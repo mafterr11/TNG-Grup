@@ -1,17 +1,5 @@
-"use client"
-import { useEffect } from "react";
-
 const Servicii = () => {
-  useEffect(() => {
-    if (window.location.hash) {
-      let elem = document.getElementById(window.location.hash.slice(1));
-      if (elem) {
-        elem.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  }, []);
   return (
-
     <div className="pt-[8rem]">
       {/* Header */}
       <div className="text-center mb-[13rem]">
@@ -102,7 +90,6 @@ const Servicii = () => {
       </div>
     </div>
   )
-};
-
+}
 
 export default Servicii
