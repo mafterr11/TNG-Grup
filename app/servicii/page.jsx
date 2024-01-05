@@ -86,6 +86,7 @@ const Servicii = () => {
             complexe cerințe, demonstrând flexibilitatea și versatilitatea
             noastră în orice proiect.
           </p>
+          {/* Accordion Container*/}
           <motion.div
             variants={fadeIn("down", 0.3)}
             initial='hidden'
@@ -144,11 +145,14 @@ const Servicii = () => {
                   <p>
                     <span className='text-accent'>&#9679;</span> Suntem precauți
                     și dornici să eliminăm din start orice inconvenient tehnic
-                    care ar putea apărea pe parcurs. Proiectantul va fi prezent
-                    pe șantier în timpul derulării activităților propriu-zise,
-                    dar și la controalele efectuate de Inspectoratul de stat. În
-                    plus, va monitoriza detaliile tehnice suplimentare, adăugate
-                    planului de execuție.
+                    care ar putea apărea pe parcurs. planului de execuție.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Proiectantul va
+                    fi prezent pe șantier în timpul derulării activităților
+                    propriu-zise, dar și la controalele efectuate de
+                    Inspectoratul de stat. În plus, va monitoriza detaliile
+                    tehnice suplimentare, adăugate
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -219,6 +223,7 @@ const Servicii = () => {
           </p>
           <p>- Hale metalice</p>
           <p>- Hale prefabricate</p>
+          {/* Accordion Container*/}
           <motion.div
             variants={fadeIn("down", 0.3)}
             initial='hidden'
@@ -369,6 +374,7 @@ const Servicii = () => {
             fiecărui client în parte, indiferent de complexitatea proiectului pe
             care vrea să-l efectueze.
           </p>
+          {/* Accordion Container*/}
           <motion.div
             variants={fadeIn("down", 0.3)}
             initial='hidden'
@@ -516,6 +522,7 @@ const Servicii = () => {
             în fața condițiilor meteo nefavorabile, dar și altor factori de
             uzură și degradare.
           </p>
+          {/* Accordion Container */}
           <motion.div
             variants={fadeIn("down", 0.3)}
             initial='hidden'
@@ -542,9 +549,13 @@ const Servicii = () => {
                     sale în materie de costuri și investiții ulterioare. Noi ne
                     dorim să optimizăm toate resursele implicate în proces și să
                     oferim clientului șansa de a se bucura de un raport
-                    calitate-preț excelent. Indiferent că e vorba de un proiect
-                    casă simplă sau o hală industrială, la final, când tragem
-                    linie, ne dorim să avem parte de feedback pozitiv.
+                    calitate-preț excelent.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Indiferent că e
+                    vorba de un proiect casă simplă sau o hală industrială, la
+                    final, când tragem linie, ne dorim să avem parte de feedback
+                    pozitiv.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -653,6 +664,7 @@ const Servicii = () => {
             regulat pe șantier pentru a se asigura că toate activitățile
             derulate respectă întocmai prevederile de natură legislativă.
           </p>
+          {/* Accordion Container */}
           <motion.div
             variants={fadeIn("down", 0.3)}
             initial='hidden'
@@ -683,7 +695,9 @@ const Servicii = () => {
                     în mod constant discuții telefonice sau, după caz, întâlniri
                     fizice pentru a clarifica eventuale nelămuriri sau a
                     planifica următorul stadiu de evoluție al construcției.
-                    Oferim doar soluții personalizate, tocmai de aceea ne
+                  </p>
+                  <p>
+                  <span className='text-accent'>&#9679;</span> Oferim doar soluții personalizate, tocmai de aceea ne
                     asigurăm că avem toate detaliile despre ceea ce își dorește
                     beneficiarul.
                   </p>
@@ -1150,19 +1164,28 @@ const Servicii = () => {
                     cadrului legal și anume:
                   </h3>
                   <p>
-                    <span className='text-accent'>&#9679;</span> Legea 10/1995 care vizează calitatea în construcţii, completată şi modificată;
+                    <span className='text-accent'>&#9679;</span> Legea 10/1995
+                    care vizează calitatea în construcţii, completată şi
+                    modificată;
                   </p>
                   <p>
-                    <span className='text-accent'>&#9679;</span> Legea 50/1991 republicată cu privire la autorizarea executării lucrărilor de construcţii.
+                    <span className='text-accent'>&#9679;</span> Legea 50/1991
+                    republicată cu privire la autorizarea executării lucrărilor
+                    de construcţii.
                   </p>
                   <p>
-                    <span className='text-accent'>&#9679;</span> H.G. 343/2017 care detaliază aprobarea Regulamentului de recepţie a lucrărilor de construcţii şi instalaţii.
+                    <span className='text-accent'>&#9679;</span> H.G. 343/2017
+                    care detaliază aprobarea Regulamentului de recepţie a
+                    lucrărilor de construcţii şi instalaţii.
                   </p>
                   <p>
-                    <span className='text-accent'>&#9679;</span> HG 766/1997 pentru aprobarea unor regulamente care asigură calitatea în construcţii;
+                    <span className='text-accent'>&#9679;</span> HG 766/1997
+                    pentru aprobarea unor regulamente care asigură calitatea în
+                    construcţii;
                   </p>
                   <p>
-                    <span className='text-accent'>&#9679;</span> Legea nr. 319/2006 a securităţii şi sănătăţii în muncă.
+                    <span className='text-accent'>&#9679;</span> Legea nr.
+                    319/2006 a securităţii şi sănătăţii în muncă.
                   </p>
                 </AccordionContent>
               </AccordionItem>
