@@ -1,3 +1,4 @@
+"use client"
 const Servicii = () => {
   return (
     <div className="pt-[8rem]">
