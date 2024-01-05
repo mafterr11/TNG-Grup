@@ -3,11 +3,21 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 const Servicii = () => {
-  const router = useRouter();
+   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = () => {
-      // Your existing logic...
+      let hash = window.location.hash;
+      if (hash) {
+        // Decode the hash to handle URL encoded characters
+        hash = decodeURIComponent(hash);
+        const element = document.querySelector(hash);
+        if (element) {
+          requestAnimationFrame(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
+      }
     };
 
     // Run the handler right away in case the page is loaded with a hash
