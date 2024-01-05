@@ -86,10 +86,10 @@ const Servicii = () => {
           <p><span className="text-accent">&#9679;</span> <span className="text-accent font-bold">Experiența necesară</span> - Nimic nu se compară cu eficiența activităților pe care le pot derula profesioniștii. Colaborăm doar cu persoane care dețin certificări care le atestă abilitățile.</p>
           <p><span className="text-accent">&#9679;</span> <span className="text-accent font-bold">Respectarea prevederilor legale </span> - Un aspect foarte important pentru orice persoană care participă activ la procesul de proiectare și implementare. Dirigintele de șantier va răspunde în fața autorităților în cazul în care ceva este în neregulă. Tocmai de aceea, analizează foarte bine documentele pe care le semnează și se asigură că ceea ce se află în acte este conform cu realitatea.</p>
         </div>
-
       </div>
     </div>
   )
-}
+};
+
 
 export default Servicii
