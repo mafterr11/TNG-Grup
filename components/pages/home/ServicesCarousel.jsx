@@ -3,7 +3,6 @@ import * as React from "react";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
 import {
   Carousel,
   CarouselContent,
@@ -97,12 +96,6 @@ export function ServicesCarousel() {
     groupedServiciiDesktop.push(servicii.slice(i, i + 4));
   }
 
-  const router = useRouter();
-
-  const handleCardClick = (path) => {
-    // Navigate to the specific section on the SERVICII page
-    router.push(path);
-  };
   return (
     <Carousel
       plugins={[
@@ -121,7 +114,6 @@ export function ServicesCarousel() {
                 <div key={serviciuIndex} className='w-[90%]'>
                   <Link href={serviciu.path}>
                     <Card
-                      onClick={() => handleCardClick(serviciu.path)}
                       className='border-2  border-accent hover:bg-grey/85 '
                     >
                       <CardContent className='flex flex-col gap-y-6 items-center justify-start p-6 bg-grey/95 min-h-[310px] hover:scale-[0.98]'>

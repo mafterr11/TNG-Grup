@@ -1,4 +1,20 @@
+"use client"
+
+import { useEffect } from "react";
+
 const Servicii = () => {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 0); // Timeout ensures this runs in the next event loop after navigation
+      }
+    }
+  }, []); // Empty dependency array means it only runs once on mount
   return (
     <div className="pt-[8rem]">
       {/* Header */}
