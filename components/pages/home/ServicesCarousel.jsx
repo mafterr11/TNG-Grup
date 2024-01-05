@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
+import { useState, useEffect } from 'react';
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -90,10 +91,24 @@ export const servicii = [
 ];
 
 export function ServicesCarousel() {
-  // Function to group the services into chunks of 4 for desktop and chunks of 1 for mobile
-  const groupedServiciiDesktop = [];
-  for (let i = 0; i < servicii.length; i += 4) {
-    groupedServiciiDesktop.push(servicii.slice(i, i + 4));
+  const [groupSize, setGroupSize] = useState(4); // Default to 4 for desktop
+
+  // Update group size based on screen width
+  useEffect(() => {
+    const updateGroupSize = () => {
+      setGroupSize(window.innerWidth < 768 ? 1 : 4);
+    };
+
+    window.addEventListener('resize', updateGroupSize);
+    updateGroupSize();
+
+    return () => window.removeEventListener('resize', updateGroupSize);
+  }, []);
+
+  // Group the services based on groupSize
+  const groupedServicii = [];
+  for (let i = 0; i < servicii.length; i += groupSize) {
+    groupedServicii.push(servicii.slice(i, i + groupSize));
   }
 
   return (
@@ -107,7 +122,7 @@ export function ServicesCarousel() {
       className='w-full max-w-7xl mt-16'
     >
       <CarouselContent className='flex -ml-1'>
-        {groupedServiciiDesktop.map((group, index) => (
+        {groupedServicii.map((group, index) => (
           <CarouselItem key={index} className='flex-shrink-0 px-3 w-full'>
             <div className='flex flex-col xl:flex-row xl:gap-x-6 items-center justify-center gap-y-4'>
               {group.map((serviciu, serviciuIndex) => (
