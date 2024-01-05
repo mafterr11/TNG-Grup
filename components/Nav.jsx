@@ -28,7 +28,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
   const pathname = usePathname();
   return <nav className={`${containerStyles}`}>
     {links.map((link, index)=>{
-        return <Link key={index} href={link.path} scroll={false} className={`${linkStyles}`}><span>{link.name}</span></Link>
+        return <Link key={index} href={link.path} className={`${linkStyles}`}><span>{link.name}</span></Link>
     })}
   </nav>;
 };
