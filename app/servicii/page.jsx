@@ -1,6 +1,28 @@
 "use client"
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 const Servicii = () => {
-  
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      // Your existing logic...
+    };
+
+    // Run the handler right away in case the page is loaded with a hash
+    handleRouteChange();
+
+    // Subscribe to route changes if router and router.events are defined
+    if (router && router.events) {
+      router.events.on('hashChangeComplete', handleRouteChange);
+
+      // Unsubscribe from events on cleanup
+      return () => {
+        router.events.off('hashChangeComplete', handleRouteChange);
+      };
+    }
+  }, [router]);
   return (
     <div className="pt-[8rem]">
       {/* Header */}
