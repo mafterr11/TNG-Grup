@@ -1,38 +1,5 @@
-"use client"
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-
 const Servicii = () => {
-   const router = usePathname();
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      let hash = window.location.hash;
-      if (hash) {
-        // Decode the hash to handle URL encoded characters
-        hash = decodeURIComponent(hash);
-        const element = document.querySelector(hash);
-        if (element) {
-          requestAnimationFrame(() => {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          });
-        }
-      }
-    };
-
-    // Run the handler right away in case the page is loaded with a hash
-    handleRouteChange();
-
-    // Subscribe to route changes if router and router.events are defined
-    if (router && router.events) {
-      router.events.on('hashChangeComplete', handleRouteChange);
-
-      // Unsubscribe from events on cleanup
-      return () => {
-        router.events.off('hashChangeComplete', handleRouteChange);
-      };
-    }
-  }, [router]);
+  
   return (
     <div className="pt-[8rem]">
       {/* Header */}
