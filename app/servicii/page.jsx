@@ -1,9 +1,9 @@
 "use client"
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const Servicii = () => {
-  const router = useRouter();
+  const router = usePathname();
 
   useEffect(() => {
     const handleRouteChange = () => {
