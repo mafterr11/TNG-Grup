@@ -1,48 +1,15 @@
 "use client"
-import { useEffect, useRef } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
-
-const usePrevious = (value) => {
-  const ref = useRef();
-  useEffect(() => {
-    ref.current = value;
-  }, [value]);
-  return ref.current;
-};
-
-// Custom hook to listen to navigation events
-const useNavigation = (onRouteChanged) => {
-  const pathname = usePathname();
-  const prevPathname = usePrevious(pathname);
-
-  const searchParams = useSearchParams();
-  const prevSearchParams = usePrevious(searchParams);
-
-  useEffect(() => {
-    if (searchParams?.toString() !== prevSearchParams?.toString() || pathname !== prevPathname) {
-      onRouteChanged({ pathname, searchParams });
-    }
-  }, [pathname, prevPathname, prevSearchParams, searchParams, onRouteChanged]);
-};
-
+import { useEffect } from "react";
 
 const Servicii = () => {
-  // Define what to do when the route changes
-  const onRouteChanged = ({ pathname, searchParams }) => {
-    // If the pathname matches '/servicii' and there's a hash in the URL
-    if (pathname === '/servicii' && searchParams.has('hash')) {
-      const hash = searchParams.get('hash');
-      const element = document.getElementById(hash);
-
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  useEffect(() => {
+    if (window.location.hash) {
+      let elem = document.getElementById(window.location.hash.slice(1));
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
-  };
-
-  // Use the custom hook
-  useNavigation(onRouteChanged);
-
+  }, []);
   return (
 
     <div className="pt-[8rem]">
