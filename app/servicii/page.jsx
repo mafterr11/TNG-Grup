@@ -1,6 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../variants";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Servicii = () => {
   return (
@@ -80,6 +86,74 @@ const Servicii = () => {
             complexe cerințe, demonstrând flexibilitatea și versatilitatea
             noastră în orice proiect.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              Ce garanții oferim?
+            </h3>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Materiale premium, certificate
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Folosim doar
+                    alternative durabile, care garantează utilizări îndelungate
+                    și capacitatea de a rezista condițiilor meteo extreme și
+                    factorilor de uzură și degradare.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ne pliem și pe
+                    bugetul clientului, pentru a putea îmbina cu succes utilul
+                    cu plăcutul.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-2'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Grade sporite de siguranță
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Cu ani de
+                    experiență în construcții, garantăm execuția proiectelor cu
+                    maximă siguranță și confort. Ne bazăm pe tehnici inovatoare
+                    și echipament de protecție de top, eliminând riscurile și
+                    asigurând calitatea superioară a lucrărilor noastre.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Alegeți
+                    experiența și dedicarea pentru un rezultat excepțional în
+                    construcții.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-3'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Asistență tehnică pe parcursul etapelor de execuție
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Suntem precauți
+                    și dornici să eliminăm din start orice inconvenient tehnic
+                    care ar putea apărea pe parcurs. Proiectantul va fi prezent
+                    pe șantier în timpul derulării activităților propriu-zise,
+                    dar și la controalele efectuate de Inspectoratul de stat. În
+                    plus, va monitoriza detaliile tehnice suplimentare, adăugate
+                    planului de execuție.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Execuție construcții industriale 2 */}
         <motion.div
@@ -145,6 +219,89 @@ const Servicii = () => {
           </p>
           <p>- Hale metalice</p>
           <p>- Hale prefabricate</p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              Ce avantaje îți oferim?
+            </h3>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Discuții constante și implementarea rapidă a feedback-ului
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Nu e nevoie să
+                    ne vizitezi mereu pentru a te asigura că totul este în
+                    conformitate cu planul tehnic. Putem stabili discuții
+                    telefonice pentru a dezbate ultimele stadii ale proiectului.
+                    În cazul în care este necesar, poți face orice modificare
+                    îți dorești în ceea ce privește construcția.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Noi ne vom
+                    asigura că feedback-ul tău va fi implementat cât mai repede
+                    posibil. Același principiu se aplică și în cazul unui
+                    proiect casă sau a unuia agricol.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-2'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  O durată de viață îndelungată a proiectului
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Indiferent de
+                    caracteristicile locului în care se află construcția, noi ne
+                    asigurăm că poate rezista atât factorilor interni, cât și
+                    externi de uzură. Folosim doar materiale care dispun de
+                    proprietăți chimice și mecanice excelente.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ne dorim ca
+                    rezultatul final să fie o investiție pe termen lung, nu una
+                    care să necesite în mod constant modificări. Tocmai de
+                    aceea, aplicăm metode ingenioase de lucru și folosim
+                    avantajele numeroase pe care le oferă tehnologiile de ultimă
+                    generație.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-3'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  O colaborare presărată marcată de eficiență
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Suntem precauți
+                    și dornici să eliminăm din start orice inconvenient tehnic
+                    care ar putea apărea pe parcurs. Proiectantul va fi prezent
+                    pe șantier în timpul derulării activităților propriu-zise,
+                    dar și la controalele efectuate de Inspectoratul de stat. În
+                    plus, va monitoriza detaliile tehnice suplimentare, adăugate
+                    planului de execuție.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ne dorim să
+                    încheiem colaborări profitabile, care să se ridice la
+                    nivelul așteptărilor și banilor investiți. Tocmai de aceea
+                    punem la bătaie toate resursele de care dispunem și creăm
+                    premisele unei comunicări transparente. Expunem cu
+                    sinceritate toate detaliile de care nevoie beneficiarul.
+                    Simplu și eficient!
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Execuție construcții agricole 3 */}
         <motion.div
@@ -212,6 +369,92 @@ const Servicii = () => {
             fiecărui client în parte, indiferent de complexitatea proiectului pe
             care vrea să-l efectueze.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              Cum ne desfășurăm activitatea?
+            </h3>
+            <p>
+              Suntem gata să ducem la bun sfârșit proiecte complexe, care să-ți
+              ofere standarde înalte de:
+            </p>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Eficiență
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Garantăm
+                    rezultate care să se plieze în funcție de cerințele tale.
+                    Asigurăm consultanță specializată la începutul proiectului
+                    și stabilim discuții și întâlniri constante pentru a
+                    implementa posibilele modificări.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Pentru noi e
+                    foarte important să punem la dispoziție beneficiarilor
+                    soluții personalizate și idei inovative.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-2'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Durabilitate
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Folosim doar
+                    materiale capabile să reziste la șocuri diverse și care se
+                    adaptează condițiilor meteo extreme. Luăm în calcul
+                    aspectele de ordin geotehnic și gândim construcțiile
+                    agricole în așa fel încât culturile să nu fie afectate în
+                    vreun fel.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Suntem la
+                    curent cu noile tehnici din domeniu și utilizăm echipamente
+                    moderne, de calitate superioară.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-3'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Siguranță
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Modalitățile de
+                    execuție se efectuează conform reglementărilor în vigoare.
+                    În plus, va exista în permanență un proiectant pe șantier
+                    care va supraveghea corectitudinea derulării activităților.
+                    Știm că orice greșeală, oricât de mică ar fi, care intervine
+                    în faza de execuție poate cauza probleme serioase
+                    rezultatului final. Specialiștii noștri monitorizează
+                    concordanța dintre planul tehnic și realitate pentru a evita
+                    din start eventualele erori tehnice și implicit nemulțumiri
+                    din partea clientului.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Dacă vrei să
+                    excelezi în domeniul agricol, noi avem răspunsul! Derulăm
+                    servicii de execuție construcții agricole. Ne ocupăm de
+                    proiectarea și construirea serelor, sistemelor de irigații
+                    și silozurilor. Oferim soluții adaptate în funcție de
+                    cerințele și nevoile clienților și suntem atenți la fiecare
+                    detaliu.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Supervizare lucrări de execuție 4 */}
         <motion.div
@@ -273,6 +516,91 @@ const Servicii = () => {
             în fața condițiilor meteo nefavorabile, dar și altor factori de
             uzură și degradare.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              Cum se derulează totul?
+            </h3>
+            <p>
+              Suntem gata să ducem la bun sfârșit proiecte complexe, care să-ți
+              ofere standarde înalte de:
+            </p>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  În primă fază
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Vom discuta pe
+                    larg cu beneficiarul pentru a înțelege care sunt așteptările
+                    sale în materie de costuri și investiții ulterioare. Noi ne
+                    dorim să optimizăm toate resursele implicate în proces și să
+                    oferim clientului șansa de a se bucura de un raport
+                    calitate-preț excelent. Indiferent că e vorba de un proiect
+                    casă simplă sau o hală industrială, la final, când tragem
+                    linie, ne dorim să avem parte de feedback pozitiv.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-2'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Mai apoi
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Vom integra
+                    toate detaliile în programe excel pentru a avea o
+                    perspectivă cât mai nuanțată asupra proiectului. Integrăm
+                    atât timpul estimat, cât și costurile preconizate pentru a
+                    ne ocupa așa cum trebuie de managerierea eficientă.
+                    Planificăm detaliile în așa fel încât să garantăm standarde
+                    înalte de eficiență, calitate și siguranță.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Luăm în calcul
+                    toate riscurile care pot apărea pe parcurs pentru a elimina
+                    din start un posibil eșec.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-3'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Trecem la munca propriu-zisă
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Verificăm
+                    calitatea materialelor și a tehnicilor de lucru executate
+                    sau care se află în curs de execuție. Mizăm exclusiv pe
+                    avantajele opțiunilor de calitate superioară pentru a ne
+                    asigura de funcționalitatea construcției, fie civilă sau
+                    industrială. Supraveghem progresul lucrărilor și rezolvăm
+                    toate problemele tehnice și organizatorice care pot apărea.
+                    Reacționăm bine în situații de stres sau urgență și asigurăm
+                    conformitatea cu proiectul și normele aplicabile.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ne ocupăm cu
+                    atenție de tot ce presupune activitatea de supervizare
+                    lucrări de execuție. Garantăm succesul oricărui proiect,
+                    indiferent de complexitatea pe care o prezintă. Ne asigurăm
+                    că locuința excelează atât din punct de vedere funcțional,
+                    cât și tehnic. Integrăm toate cerințele specificate de
+                    client în planuri și tabele detaliate pentru a optimiza
+                    toate costurile implicate.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Verificare calitate lucrări în execuție 5 */}
         <motion.div
@@ -325,6 +653,87 @@ const Servicii = () => {
             regulat pe șantier pentru a se asigura că toate activitățile
             derulate respectă întocmai prevederile de natură legislativă.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              De ce să alegi serviciul de verificare calitate lucrări în
+              execuție?
+            </h3>
+            <p>
+              Ne ocupăm de efectuarea chiar și celor mai complexe proiecte, fie
+              că e vorba de construcții civile, agricole sau industriale. Gama
+              noastră de proiecte case impresionează atât prin designul inedit,
+              cât și prin gradele sporite de siguranță și confort pe care le
+              oferă.
+            </p>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Comunicare transparentă
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Pe tot
+                    parcursul proceselor de proiectare și execuție. Planificăm
+                    în mod constant discuții telefonice sau, după caz, întâlniri
+                    fizice pentru a clarifica eventuale nelămuriri sau a
+                    planifica următorul stadiu de evoluție al construcției.
+                    Oferim doar soluții personalizate, tocmai de aceea ne
+                    asigurăm că avem toate detaliile despre ceea ce își dorește
+                    beneficiarul.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-2'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Un spațiu perfect funcțional
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Verificăm
+                    îndeaproape calitatea proiectelor pentru a-ți oferi șansa de
+                    a te bucura de un loc pe care să-l numești acasă. În cazul
+                    în care ești antreprenor și ai optat pentru o construcție
+                    comercială, ne asigurăm că îți oferim premisele unei afaceri
+                    de succes.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-3'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Siguranță garantată, indiferent de stadiul lucrării
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Cunoaștem
+                    îndeaproape tot cadrul legislativ care reglementează
+                    activitățile de execuție a unei construcții. Tocmai de
+                    aceea, eliminăm din start situațiile neplăcute sau
+                    problemele care pot apărea cu instituțiile competente.
+                    Suntem la curent cu noile modificări de natură legală și ne
+                    ocupăm de întocmirea documentației necesare.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Vrei să te
+                    bucuri de avantajele unei construcții ideale? La Hauze
+                    găsești toate răspunsurile de care ai nevoie. Mizăm pe
+                    colaborări eficiente și respectăm întocmai cerințele venite
+                    din partea autorităților. Serviciul de verificare calitate
+                    lucrări în execuție este cel care ne ajută să eliminăm din
+                    start posibilele erori și să ne bucuri de rezultatele
+                    dorite.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Planificarea execuției 6 */}
         <motion.div
@@ -397,6 +806,86 @@ const Servicii = () => {
             tehnice, stopează lucrările și acționează cu promptitudine pentru a
             găsi o soluție eficientă de rezolvare.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              De ce să ne alegi pe noi?
+            </h3>
+            <p>
+              Vrem să oferim fiecărui client șansa de a se bucura de rezultatele
+              dorite, indiferent că e vorba de o locuință personală sau clădire
+              de birouri. Poate te întrebi, totuși, de ce ar trebui să ne alegi
+              pe noi, în condițiile în care ai atât de multe variante la
+              dispoziție.
+            </p>
+            <p>Ei bine, noi îți garantăm:</p>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Îndeplinirea obiectivelor setate la începutul colaborării
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ne place să
+                    impresionăm prin fapte, tocmai de aceea ne adunăm toate
+                    resursele de care dispunem pentru a asigura succesul
+                    proiectului. Dacă vrei să te convingi, poți consulta gama
+                    noastră de proiecte case în execuție.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-2'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  O echipă de execuție formată exclusiv din profesioniști
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Nu ne permitem
+                    să facem nicio greșeală. Toți oamenii care fac parte din
+                    echipa responsabilă de efectuarea etapelor execuție dețin
+                    toate calificările necesare. Pe lângă abilitățile
+                    profesionale, dispun și de numeroase calități personale.
+                    Sunt deschiși, implicați și răbdători.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value='item-3'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Șansa de a avea proiectul dorit la data stabilită
+                </AccordionTrigger>
+                <AccordionContent className='text-base mt-4'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Efectuăm cu
+                    atenție serviciul de planificare, ceea ce asigură premisele
+                    unor rezultate fără cusur. Organizarea este punctul cheie
+                    care ne ajută să ajungem acolo unde ne-am propus. Tocmai de
+                    aceea, vei avea posibilitatea de a te bucura rapid de
+                    proiectul mult visat, fără eforturi suplimentare. Nu va mai
+                    trebui să pierzi timp în căutarea materialelor și
+                    echipamentelor potrivite. Noi ne ocupăm de tot!
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Etapa de
+                    execuție este una dintre cele mai dificile activități din
+                    cadrul unui proiect de construcții. Însă, cu ajutorul
+                    echipei potrivite vei reuși să-ți îndeplinești obiectivele.
+                    Noi ne mândrim cu o echipă formată doar din profesioniști,
+                    atât pe partea de proiectare, cât și de implementare. Avem
+                    responsabili tehnici și manageri de proiect instruiți, care
+                    se asigură de corectitudinea proiectului și intervin în
+                    cazul în care apar nereguli.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Servicii RTE 7 */}
         <motion.div
@@ -453,6 +942,92 @@ const Servicii = () => {
             cu noile tendințe din domeniu și garantează colaborări avantajoase,
             indiferent de context.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              Care sunt atribuțiile unui responsabil de proiect?
+            </h3>
+            <p>
+              Fără ajutorul unui responsabil tehnic cu execuția proiectele
+              noastre nu ar mai arăta la fel. Este persoana care garantează
+              efectuarea corespunzătoare a activităților de lucru și respectarea
+              întocmai a reglementărilor legale. Verifică inclusiv calitatea
+              materialelor folosite și intervine imediat în cazul unor posibile
+              nereguli. În cazul în care este necesar anunță autoritățile
+              competente și reia execuția numai când toate neregulile au fost
+              rezolvate.
+            </p>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  Te întrebi care sunt activitățile propriu-zise pe care le va
+                  derula un responsabil de proiect casă?
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Se asigură că
+                    detaliile specificate în caietul cu sarcini sunt
+                    implementate corect.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ia parte la
+                    momentul definitivării proiectului și punctelor de reper,
+                    care ghidează practic întreaga execuție.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ține o evidență
+                    a tuturor activităților care se derulează într-o zi pe
+                    șantierul de lucru. Informațiile atât în format fizic, cât
+                    și electronic.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Se ocupă de
+                    întocmirea și semnarea documentelor necesare, care atestă
+                    efectuarea fiecărei faze ale proiectului.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Verifică atent
+                    proprietățile tehnice și calitatea materialelor folosite
+                    pentru efectuarea activităților. În cazul în care lucrările
+                    se stopează din diverse motive, responsabilul se asigură că
+                    materialele sunt depozitate în siguranță în locuri special
+                    amenajate.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Întocmește un
+                    raport de neconformitate (R.N.C) în cazul în care sesizează
+                    nereguli în faza de execuție. Anunță proiectantul lucrării
+                    și dirigintele de șantier și stabilesc împreună soluțiile
+                    ideale de rezolvare. Imediat după ce situația este
+                    remediată, se reiau activitățile.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Participă la
+                    întocmirea cărții tehnice a clădirii construite, alături de
+                    proiectant și diriginte de șantier. Alături de cei trei
+                    specialiști, vine cu propuneri în cazul în care există
+                    probleme în procesul de lucru sau se dorește optimizarea
+                    lucrării.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Anunță
+                    autoritățile competente în cazul în care apar modificări la
+                    nivelul documentelor oficiale.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Ia decizii cu
+                    privire la procedurile tehnice, fișele tehnologice și planul
+                    de control al calității execuției.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
         {/* Servicii dirigenție de șantier 8 */}
         <motion.div
@@ -503,6 +1078,96 @@ const Servicii = () => {
             care le semnează și se asigură că ceea ce se află în acte este
             conform cu realitatea.
           </p>
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial='hidden'
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+          >
+            <h3 className='mt-8 text-accent text-2xl text-center xl:text-start'>
+              Ce responsabilități are dirigintele de șantier?
+            </h3>
+            <p>
+              Rolul dirigintelui de șantier în garantarea succesului lucrării
+              este destul de însemnat. Tocmai de aceea, se asigură că toate
+              activitățile conform standardelor de siguranță, funcționalitate și
+              confort.
+            </p>
+            {/* Accordion */}
+            <Accordion type='single' collapsible>
+              <AccordionItem value='item-1'>
+                <AccordionTrigger className='text-lg text-accent text-start'>
+                  În perioada execuției, fie că e vorba deproiect casă simplăsau
+                  o hală industrială, dirigintele vizează următoarele etape:
+                </AccordionTrigger>
+                <AccordionContent className='text-base'>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Urmărește
+                    îndeaproape modalitatea de efectuare a activităților de
+                    execuție.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Se asigură că
+                    există documente care să ateste calitatea materialelor de
+                    construcții folosite.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Interzice
+                    folosirea echipamentelor care nu dețin avize tehnice sau
+                    certificate de conformitate.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Se asigură că
+                    etapele de execuție sunt derulate de personal calificat în
+                    domeniu.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Informează
+                    imediat beneficiarul în cazul în care apar nereguli sau
+                    probleme tehnice.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Propune soluții
+                    de rezolvare pentru situațiile care necesită intervenție
+                    imediată.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Întocmește
+                    actele de recepție.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Colaborează cu
+                    responsabilul tehnic cu execuția în așa fel încât să elimine
+                    orice fel de problemă care ar putea îngreuna activitățile.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Completează
+                    cartea tehnică și adaugă toate documentele necesare.
+                  </p>
+                  <h3 className='text-lg text-accent mt-4'>
+                    Garantăm efectuarea lucrărilor conform reglementărilor în
+                    vigoare. Diriginții noștri de șantier garantează respectarea
+                    cadrului legal și anume:
+                  </h3>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Legea 10/1995 care vizează calitatea în construcţii, completată şi modificată;
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Legea 50/1991 republicată cu privire la autorizarea executării lucrărilor de construcţii.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> H.G. 343/2017 care detaliază aprobarea Regulamentului de recepţie a lucrărilor de construcţii şi instalaţii.
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> HG 766/1997 pentru aprobarea unor regulamente care asigură calitatea în construcţii;
+                  </p>
+                  <p>
+                    <span className='text-accent'>&#9679;</span> Legea nr. 319/2006 a securităţii şi sănătăţii în muncă.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </motion.div>
         </motion.div>
       </div>
     </div>
