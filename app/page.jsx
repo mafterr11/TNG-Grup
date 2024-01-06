@@ -6,7 +6,7 @@ import AchievementCounter from "@/components/pages/home/AchievementCounter";
 const Home = () => {
   return (
     <div className='py-[5.7rem] '>
-      <div className="text-center container mt-8 flex flex-col md:hidden">
+      <div className="container text-center mt-8 flex flex-col md:hidden">
         <h1>
           <span className='text-accent'>TNG</span> Grup
         </h1>
