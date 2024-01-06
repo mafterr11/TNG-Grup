@@ -54,6 +54,7 @@ export function HeroCarousel() {
         initial="hidden"
         whileInView={"show"}
         viewport={{once:true, ammount:0.4}}
+        className="hidden md:block"
         >
           <span className='text-accent'>TNG</span> Grup
         </motion.h2>
