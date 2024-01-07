@@ -48,7 +48,7 @@ const Header = () => {
           />
           {/* btn */}
           <Link href='/contact' className='hidden xl:flex'>
-            <Button variant='orange'>Contacteaza-ne</Button>
+            <Button variant='orange'>Solicitați o ofertă</Button>
           </Link>
           {/* mobile nav */}
           <NavMobile
