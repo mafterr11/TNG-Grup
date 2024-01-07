@@ -48,7 +48,9 @@ const Header = () => {
             linkStyles='capitalize text-lg hover'
           />
           {/* btn */}
+          <div className="hidden xl:block">
           <SolicitatiOferta />
+          </div>
           {/* mobile nav */}
           <NavMobile
             containerStyles='xl:hidden'

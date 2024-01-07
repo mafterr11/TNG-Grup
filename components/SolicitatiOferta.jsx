@@ -2,7 +2,7 @@
 import React, { useState } from "react"
 
 import { cn } from "@/lib/utils"
-import { useMediaQuery } from "@/hooks/use-media-query"
+import { useMediaQuery } from 'react-responsive';
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -27,7 +27,7 @@ import { Label } from "@/components/ui/label"
 
 export function SolicitatiOferta() {
   const [open, setOpen] = useState(false)
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
 
   if (isDesktop) {
     return (

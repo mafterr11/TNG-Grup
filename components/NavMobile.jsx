@@ -8,6 +8,7 @@ import { MdConstruction } from "react-icons/md";
 
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { SolicitatiOferta } from "./SolicitatiOferta";
 
 export const links = [
   {
@@ -78,9 +79,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
               );
             })}
           </div>
-          <Link href="/contact">
-            <Button variant="orange">Contacteaza-ne</Button>
-          </Link>
+          <SolicitatiOferta />
         </div>
       </aside>
     </div>
