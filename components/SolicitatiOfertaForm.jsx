@@ -4,10 +4,11 @@ import { useState } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
+import { DrawerClose } from "./ui/drawer"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
-export default function SolicitatiOfertaForm() {
+export default function SolicitatiOfertaForm({ onClose }) {
   const [constructie, setConstructie] = useState('');
   const [judet, setJudet] = useState('');
   const [inceput, setInceput] = useState('');
@@ -39,7 +40,7 @@ export default function SolicitatiOfertaForm() {
   return (
     <div className="max-w-lg mx-auto p-6 bg-grey shadow-md rounded-lg">
       <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
-      <form className="mt-4 space-y-2" onSubmit={handleSubmit}>
+      <form className="mt-4 space-y-2 xs:space-y-4" onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="nume">Nume</Label>
@@ -174,7 +175,9 @@ export default function SolicitatiOfertaForm() {
         </div>
         <div className="text-right flex gap-x-4">
           <Button type="submit" variant="orange" size="full">Trimite</Button>
-          <Button variant="orange" size="full">Inchide</Button>
+          <DrawerClose asChild>
+          <Button variant="orange" size="full" onClick={onClose}>Inchide</Button>
+        </DrawerClose>
         </div>
       </form>
     </div>
