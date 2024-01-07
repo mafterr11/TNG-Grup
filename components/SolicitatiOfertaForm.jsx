@@ -1,38 +1,41 @@
+"use client"
+import { useState } from "react"
+
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const formData = {
-    nume: event.target.nume.value,
-    prenume: event.target.prenume.value,
-    email: event.target.email.value,
-    telefon: event.target.telefon.value,
-    constructie: event.target.constructie.value,
-    judet: event.target.judet.value,
-    inceput: event.target.inceput.value,
-    etapa: event.target.etapa.value,
-    mesaj: event.target.mesaj.value,
-  };
-
-  const emailBody = `Nume: ${formData.nume}\n` +
-                    `Prenume: ${formData.prenume}\n` +
-                    `Email: ${formData.email}\n` +
-                    `Telefon: ${formData.telefon}\n` +
-                    `Constructie: ${formData.constructie}\n` +
-                    `Judet: ${formData.judet}\n` +
-                    `Inceput: ${formData.inceput}\n` +
-                    `Etapa: ${formData.etapa}\n` +
-                    `Mesaj: ${formData.mesaj}`;
-
-  window.location.href = `mailto:mafterr11@gmail.com?subject=Solicitare Oferta&body=${encodeURIComponent(emailBody)}`;
-};
-
-
 export default function SolicitatiOfertaForm() {
+  const [constructie, setConstructie] = useState('');
+  const [judet, setJudet] = useState('');
+  const [inceput, setInceput] = useState('');
+  const [etapa, setEtapa] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = {
+      nume: event.target.nume.value,
+      prenume: event.target.prenume.value,
+      email: event.target.email.value,
+      telefon: event.target.telefon.value,
+      mesaj: event.target.mesaj.value,
+    };
+
+    const emailBody = `Nume: ${formData.nume}\n` +
+                      `Prenume: ${formData.prenume}\n` +
+                      `Email: ${formData.email}\n` +
+                      `Telefon: ${formData.telefon}\n` +
+                      `Constructie: ${constructie}\n` +
+                      `Judet: ${judet}\n` +
+                      `Inceput: ${inceput}\n` +
+                      `Etapa: ${etapa}\n` +
+                      `Mesaj: ${formData.mesaj}`;
+
+    window.location.href = `mailto:mafterr11@gmail.com?subject=Solicitare Oferta&body=${encodeURIComponent(emailBody)}`;
+  };
+  
   return (
     <div className="max-w-lg mx-auto p-6 bg-grey shadow-md rounded-lg">
       <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
@@ -60,7 +63,7 @@ export default function SolicitatiOfertaForm() {
         {/* Intrebarea 1 */}
         <div>
           <Label htmlFor="constructie">Ce doriți să construiți?</Label>
-          <Select id="constructie" name="constructie">
+          <Select onValueChange={setConstructie} id="constructie" name="constructie">
             <SelectTrigger id="constructie">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -85,7 +88,7 @@ export default function SolicitatiOfertaForm() {
         {/* Intrebarea 2 */}
         <div>
           <Label htmlFor="judet">În ce județ va fi construcția?</Label>
-          <Select id="judet" name="judet">
+          <Select onValueChange={setJudet} id="judet" name="judet">
             <SelectTrigger id="judet">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -138,7 +141,7 @@ export default function SolicitatiOfertaForm() {
         {/* Intrebarea 3 */}
         <div>
           <Label htmlFor="inceput">Când v-ați dori să începeți construcția?</Label>
-          <Select id="inceput" name="inceput">
+          <Select onValueChange={setInceput} id="inceput" name="inceput">
             <SelectTrigger id="inceput">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -152,7 +155,7 @@ export default function SolicitatiOfertaForm() {
         {/* Intrebarea 4 */}
         <div>
           <Label htmlFor="etapa">În ce etapă sunteți?</Label>
-          <Select id="etapa" name="etapa">
+          <Select onValueChange={setEtapa} id="etapa" name="etapa">
             <SelectTrigger id="etapa">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
