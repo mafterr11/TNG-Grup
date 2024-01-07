@@ -55,7 +55,7 @@ export function SolicitatiOferta() {
             Make changes to your profile here. Click save when you're done.
           </DrawerDescription>
         </DrawerHeader>
-        <ProfileForm className="px-4" />
+        <SolicitatiOfertaForm />
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
