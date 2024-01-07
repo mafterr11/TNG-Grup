@@ -52,7 +52,7 @@ export function SolicitatiOferta() {
         <DrawerHeader className="text-left">
           <DrawerTitle>Solicitați o ofertă</DrawerTitle>
           <DrawerDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when youre done.
           </DrawerDescription>
         </DrawerHeader>
         <SolicitatiOfertaForm />
