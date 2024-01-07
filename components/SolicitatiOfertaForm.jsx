@@ -8,7 +8,6 @@ export default function Component() {
   return (
     <div className="max-w-lg mx-auto p-6 bg-grey shadow-md rounded-lg">
       <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
-      <p className="text-gray-600">Partenerul dumneavoastră în realizarea casei de vis</p>
       <form className="mt-4 space-y-4">
         <div className="grid grid-cols-2 gap-4">
           <div>
