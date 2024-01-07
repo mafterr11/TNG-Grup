@@ -1,1 +1,10 @@
 https://v0.dev/ giga tool
+
+Not used yet:
+
+dialog 
+drawer
+form 
+input
+label
+select 

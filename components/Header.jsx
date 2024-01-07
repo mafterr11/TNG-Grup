@@ -6,6 +6,7 @@ import NavMobile from "./NavMobile";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import logo from "../public/logo.png";
+import { SolicitatiOferta } from "./SolicitatiOferta";
 
 const Header = () => {
   const [active, setActive] = useState(false);
@@ -47,9 +48,7 @@ const Header = () => {
             linkStyles='capitalize text-lg hover'
           />
           {/* btn */}
-          <Link href='/contact' className='hidden xl:flex'>
-            <Button variant='orange'>Solicitați o ofertă</Button>
-          </Link>
+          <SolicitatiOferta />
           {/* mobile nav */}
           <NavMobile
             containerStyles='xl:hidden'
