@@ -67,9 +67,9 @@ const Nav = ({ containerStyles, linkStyles }) => {
           return (
             <NavigationMenu key={index}>
               <NavigationMenuList>
-                <NavigationMenuItem as='div'>
-                  <NavigationMenuTrigger as='span' className={`${linkStyles}`}>
-                    {link.name}
+                <NavigationMenuItem as='div' className={`${linkStyles}`}>
+                  <NavigationMenuTrigger as='span' >
+                    <Link href="/servicii"><span>{link.name}</span></Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent as='div'>
                     {dropdownLinks.map((dropdownLink, dropdownIndex) => (
@@ -77,17 +77,14 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         key={dropdownIndex}
                         href={dropdownLink.path}
                         passHref
-                        legacyBehavior 
+                        legacyBehavior
                       >
                         <NavigationMenuLink>
-                          <div>
                           <div className='mb-4 w-[16rem] flex  gap-x-[4px] '>
                             <span className='text-accent'>&#9679;</span>
                             <div className='hover'>
                               <span>{dropdownLink.name}</span>
                             </div>
-                          </div>
-                          <span className="w-full h-2 text-white"></span>
                           </div>
                         </NavigationMenuLink>
                       </Link>
