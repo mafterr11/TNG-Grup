@@ -4,11 +4,39 @@ import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
-export default function Component() {
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const formData = {
+    nume: event.target.nume.value,
+    prenume: event.target.prenume.value,
+    email: event.target.email.value,
+    telefon: event.target.telefon.value,
+    constructie: event.target.constructie.value,
+    judet: event.target.judet.value,
+    inceput: event.target.inceput.value,
+    etapa: event.target.etapa.value,
+    mesaj: event.target.mesaj.value,
+  };
+
+  const emailBody = `Nume: ${formData.nume}\n` +
+                    `Prenume: ${formData.prenume}\n` +
+                    `Email: ${formData.email}\n` +
+                    `Telefon: ${formData.telefon}\n` +
+                    `Constructie: ${formData.constructie}\n` +
+                    `Judet: ${formData.judet}\n` +
+                    `Inceput: ${formData.inceput}\n` +
+                    `Etapa: ${formData.etapa}\n` +
+                    `Mesaj: ${formData.mesaj}`;
+
+  window.location.href = `mailto:mafterr11@gmail.com?subject=Solicitare Oferta&body=${encodeURIComponent(emailBody)}`;
+};
+
+
+export default function SolicitatiOfertaForm() {
   return (
     <div className="max-w-lg mx-auto p-6 bg-grey shadow-md rounded-lg">
       <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
-      <form className="mt-4 space-y-4">
+      <form className="mt-4 space-y-2" onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="nume">Nume</Label>
@@ -22,21 +50,22 @@ export default function Component() {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" placeholder="Email" type="email" />
+            <Input id="email" name="email" placeholder="Email" type="email" autoComplete="email" />
           </div>
           <div>
             <Label htmlFor="telefon">Telefon</Label>
             <Input id="telefon" placeholder="Telefon" />
           </div>
         </div>
+        {/* Intrebarea 1 */}
         <div>
           <Label htmlFor="constructie">Ce doriți să construiți?</Label>
-          <Select>
+          <Select id="constructie" name="constructie">
             <SelectTrigger id="constructie">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent position="popper">
-            <SelectItem value='Construcții Civile - Parter'>
+            <SelectItem name="constructie" value='Construcții Civile - Parter'>
                 Construcții Civile - Parter
               </SelectItem>
               <SelectItem value='Construcții Civile - Cu Etaj'>
@@ -53,14 +82,15 @@ export default function Component() {
             </SelectContent>
           </Select>
         </div>
+        {/* Intrebarea 2 */}
         <div>
           <Label htmlFor="judet">În ce județ va fi construcția?</Label>
-          <Select>
+          <Select id="judet" name="judet">
             <SelectTrigger id="judet">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent position="popper">
-            <SelectItem value='București'>București</SelectItem>
+            <SelectItem name="judet" value='București'>București</SelectItem>
               <SelectItem value='Ilfov'>Ilfov</SelectItem>
               <SelectItem value='Alba'>Alba</SelectItem>
               <SelectItem value='Arad'>Arad</SelectItem>
@@ -105,27 +135,29 @@ export default function Component() {
             </SelectContent>
           </Select>
         </div>
+        {/* Intrebarea 3 */}
         <div>
           <Label htmlFor="inceput">Când v-ați dori să începeți construcția?</Label>
-          <Select>
+          <Select id="inceput" name="inceput">
             <SelectTrigger id="inceput">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent position="popper">
-            <SelectItem value='Cât mai repede'>Cât mai repede</SelectItem>
+            <SelectItem name="inceput" value='Cât mai repede'>Cât mai repede</SelectItem>
               <SelectItem value='În următoarele 6 luni'>În următoarele 6 luni</SelectItem>
               <SelectItem value='Nu m-am hotărât încă'>Nu m-am hotărât încă</SelectItem>
             </SelectContent>
           </Select>
         </div>
+        {/* Intrebarea 4 */}
         <div>
           <Label htmlFor="etapa">În ce etapă sunteți?</Label>
-          <Select>
+          <Select id="etapa" name="etapa">
             <SelectTrigger id="etapa">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent position="popper">
-            <SelectItem value='Urmează să cumpăr terenul'>Urmează să cumpăr terenul</SelectItem>
+            <SelectItem name="etapa" value='Urmează să cumpăr terenul'>Urmează să cumpăr terenul</SelectItem>
               <SelectItem value='Este planificată elaborarea proiectului'>Este planificată elaborarea proiectului</SelectItem>
               <SelectItem value='Sunt în proces de a căpăta autorizația'>Sunt în proces de a căpăta autorizația</SelectItem>
               <SelectItem value='Am obținut autorizația'>Am obținut autorizația</SelectItem>
@@ -137,8 +169,9 @@ export default function Component() {
           <Label htmlFor="mesaj">Mesaj</Label>
           <Textarea id="mesaj" placeholder="Introduceți mesajul aici." />
         </div>
-        <div className="text-right">
-          <Button variant="orange" size="full">Trimite</Button>
+        <div className="text-right flex gap-x-4">
+          <Button type="submit" variant="orange" size="full">Trimite</Button>
+          <Button variant="orange" size="full">Inchide</Button>
         </div>
       </form>
     </div>
