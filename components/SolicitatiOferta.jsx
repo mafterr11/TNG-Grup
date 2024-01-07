@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/drawer"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import SolicitatiOfertaForm from "./SolicitatiOfertaForm";
 
 export function SolicitatiOferta() {
   const [open, setOpen] = useState(false)
@@ -36,13 +37,7 @@ export function SolicitatiOferta() {
           <Button variant="orange">Solicitați o ofertă</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Solicitați o ofertă</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you're done.
-            </DialogDescription>
-          </DialogHeader>
-          <ProfileForm />
+        <SolicitatiOfertaForm />
         </DialogContent>
       </Dialog>
     )
