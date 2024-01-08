@@ -7,7 +7,6 @@ import { TbListDetails } from "react-icons/tb"
 import { MdConstruction } from "react-icons/md";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { SolicitatiOferta } from "./SolicitatiOferta";
 
 export const links = [

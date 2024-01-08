@@ -80,7 +80,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         legacyBehavior
                       >
                         <NavigationMenuLink>
-                          <div className='mb-4 w-[16rem] flex  gap-x-[4px] '>
+                          <div className='mb-4 w-[21rem] flex  gap-x-[4px] '>
                             <span className='text-accent'>&#9679;</span>
                             <div className='hover'>
                               <span>{dropdownLink.name}</span>
