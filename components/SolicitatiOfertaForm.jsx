@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -37,25 +37,8 @@ export default function SolicitatiOfertaForm({ onClose }) {
     window.location.href = `mailto:mafterr11@gmail.com?subject=Solicitare Oferta&body=${encodeURIComponent(emailBody)}`;
   };
   
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowHeight(window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  // A simple heuristic to detect keyboard activity: compare the current window height with the initial height
-  const isKeyboardActive = windowHeight < window.innerHeight * 0.8;
   return (
-    <div className={`xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg ${isKeyboardActive ? 'pb-20' : ''}`}>
+    <div className="xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg">
       <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
       <form className="mt-4 space-y-2 xs:space-y-4" onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-4">
