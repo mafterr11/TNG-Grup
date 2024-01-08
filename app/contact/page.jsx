@@ -1,11 +1,7 @@
-import ContactMap from "@/components/ContactMap";
+import ContactMap from "@/components/pages/contact/ContactMap";
 
 const Contact = () => {
-  return (
-    <div>
-      <ContactMap />
-    </div>
-  )
+  return <ContactMap />;
 }
 
 export default Contact

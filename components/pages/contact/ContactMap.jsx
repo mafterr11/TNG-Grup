@@ -1,3 +1,6 @@
+"use client"
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
@@ -5,13 +8,23 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 const ContactMap = () => {
   return (
     <div className='lg:pt-44 py-32'>
-      <div className='lg:mb-12 mb-0 text-center'>
+      <motion.div
+        variants={fadeIn("left", 0.2)}
+        initial='hidden'
+        whileInView={"show"}
+        viewport={{ once: true, ammount: 0.4 }}
+        className='lg:mb-12 mb-0 text-center'>
         <h2 className='mb-2'>
           <span className="text-accent">Haideți</span> să ne <span className='text-accent'>conectăm.</span>
         </h2>
-        <h1></h1>
-      </div>
-      <div className='w-[80%] px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[1000px] gap-y-10'>
+        <h3><span className="text-accent">Construiește</span> cu noi - <span className="text-accent">echipa TNG</span> îți aduce visul la <span className="text-accent">realitate</span></h3>
+      </motion.div>
+      <motion.div
+        variants={fadeIn("right", 0.3)}
+        initial='hidden'
+        whileInView={"show"}
+        viewport={{ once: true, ammount: 0.4 }}
+        className='w-full xl:w-[80%] xl:px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[1000px] gap-y-10'>
         <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative pt-[56.25%]'>
           <iframe
             width='100%'
@@ -28,7 +41,7 @@ const ContactMap = () => {
                 ADDRESS
               </h2>
               <a
-                href='https://maps.app.goo.gl/p1wcRJjfmqQvtwxq8'
+                href='https://maps.app.goo.gl/1st6m75wnDy4ryyJ8'
                 target='_blank'
                 className=' text-accent font-bold hover hover:underline-offset-4 hover:decoration-2'
               >
@@ -41,7 +54,7 @@ const ContactMap = () => {
                 EMAIL
               </h2>
               <a
-                href='mailto: madinytattoo@gmail.com'
+                href='mailto: office@tngag.ro'
                 className='text-accent mt-2 hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-white" />office@tngag.ro
@@ -50,7 +63,7 @@ const ContactMap = () => {
                 PHONE
               </h2>
               <a
-                href='tel:+40741620774'
+                href='tel:+40728873254'
                 target='blank'
                 className='text-accent mt-2 hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
@@ -79,44 +92,28 @@ const ContactMap = () => {
         </div>
         {/* Mobile Panel */}
         <div className="flex md:hidden flex-col gap-y-6">
-          {/* Program */}
-          <div className='lg:w-1/3 md:w-1/2  z-[7] flex flex-col md:ml-auto w-full p-4 mt-8 md:mt-0 mr-4 lg:mb-[24rem] rounded shadow-md'>
-            <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
-              Program:
-            </h2>
-            <div className='relative mb-4'>
-              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
-                <span className='text-accent'>Luni-Sambata:</span> 11:00 am -
-                22:00 pm
-              </p>
-            </div>
-            <div className='relative'>
-              <p className='leading-relaxed text-gray-900 font-semibold'>
-                <span className='text-accent'>Duminica:</span> Inchis
-              </p>
-            </div>
-          </div>
+
           {/* Detalii */}
-          <div className=' relative flex flex-wrap py-4 mb-4 rounded shadow-md items-center justify-start'>
-            <div className='lg:w-1/2 px-6 mb-4 lg:mt-0'>
+          <div className='  flex flex-wrap rounded text-center items-center justify-center'>
+            <div className='lg:w-1/2 px-6 mb-6 lg:mt-0'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
                 EMAIL
               </h2>
               <a
-                href='mailto: madinytattoo@gmail.com'
-                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold items-center flex'
+                href='mailto: office@tngag.ro'
+                className='text-accent mb-6 hover:underline hover:underline-offset-4 hover:decoration-2 font-bold items-center flex'
               >
-                <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-white" />Madinytattoo@gmail.com
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-white" />office@tngag.ro
               </a>
               <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
                 PHONE
               </h2>
               <a
-                href='tel:+40741620774'
+                href='tel:+40728873254'
                 target='blank'
                 className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
-                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-white" />+04.741.620.774
+                <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-white" />0728.873.254
               </a>
             </div>
             <div className='lg:w-1/2 px-6'>
@@ -124,16 +121,34 @@ const ContactMap = () => {
                 ADDRESS
               </h2>
               <a
-                href='https://maps.app.goo.gl/p1wcRJjfmqQvtwxq8'
+                href='https://maps.app.goo.gl/1st6m75wnDy4ryyJ8'
                 target='_blank'
-                className='mt-1 text-accent font-bold hover hover:underline-offset-4 hover:decoration-2'
+                className='mt-1 text-accent flex font-bold hover hover:underline-offset-4 hover:decoration-2'
               >
-                Șos. Pipera 61, București 077190
+                Str. Costache Sibiceanu nr. 8,
+                Sector 1 București
               </a>
             </div>
           </div>
+          {/* Program */}
+          <div className='lg:w-1/3 md:w-1/2 z-[7] flex flex-col md:ml-auto w-full p-4 text-center md:mt-0 mr-4 lg:mb-[24rem] rounded'>
+            <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
+              Program:
+            </h2>
+            <div className='mb-4'>
+              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
+                <span className='text-accent'>Luni-Vineri:</span> 08:00 am -
+                17:00 pm
+              </p>
+            </div>
+            <div>
+              <p className='leading-relaxed text-gray-900 font-semibold'>
+                <span className='text-accent'>Sâmbătă-Duminică:</span> Inchis
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
