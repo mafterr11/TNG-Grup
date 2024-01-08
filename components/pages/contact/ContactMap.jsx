@@ -31,7 +31,7 @@ const ContactMap = () => {
             height='100%'
             className='absolute top-0 left-0 w-full h-[85%] border-0'
             title='map'
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d711.9110905301695!2d26.0682636!3d44.4609632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2021f17f0f475%3A0x44caf459818d9276!2sStrada%20Costache%20Sibiceanu%208%2C%20Bucure%C8%99ti%20011513%2C%20Rum%C3%A4nien!5e0!3m2!1sde!2sat!4v1704709423542!5m2!1sde!2sat"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2847.640508958187!2d26.065850776564165!3d44.46104219980873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2021f17f0f475%3A0x44caf459818d9276!2sStrada%20Costache%20Sibiceanu%208%2C%20Bucure%C8%99ti%20011513%2C%20Romania!5e0!3m2!1sen!2sat!4v1704713070385!5m2!1sen!2sat"
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
           {/* Detalii */}
