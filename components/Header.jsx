@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Nav from "./Nav";
 import NavMobile from "./NavMobile";
-import { Button } from "./ui/button";
 import Image from "next/image";
 import logo from "../public/logo.png";
 import { SolicitatiOferta } from "./SolicitatiOferta";
