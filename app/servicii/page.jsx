@@ -39,7 +39,7 @@ const Servicii = () => {
           id='execuție-construcții-civile'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
-            Execuție Construcții Civile - Precizie Și Siguranță
+            Execuție Construcții Civile - Precizie și Siguranță
           </h3>
           <p>
             După definitivarea proiectului tehnic și obținerea avizelor
@@ -318,7 +318,7 @@ const Servicii = () => {
           id='execuție-construcții-agricole'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
-            Execuție Construcții Agricole - Soluții Pe Termen Lung
+            Execuție Construcții Agricole - Soluții pe Termen Lung
           </h3>
           <p>
             De la concepția planului tehnic până la navigarea prin complexul
@@ -472,7 +472,7 @@ const Servicii = () => {
           id='supervizare-lucrări-de-execuție'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
-            Supervizare Lucrări De Execuție
+            Supervizare Lucrări de Execuție
           </h3>
           <p>
             Ne dorim să punem la dispoziție clienților clădiri perfect
@@ -623,7 +623,7 @@ const Servicii = () => {
           id='verificare-calitate-lucrări-în-execuție'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
-            Verificare Calitate Lucrări În Execuție
+            Verificare Calitate Lucrări în Execuție
           </h3>
           <p>
             Persoana care se ocupă de verificare este fie responsabilul
@@ -759,7 +759,7 @@ const Servicii = () => {
           id='planificarea-execuției'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
-            Planificarea execuției - Precizie și organizare
+            Planificarea Execuției - Precizie și Organizare
           </h3>
           <p>
             Este o activitate care presupune multă răbdare și atenție la{" "}
@@ -1053,7 +1053,7 @@ const Servicii = () => {
           id='dirigenție-de-șantier'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
-            Servicii De Dirigenție De Șantier
+            Servicii de Dirigenție de Șantier
           </h3>
           <p>
             Dirigintele de șantier are rolul esențial de a monitoriza execuția
