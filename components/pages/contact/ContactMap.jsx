@@ -9,7 +9,7 @@ const ContactMap = () => {
   return (
     <div className='lg:pt-44 py-32'>
       <motion.div
-        variants={fadeIn("left", 0.2)}
+        variants={fadeIn("down", 0.2)}
         initial='hidden'
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
@@ -20,7 +20,7 @@ const ContactMap = () => {
         <h3><span className="text-accent">Construiește</span> cu noi - <span className="text-accent">echipa TNG</span> îți aduce visul la <span className="text-accent">realitate</span></h3>
       </motion.div>
       <motion.div
-        variants={fadeIn("right", 0.3)}
+        variants={fadeIn("down", 0.3)}
         initial='hidden'
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
@@ -96,7 +96,7 @@ const ContactMap = () => {
           {/* Detalii */}
           <div className='  flex flex-wrap rounded text-center items-center justify-center'>
             <div className='lg:w-1/2 px-6 mb-6 lg:mt-0'>
-              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
+              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-lg'>
                 EMAIL
               </h2>
               <a
@@ -105,7 +105,7 @@ const ContactMap = () => {
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-white" />office@tngag.ro
               </a>
-              <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
+              <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-lg'>
                 PHONE
               </h2>
               <a
@@ -117,7 +117,7 @@ const ContactMap = () => {
               </a>
             </div>
             <div className='lg:w-1/2 px-6'>
-              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
+              <h2 className='text-lg font-semibold text-gray-900 tracking-widest'>
                 ADDRESS
               </h2>
               <a
@@ -125,16 +125,16 @@ const ContactMap = () => {
                 target='_blank'
                 className='mt-1 text-accent flex font-bold hover hover:underline-offset-4 hover:decoration-2'
               >
-                Str. Costache Sibiceanu nr. 8,
-                Sector 1 București
+                Str. Costache Sibiceanu <br /> 
+                nr. 8, Sector 1 București
               </a>
             </div>
           </div>
           {/* Program */}
           <div className='lg:w-1/3 md:w-1/2 z-[7] flex flex-col md:ml-auto w-full p-4 text-center md:mt-0 mr-4 lg:mb-[24rem] rounded'>
-            <h2 className='font-semibold text-gray-900 tracking-widest mb-1'>
+            <h3 className='font-semibold text-xl text-gray-900 tracking-widest mb-4'>
               Program:
-            </h2>
+            </h3>
             <div className='mb-4'>
               <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1'>
                 <span className='text-accent'>Luni-Vineri:</span> 08:00 am -
