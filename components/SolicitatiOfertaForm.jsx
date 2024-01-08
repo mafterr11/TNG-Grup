@@ -141,7 +141,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
         </div>
         {/* Intrebarea 3 */}
         <div>
-          <Label htmlFor="inceput">Când v-ați dori să începeți construcția?</Label>
+          <Label htmlFor="inceput" className="leading-5">Când v-ați dori să începeți construcția?</Label>
           <Select onValueChange={setInceput} id="inceput" name="inceput">
             <SelectTrigger id="inceput">
               <SelectValue placeholder="Select" />
