@@ -1,7 +1,9 @@
+import ContactMap from "@/components/ContactMap";
+
 const Contact = () => {
   return (
     <div>
-      aea
+      <ContactMap />
     </div>
   )
 }
