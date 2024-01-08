@@ -37,27 +37,23 @@ export default function SolicitatiOfertaForm({ onClose }) {
     window.location.href = `mailto:mafterr11@gmail.com?subject=Solicitare Oferta&body=${encodeURIComponent(emailBody)}`;
   };
   
-  // Add state to detect when the keyboard is active
-const [isKeyboardActive, setIsKeyboardActive] = useState(false);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
-// Add event listeners to detect keyboard show/hide
-useEffect(() => {
-  function handleShow() {
-    setIsKeyboardActive(true);
-  }
-  function handleHide() {
-    setIsKeyboardActive(false);
-  }
-  window.addEventListener('keyboardDidShow', handleShow);
-  window.addEventListener('keyboardDidHide', handleHide);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight);
+    };
 
-  // Cleanup
-  return () => {
-    window.removeEventListener('keyboardDidShow', handleShow);
-    window.removeEventListener('keyboardDidHide', handleHide);
-  };
-}, []);
+    window.addEventListener('resize', handleResize);
 
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // A simple heuristic to detect keyboard activity: compare the current window height with the initial height
+  const isKeyboardActive = windowHeight < window.innerHeight * 0.8;
   return (
     <div className={`xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg ${isKeyboardActive ? 'pb-20' : ''}`}>
       <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
