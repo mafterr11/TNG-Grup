@@ -19,9 +19,9 @@ const AchievementCounter = () => {
             {/* container */}
             <div className="flex flex-col xl:flex-row gap-y-12 xl:gap-y-20 justify-center xl:gap-x-40 ">
                 <div className='flex-1'>
-                    <div className='text-3xl lg:text-5xl font-extrabold mb-2 flex items-end'>
+                    <div className='text-3xl lg:text-5xl font-extrabold mb-2 flex items-end xl:pt-4'>
                         <CountUp start={0} end={inView ? 30 : 0} duration={5} /> +
-                        <div className='text-lg lg:text-base xl:text-3xl font-bold uppercase tracking-[1px] leading-[1] max-w-[150px] lg:max-w-[150px] xl:max-w-[200px] text-accent'>
+                        <div className='text-lg lg:text-base xl:text-3xl font-bold uppercase ml-[3px] tracking-[1px] leading-[1] max-w-[150px] lg:max-w-[150px] xl:max-w-[200px] text-accent'>
                             Ani
                         </div>
                     </div>
