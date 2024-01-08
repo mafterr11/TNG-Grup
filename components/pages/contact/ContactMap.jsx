@@ -13,7 +13,7 @@ const ContactMap = () => {
         initial='hidden'
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
-        className='lg:mb-12 mb-0 text-center'>
+        className='lg:mb-12 mb-0 text-center px-2'>
         <h2 className='mb-2'>
           <span className="text-accent">Haideți</span> să ne <span className='text-accent'>conectăm.</span>
         </h2>
