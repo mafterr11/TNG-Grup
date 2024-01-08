@@ -10,11 +10,14 @@ const AchievementCounter = () => {
         threshold: 0.3, // Percentage of the element that must be visible
     });
     return (
-        <div ref={ref} className="w-full bg-black/60 flex items-center justify-center p-16">
+        <motion.div
+            variants={fadeIn('down', 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: true, ammount: 0.4 }}
+            ref={ref} className="w-full bg-black/60 flex items-center justify-center p-16">
             {/* container */}
             <div className="flex flex-col xl:flex-row gap-y-12 xl:gap-y-20 justify-center xl:gap-x-40 ">
-                {/* Ani exp */}
-
                 <div className='flex-1'>
                     <div className='text-3xl lg:text-5xl font-extrabold mb-2 flex items-end'>
                         <CountUp start={0} end={inView ? 30 : 0} duration={5} /> +
@@ -42,11 +45,8 @@ const AchievementCounter = () => {
                         Construcții Industriale
                     </div>
                 </div>
-
-
-
             </div>
-        </div>
+        </motion.div>
     )
 }
 
