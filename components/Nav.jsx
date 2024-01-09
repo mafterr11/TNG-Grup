@@ -66,7 +66,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
             <NavigationMenu key={index}>
               <NavigationMenuList>
                 <NavigationMenuItem as='div' className={`${linkStyles}`}>
-                  <NavigationMenuTrigger as='span' >
+                  <NavigationMenuTrigger as='span'>
                     <Link href="/servicii"><span>{link.name}</span></Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent as='div'>
@@ -78,7 +78,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         legacyBehavior
                       >
                         <NavigationMenuLink>
-                          <div className='mb-4 w-[21rem] flex  gap-x-[4px] '>
+                          <div className='mb-4 w-[21rem] flex gap-x-[4px] '>
                             <span className='text-accent'>&#9679;</span>
                             <div className='hover'>
                               <span>{dropdownLink.name}</span>
