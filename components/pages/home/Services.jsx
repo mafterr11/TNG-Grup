@@ -12,7 +12,7 @@ const Services = () => {
        variants={fadeIn('down', 0.2)}
        initial="hidden"
        whileInView={"show"}
-       viewport={{ once: true, ammount: 0.4 }}
+       viewport={{ once: true, ammount: 0.2 }}
       className="flex flex-col items-center justify-center mb-10">
         <Image src={ServicesCarouselImg} alt='ServicesCarousel Image' className='object-contain rounded-b-[30%]' />
         <span className="w-2/3 border-b-2 border-accent mt-10"></span>
