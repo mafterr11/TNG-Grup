@@ -15,10 +15,10 @@ import { Button } from "../../ui/button";
 import Autoplay from "embla-carousel-autoplay";
 // Data
 export const pictures = [
-  { image: "/HeroCarousel/1.jpg" },
-  { image: "/HeroCarousel/2.jpg" },
-  { image: "/HeroCarousel/3.jpg" },
-  { image: "/HeroCarousel/4.jpg" },
+  { image: "/HeroCarousel/1.webp" },
+  { image: "/HeroCarousel/2.webp" },
+  { image: "/HeroCarousel/3.webp" },
+  { image: "/HeroCarousel/4.webp" },
 ];
 
 export function HeroCarousel() {
