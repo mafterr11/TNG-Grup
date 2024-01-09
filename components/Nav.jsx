@@ -1,4 +1,3 @@
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -59,7 +58,6 @@ const dropdownLinks = [
 ];
 
 const Nav = ({ containerStyles, linkStyles }) => {
-  const pathname = usePathname();
   return (
     <nav className={`${containerStyles} flex items-center justify-center`}>
       {links.map((link, index) => {
@@ -88,7 +86,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                           </div>
                         </NavigationMenuLink>
                       </Link>
-                    ))}
+                    ))} 
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
