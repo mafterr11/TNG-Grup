@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image"
-import p1 from '../../../public/HeroCarousel/1.jpg'
-import p2 from '../../../public/HeroCarousel/2.jpg'
-import p3 from '../../../public/HeroCarousel/3.jpg'
+import p1 from '../../../public/HeroCarousel/7.jpg'
+import p2 from '../../../public/HeroCarousel/6.jpg'
+import p3 from '../../../public/HeroCarousel/5.jpg'
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../../variants';
 

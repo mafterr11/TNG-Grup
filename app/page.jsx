@@ -7,7 +7,7 @@ import HeroTextMobile from "@/components/pages/home/HeroTextMobile";
 
 const Home = () => {
   return (
-    <div className='py-[5.7rem] '>
+    <div className='py-[6rem] '>
       <HeroTextMobile />
       <HeroCarousel />
       <WhyChooseUs />
