@@ -37,8 +37,8 @@ const ContactMap = () => {
           {/* Detalii */}
           <div className=' bg-grey absolute top-16 right-12 hidden md:flex flex-col flex-wrap py-8 rounded items-start justify-center'>
             <div className=' px-8'>
-              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm '>
-                ADDRESS
+              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm uppercase'>
+              Adresă
               </h2>
               <a
                 href='https://maps.app.goo.gl/1st6m75wnDy4ryyJ8'
@@ -60,7 +60,7 @@ const ContactMap = () => {
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-white" />office@tngag.ro
               </a>
               <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
-                PHONE
+                TELEFON
               </h2>
               <a
                 href='tel:+40728873254'
@@ -94,8 +94,8 @@ const ContactMap = () => {
         <div className="flex md:hidden flex-col gap-y-6">
 
           {/* Detalii */}
-          <div className='  flex flex-wrap rounded text-center items-center justify-center'>
-            <div className='lg:w-1/2 px-6 mb-6 lg:mt-0'>
+          <div className='  flex flex-col rounded text-center items-center justify-center'>
+            <div className='mb-6'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-lg'>
                 EMAIL
               </h2>
@@ -106,7 +106,7 @@ const ContactMap = () => {
                 <FontAwesomeIcon icon={faEnvelope} className="mr-2 w-4 h-4 text-white" />office@tngag.ro
               </a>
               <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-lg'>
-                PHONE
+                TELEFON
               </h2>
               <a
                 href='tel:+40728873254'
@@ -116,9 +116,9 @@ const ContactMap = () => {
                 <FontAwesomeIcon icon={faPhone} className="mr-2 w-4 h-4 text-white" />0728.873.254
               </a>
             </div>
-            <div className='lg:w-1/2 px-6'>
-              <h2 className='text-lg font-semibold text-gray-900 tracking-widest'>
-                ADDRESS
+            <div className=''>
+              <h2 className='text-lg font-semibold text-gray-900 tracking-widest uppercase'>
+              Adresă
               </h2>
               <a
                 href='https://maps.app.goo.gl/1st6m75wnDy4ryyJ8'
