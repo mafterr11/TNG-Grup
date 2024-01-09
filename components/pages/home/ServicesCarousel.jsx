@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -11,7 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
+import { IoIosArrowRoundForward } from "react-icons/io";
 import {
   LiaRulerCombinedSolid,
   LiaHardHatSolid,
@@ -99,10 +99,10 @@ export function ServicesCarousel() {
       setGroupSize(window.innerWidth < 768 ? 1 : 4);
     };
 
-    window.addEventListener('resize', updateGroupSize);
+    window.addEventListener("resize", updateGroupSize);
     updateGroupSize();
 
-    return () => window.removeEventListener('resize', updateGroupSize);
+    return () => window.removeEventListener("resize", updateGroupSize);
   }, []);
 
   // Group the services based on groupSize
@@ -128,9 +128,7 @@ export function ServicesCarousel() {
               {group.map((serviciu, serviciuIndex) => (
                 <div key={serviciuIndex} className='w-[90%]'>
                   <Link href={serviciu.path}>
-                    <Card
-                      className='border-2 border-accent hover:bg-grey/85 rounded-xl'
-                    >
+                    <Card className='border-2 border-accent hover:bg-grey/85 rounded-xl relative group'>
                       <CardContent className='flex flex-col gap-y-6 items-center justify-start p-6 bg-grey/95 min-h-[310px] hover:scale-[0.98] rounded-[3%]'>
                         <div className='flex flex-col items-center justify-center gap-y-4'>
                           <div className='text-3xl'>{serviciu.icon}</div>
@@ -142,6 +140,9 @@ export function ServicesCarousel() {
                         <p className='text-sm overflow-hidden text-ellipsis text-center xl:text-start'>
                           {serviciu.description}
                         </p>
+                        <div className='text-5xl absolute bottom-2 right-4 font-thin'>
+                          <IoIosArrowRoundForward  className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300' />
+                        </div>
                       </CardContent>
                     </Card>
                   </Link>
