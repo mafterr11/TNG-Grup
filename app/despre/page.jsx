@@ -12,14 +12,8 @@ const Despre = () => {
       <br />
       <br />
       <br />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo deserunt a veritatis obcaecati, aliquam doloremque iusto quod recusandae, aspernatur voluptatum sapiente. Blanditiis dolorem perspiciatis, odio beatae corporis omnis obcaecati?</p>
+      <p>Inovarea și adaptabilitatea sunt calitățile cheie ale echipei TNG Grup. Tinerii noștri profesioniști sunt mereu la curent cu ultimele tendințe și tehnologii din domeniu, îmbrățișând noi metode și soluții pentru a optimiza procesele de construcție. Această abordare proactivă asigură că suntem mereu un pas înainte în industrie, oferind clienților noștri cele mai eficiente și sustenabile soluții.</p>
+       
     </div>
   )
 }
