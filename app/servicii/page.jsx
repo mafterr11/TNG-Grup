@@ -35,7 +35,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-44 scroll-mt-32'
+          className='mb-44 scroll-mt-28 xl:scroll-mt-32'
           id='execuție-construcții-civile'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -165,7 +165,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-28 xl:scroll-mt-32'
           id='execuție-construcții-industriale'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -314,7 +314,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-28 xl:scroll-mt-32'
           id='execuție-construcții-agricole'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -468,7 +468,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-[5.5rem] xl:scroll-mt-32'
           id='supervizare-lucrări-de-execuție'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -619,7 +619,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-28 xl:scroll-mt-32'
           id='verificare-calitate-lucrări-în-execuție'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -755,7 +755,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-28 xl:scroll-mt-32'
           id='planificarea-execuției'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -907,7 +907,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-28 xl:scroll-mt-32'
           id='servicii-RTE'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>
@@ -1049,7 +1049,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-32 scroll-mt-32'
+          className='mb-32 scroll-mt-12 xl:scroll-mt-32'
           id='dirigenție-de-șantier'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>

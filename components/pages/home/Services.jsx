@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <div className='py-12 xl:py-20 w-full max-w-[1440px] mx-auto overflow-hidden'>
       <motion.div
-       variants={fadeIn('down', 0.2)}
+       variants={fadeIn('down', 0.4)}
        initial="hidden"
        whileInView={"show"}
        viewport={{ once: true, ammount: 0.2 }}

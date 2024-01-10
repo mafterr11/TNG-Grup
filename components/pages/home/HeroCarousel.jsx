@@ -59,7 +59,7 @@ export function HeroCarousel() {
           <span className='text-accent'>TNG</span> Grup
         </motion.h2>
         <motion.h1
-        variants={fadeIn('down', 0.4)}
+        variants={fadeIn('down', 0.2)}
         initial="hidden"
         whileInView={"show"}
         viewport={{once:true, ammount:0.4}}
