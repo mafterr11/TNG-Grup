@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Nav from "./Nav";
-import NavMobile from "./NavMobile";
 import Image from "next/image";
 import logo from "../public/logo.png";
+import Nav from "./Nav";
+import NavMobile from "./NavMobile";
 import { SolicitatiOferta } from "./SolicitatiOferta";
 
 const Header = () => {

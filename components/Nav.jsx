@@ -67,9 +67,11 @@ const Nav = ({ containerStyles, linkStyles }) => {
               <NavigationMenuList>
                 <NavigationMenuItem as='div' className={`${linkStyles}`}>
                   <NavigationMenuTrigger as='span'>
-                    <Link href="/servicii"><span>{link.name}</span></Link>
+                    <Link href='/servicii'>
+                      <span>{link.name}</span>
+                    </Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent as='div' className="py-2">
+                  <NavigationMenuContent as='div' className='py-2'>
                     {dropdownLinks.map((dropdownLink, dropdownIndex) => (
                       <Link
                         key={dropdownIndex}

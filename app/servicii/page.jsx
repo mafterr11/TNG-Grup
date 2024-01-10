@@ -697,9 +697,9 @@ const Servicii = () => {
                     planifica următorul stadiu de evoluție al construcției.
                   </p>
                   <p>
-                    <span className='text-accent'>&#9679;</span> Oferim doar soluții personalizate, tocmai de aceea ne
-                    asigurăm că avem toate detaliile despre ceea ce își dorește
-                    beneficiarul.
+                    <span className='text-accent'>&#9679;</span> Oferim doar
+                    soluții personalizate, tocmai de aceea ne asigurăm că avem
+                    toate detaliile despre ceea ce își dorește beneficiarul.
                   </p>
                 </AccordionContent>
               </AccordionItem>
