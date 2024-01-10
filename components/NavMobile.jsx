@@ -107,7 +107,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
             <IoCloseOutline />
           </div>
           {/* logo */}
-          <Link href={"/"}>
+          <Link href={"/"} onClick={() => setIsMenuOpen(false)}>
             <h2>
               <span className='text-accent'>TNG</span> Grup
             </h2>
