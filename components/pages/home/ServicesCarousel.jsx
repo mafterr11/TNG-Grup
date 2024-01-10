@@ -129,7 +129,7 @@ export function ServicesCarousel() {
                 <div key={serviciuIndex} className='w-[90%]'>
                   <Link href={serviciu.path}>
                     <Card className='border-2 border-accent hover:bg-grey/85 rounded-xl relative group'>
-                      <CardContent className='flex flex-col gap-y-6 items-center justify-start p-6 bg-grey/95 min-h-[310px] hover:scale-[0.98] rounded-[3%]'>
+                      <CardContent className='flex flex-col gap-y-6 items-center justify-start p-6 bg-grey/90 min-h-[310px] hover:scale-[0.98] rounded-[3%]'>
                         <div className='flex flex-col items-center justify-center gap-y-4'>
                           <div className='text-3xl'>{serviciu.icon}</div>
                           <div className='flex flex-col font-semibold text-accent text-center'>

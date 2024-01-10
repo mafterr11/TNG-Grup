@@ -24,10 +24,6 @@ module.exports = {
       accent: "#FF8300",
       body: "#e5e5e5",
       white: "#fff",
-      green: {
-        DEFAULT: "#539592",
-        hover: "#40807d",
-      },
       black: {
         DEFAULT: "#0d0c0b",
         heavy: "#000000",
@@ -36,16 +32,10 @@ module.exports = {
         DEFAULT: "#232323",
         light: "#2A3439",
       },
-      blue: {
-        heavy: "#1f3348",
-        hover: "#5a788f",
-        DEFAULT: "#355679"
-      },
       orange: {
         DEFAULT: "#e68530",
         hover: "#da863c",
       },
-      pink: "#ffa5a5",
     },
     extend: { 
       boxShadow: {
