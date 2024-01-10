@@ -118,7 +118,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                           <DrawerHeader>
                             <DrawerTitle className="text-accent">Servicii de Construcții Premium</DrawerTitle>
                             <DrawerDescription className="text-base font-semibold">
-                              <p>Construiește cu Încredere</p>
+                              Construiește cu Încredere
                               <span className="block border-t border-accent my-4"></span>
                             </DrawerDescription>
                           </DrawerHeader>
@@ -136,8 +136,8 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                           ))}
                           <DrawerFooter>
 
-                            <DrawerClose>
-                              <Button variant="orange" size="full">Închide</Button>
+                            <DrawerClose as="div" className="text-white bg-orange hover:bg-orange-hover hover:scale-[0.98] w-[50%] py-4 mx-auto">
+                              Închide
                             </DrawerClose>
                           </DrawerFooter>
                         </DrawerContent>
