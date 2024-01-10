@@ -115,6 +115,13 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                       <Drawer>
                         <DrawerTrigger className="absolute left-0 right-0 ">Descoperiți Serviciile Noastre</DrawerTrigger>
                         <DrawerContent>
+                          <DrawerHeader>
+                            <DrawerTitle className="text-accent">Servicii de Construcții Premium</DrawerTitle>
+                            <DrawerDescription className="text-base font-semibold">
+                              <p>Construiește cu Încredere</p>
+                              <span className="block border-t border-accent my-4"></span>
+                              </DrawerDescription>
+                          </DrawerHeader>
                           {dropdownLinks.map((dropdownLink, dropdownIndex) => (
                             <div
                               key={dropdownIndex}
@@ -128,7 +135,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                             </div>
                           ))}
                         </DrawerContent>
-                        <DrawerClose onClick={toggleServicii} />
+                        <DrawerClose />
                       </Drawer>
                     )}
                   </div>

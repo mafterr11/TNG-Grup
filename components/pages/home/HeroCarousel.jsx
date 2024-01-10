@@ -41,6 +41,7 @@ export function HeroCarousel() {
               <Image
                 src={picture.image}
                 fill
+                priority={true}
                 alt='Hero Carousel Images'
                 className='object-cover'
               />
