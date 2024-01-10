@@ -35,7 +35,7 @@ const Servicii = () => {
           initial='hidden'
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className='mb-44 scroll-mt-28 xl:scroll-mt-32'
+          className='mb-44 scroll-mt-40 xl:scroll-mt-32'
           id='execuție-construcții-civile'
         >
           <h3 className='mb-12 text-accent text-2xl text-center xl:text-start'>

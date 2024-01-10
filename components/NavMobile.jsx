@@ -20,7 +20,7 @@ import { SolicitatiOferta } from "./SolicitatiOferta";
 
 const dropdownLinks = [
   {
-    path: "/servicii#execuție-construcții-civile",
+    path: "/servicii",
     name: "Execuție Construcții Civile",
   },
   {
@@ -127,7 +127,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                     </div>
                     {isServiciiOpen && (
                       <Drawer>
-                        <DrawerTrigger className='absolute left-0 right-0 '>
+                        <DrawerTrigger className='absolute left-0 right-0'>
                           Descoperiți Serviciile Noastre
                         </DrawerTrigger>
                         <DrawerContent>
