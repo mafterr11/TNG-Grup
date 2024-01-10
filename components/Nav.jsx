@@ -69,7 +69,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                   <NavigationMenuTrigger as='span'>
                     <Link href="/servicii"><span>{link.name}</span></Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent as='div'>
+                  <NavigationMenuContent as='div' className="py-2">
                     {dropdownLinks.map((dropdownLink, dropdownIndex) => (
                       <Link
                         key={dropdownIndex}
@@ -78,7 +78,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         legacyBehavior
                       >
                         <NavigationMenuLink>
-                          <div className='mb-4 w-[21rem] flex gap-x-[4px] '>
+                          <div className='my-6 w-[21rem] flex gap-x-[4px]'>
                             <span className='text-accent'>&#9679;</span>
                             <div className='hover'>
                               <span>{dropdownLink.name}</span>
@@ -86,7 +86,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                           </div>
                         </NavigationMenuLink>
                       </Link>
-                    ))} 
+                    ))}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>

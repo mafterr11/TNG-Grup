@@ -44,7 +44,7 @@ const Header = () => {
           {/* nav */}
           <Nav
             containerStyles='hidden xl:flex gap-x-12'
-            linkStyles='capitalize text-lg hover'
+            linkStyles='capitalize text-lg hover hover:scale-[0.97]'
           />
           {/* btn */}
           <div className="hidden xl:block">
