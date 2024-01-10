@@ -176,7 +176,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
         <div className="text-right flex gap-x-4">
           <Button type="submit" variant="orange" size="full">Trimite</Button>
           <DrawerClose asChild>
-          <Button variant="orange" size="full" onClick={onClose}>Inchide</Button>
+          <Button variant="orange" size="full" onClick={onClose}>Închide</Button>
         </DrawerClose>
         </div>
       </form>

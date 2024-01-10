@@ -15,7 +15,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer"
-
+import { Button } from "./ui/button";
 import Link from "next/link";
 import { SolicitatiOferta } from "./SolicitatiOferta";
 const dropdownLinks = [
@@ -120,13 +120,13 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                             <DrawerDescription className="text-base font-semibold">
                               <p>Construiește cu Încredere</p>
                               <span className="block border-t border-accent my-4"></span>
-                              </DrawerDescription>
+                            </DrawerDescription>
                           </DrawerHeader>
                           {dropdownLinks.map((dropdownLink, dropdownIndex) => (
                             <div
                               key={dropdownIndex}
                               onClick={() => closeMenuAndNavigate(dropdownLink.path)}
-                              className='p-4 flex gap-x-[4px] cursor-pointer'
+                              className='px-4 pb-6 flex gap-x-[4px] cursor-pointer'
                             >
                               <span className='text-accent'>&#9679;</span>
                               <div className='hover'>
@@ -134,6 +134,12 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                               </div>
                             </div>
                           ))}
+                          <DrawerFooter>
+
+                            <DrawerClose>
+                              <Button variant="orange" size="full">Închide</Button>
+                            </DrawerClose>
+                          </DrawerFooter>
                         </DrawerContent>
                         <DrawerClose />
                       </Drawer>
