@@ -19,7 +19,7 @@ const ContactMap = () => {
           <span className='text-accent'>Haideți</span> să ne{" "}
           <span className='text-accent'>conectăm.</span>
         </h2>
-        <h3>
+        <h3 className="font-normal">
           <span className='text-accent'>Construiește</span> cu noi -{" "}
           <span className='text-accent'>echipa TNG</span> îți aduce visul la{" "}
           <span className='text-accent'>realitate</span>
