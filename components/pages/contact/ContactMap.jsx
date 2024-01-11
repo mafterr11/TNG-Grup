@@ -83,7 +83,7 @@ const ContactMap = () => {
                   icon={faPhone}
                   className='mr-2 w-4 h-4 text-white'
                 />
-                +04.728.873.254
+                0728.873.254
               </a>
             </div>
           </div>
