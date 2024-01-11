@@ -99,7 +99,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Materiale premium, certificate
                 </AccordionTrigger>
                 <AccordionContent className='text-base'>
@@ -118,7 +118,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-2'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Grade sporite de siguranță
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -138,7 +138,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Asistență tehnică pe parcursul etapelor de execuție
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -236,7 +236,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Discuții constante și implementarea rapidă a feedback-ului
                 </AccordionTrigger>
                 <AccordionContent className='text-base'>
@@ -258,7 +258,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-2'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   O durată de viață îndelungată a proiectului
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -281,7 +281,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   O colaborare presărată marcată de eficiență
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -391,7 +391,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Eficiență
                 </AccordionTrigger>
                 <AccordionContent className='text-base'>
@@ -411,7 +411,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-2'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Durabilitate
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -432,7 +432,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Siguranță
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -539,7 +539,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   În primă fază
                 </AccordionTrigger>
                 <AccordionContent className='text-base'>
@@ -561,7 +561,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-2'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Mai apoi
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -583,7 +583,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Trecem la munca propriu-zisă
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -685,7 +685,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Comunicare transparentă
                 </AccordionTrigger>
                 <AccordionContent className='text-base'>
@@ -705,7 +705,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-2'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Un spațiu perfect funcțional
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -721,7 +721,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Siguranță garantată, indiferent de stadiul lucrării
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -840,7 +840,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Îndeplinirea obiectivelor setate la începutul colaborării
                 </AccordionTrigger>
                 <AccordionContent className='text-base'>
@@ -855,7 +855,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-2'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   O echipă de execuție formată exclusiv din profesioniști
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -871,7 +871,7 @@ const Servicii = () => {
               </AccordionItem>
 
               <AccordionItem value='item-3'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Șansa de a avea proiectul dorit la data stabilită
                 </AccordionTrigger>
                 <AccordionContent className='text-base mt-4'>
@@ -978,7 +978,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   Te întrebi care sunt activitățile propriu-zise pe care le va
                   derula un responsabil de proiect casă?
                 </AccordionTrigger>
@@ -1110,7 +1110,7 @@ const Servicii = () => {
             {/* Accordion */}
             <Accordion type='single' collapsible>
               <AccordionItem value='item-1'>
-                <AccordionTrigger className='text-lg text-accent text-start'>
+                <AccordionTrigger className='text-lg text-start'>
                   În perioada execuției, fie că e vorba deproiect casă simplăsau
                   o hală industrială, dirigintele vizează următoarele etape:
                 </AccordionTrigger>
