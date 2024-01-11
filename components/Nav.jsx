@@ -82,7 +82,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         <NavigationMenuLink>
                           <div className='my-6 w-[21rem] text-center flex gap-x-[4px]'>
                             <span className='text-accent'>&#9679;</span>
-                            <div className='hover'>
+                            <div className='hover hover:scale-[0.97]'>
                               <span>{dropdownLink.name}</span>
                             </div>
                           </div>

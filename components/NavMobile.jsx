@@ -149,7 +149,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                               className='px-4 pb-6 flex gap-x-[4px] cursor-pointer'
                             >
                               <span className='text-accent'>&#9679;</span>
-                              <div className='hover'>
+                              <div className='hover hover:scale-[0.96]'>
                                 <span>{dropdownLink.name}</span>
                               </div>
                             </div>
