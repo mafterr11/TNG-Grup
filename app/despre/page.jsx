@@ -1,13 +1,11 @@
 import Intro from "@/components/pages/despre/Intro"
-
+import CompanyIntro from "@/components/pages/despre/CompanyIntro"
 const Despre = () => {
   return (
-    <div>
+    <div className="py-[6rem]">
       <Intro />
-      <div className="container mx-auto">
-        <p>TNG GRUP AG este o societate de Antreprenoriat General, cu capital privat integral romanesc, infiintata in anul 2019 din dorinta de a satisfice cerintele clientilor, prin respectarea termenelor contractuale agreate si a cerintelor de calitate si SSM impuse de legislatia in vigoare.
-          Calitatea lucrărilor este rezultatul eforturilor unui colectiv tânăr şi bine pregătit, argumentul principal în contractarea lucrărilor fiind garantarea acestora precum şi predarea lucrărilor la termenele stabilite.
-          Societatea deţine în acest sens personal specializat care poate asigura execuţia tuturor lucrărilor solicitate de către client.</p>
+      <CompanyIntro />
+      <div>
         <br />
         <br />
         <br />
