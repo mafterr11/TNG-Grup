@@ -22,7 +22,7 @@ const Servicii = () => {
         <h3 className='text-accent leading-relaxed'>
           Construiește Visul Tău Alături De Noi
         </h3>
-        <h3 className='text-white/90 text-2xl'>
+        <h3 className='text-white/90 text-2xl font-normal'>
           Transformăm Viziunea Ta în Realitate cu Inovație, Siguranță și
           Personalizare
         </h3>
