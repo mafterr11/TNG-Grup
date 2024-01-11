@@ -3,6 +3,33 @@ import Image from "next/image";
 import p1 from "../../../public/HeroCarousel/1.webp";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
+
+export const angajati = [
+  {
+    nume: "Munteanu Mihai",
+    rol: "Inginer Pleb",
+    descriere:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+  },
+  {
+    nume: "Munteanu Bogdan",
+    rol: "Inginer Sef",
+    descriere:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+  },
+  {
+    nume: "Vladimir",
+    rol: "Are ciobanesc",
+    descriere:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+  },
+  {
+    nume: "Marius",
+    rol: "Pare rau de mailuri",
+    descriere:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+  },
+];
 const Team = () => {
   return (
     <section className=' mt-24'>
@@ -25,108 +52,32 @@ const Team = () => {
           </p>
         </motion.div>
         <div className='flex flex-wrap -m-4'>
-          <motion.div
-            variants={fadeIn("down", 0.2)}
-            initial='hidden'
-            whileInView={"show"}
-            viewport={{ once: true, ammount: 0.4 }}
-            className='p-4 lg:w-1/2'
-          >
-            <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
-              <Image
-                alt='team'
-                className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'
-                src={p1}
-              />
-              {/* Text */}
-              <div className='flex-grow sm:pl-8'>
-                <h2 className='font-medium text-lg'>Munteanu Mihai</h2>
-                <h3 className='text-accent mb-6 font-normal '>Inginer pleb</h3>
-                <p className='-m-2'>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolor, eveniet labore aut nisi perspiciatis non alias
-                  molestiae nemo a libero!
-                </p>
+          {angajati.map((angajat, index) => (
+            <motion.div
+              key={index}
+              variants={fadeIn("down", 0.2)}
+              initial='hidden'
+              whileInView={"show"}
+              viewport={{ once: true, ammount: 0.4 }}
+              className='p-4 lg:w-1/2'
+            >
+              <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
+                <Image
+                  alt='team'
+                  className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'
+                  src={p1}
+                />
+                {/* Text */}
+                <div className='flex-grow sm:pl-8'>
+                  <h2 className='font-medium text-lg'>{angajat.nume}</h2>
+                  <h3 className='text-accent mb-6 font-normal '>
+                    {angajat.rol}
+                  </h3>
+                  <p className='-m-2'>{angajat.descriere}</p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-          <motion.div
-            variants={fadeIn("down", 0.2)}
-            initial='hidden'
-            whileInView={"show"}
-            viewport={{ once: true, ammount: 0.4 }}
-            className='p-4 lg:w-1/2'
-          >
-            <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
-              <Image
-                alt='team'
-                className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'
-                src={p1}
-              />
-              {/* Text */}
-              <div className='flex-grow sm:pl-8'>
-                <h2 className='font-medium text-lg'>Bogdan Munteanu</h2>
-                <h3 className='text-accent mb-6 font-normal'>Inginer Sef</h3>
-                <p className='-m-2'>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolor, eveniet labore aut nisi perspiciatis non alias
-                  molestiae nemo a libero!
-                </p>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            variants={fadeIn("down", 0.2)}
-            initial='hidden'
-            whileInView={"show"}
-            viewport={{ once: true, ammount: 0.4 }}
-            className='p-4 lg:w-1/2'
-          >
-            <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
-              <Image
-                alt='team'
-                className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'
-                src={p1}
-              />
-              {/* Text */}
-              <div className='flex-grow sm:pl-8'>
-                <h2 className='font-medium text-lg'>Vladimir</h2>
-                <h3 className='text-accent mb-6 font-normal'>Are ciobanesc</h3>
-                <p className='-m-2'>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolor, eveniet labore aut nisi perspiciatis non alias
-                  molestiae nemo a libero!
-                </p>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            variants={fadeIn("down", 0.2)}
-            initial='hidden'
-            whileInView={"show"}
-            viewport={{ once: true, ammount: 0.4 }}
-            className='p-4 lg:w-1/2'
-          >
-            <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
-              <Image
-                alt='team'
-                className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'
-                src={p1}
-              />
-              {/* Text */}
-              <div className='flex-grow sm:pl-8'>
-                <h2 className='font-medium text-lg'>Marius</h2>
-                <h3 className='text-accent mb-6 font-normal'>
-                  Pare rau de mailuri
-                </h3>
-                <p className='-m-2'>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolor, eveniet labore aut nisi perspiciatis non alias
-                  molestiae nemo a libero!
-                </p>
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
