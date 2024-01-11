@@ -63,3 +63,10 @@
 .hover span:hover:after {
   width: 100%;
 }
+
+.active-link {
+  text-decoration: underline;
+  text-decoration-color: #FF8300;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.5rem;
+}

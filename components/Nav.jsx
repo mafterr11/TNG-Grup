@@ -1,3 +1,5 @@
+"use client"
+import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -58,6 +60,7 @@ const dropdownLinks = [
 ];
 
 const Nav = ({ containerStyles, linkStyles }) => {
+  const currentRoute = usePathname();
   return (
     <nav className={`${containerStyles} flex items-center justify-center`}>
       {links.map((link, index) => {
@@ -67,7 +70,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
               <NavigationMenuList>
                 <NavigationMenuItem as='div' className={`${linkStyles}`}>
                   <NavigationMenuTrigger as='span'>
-                    <Link href='/servicii'>
+                    <Link href='/servicii' className={`${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-lg hover:scale-[0.97]' : 'capitalize text-lg hover hover:scale-[0.97]'}`}>
                       <span>{link.name}</span>
                     </Link>
                   </NavigationMenuTrigger>
@@ -82,7 +85,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         <NavigationMenuLink>
                           <div className='my-6 w-[21rem] text-center flex gap-x-[4px]'>
                             <span className='text-accent'>&#9679;</span>
-                            <div className='hover hover:scale-[0.97]'>
+                            <div className='hover'>
                               <span>{dropdownLink.name}</span>
                             </div>
                           </div>
@@ -96,7 +99,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
           );
         } else {
           return (
-            <Link key={index} href={link.path} className={`${linkStyles}`}>
+            <Link key={index} href={link.path} className={`${linkStyles} ${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-lg hover:scale-[0.97]' : 'capitalize text-lg hover hover:scale-[0.97]'}`}>
               <span>{link.name}</span>
             </Link>
           );
