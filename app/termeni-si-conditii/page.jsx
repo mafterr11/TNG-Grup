@@ -1,5 +1,3 @@
-import React from 'react'
-
 const TermeniSiConditii = () => {
     return (
         <div className='container mx-auto py-[12rem]'>
