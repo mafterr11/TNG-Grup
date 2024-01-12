@@ -1,6 +1,6 @@
 Folosirea site-ului www.tng-grup.ro, inclusiv accesarea, navigarea și cumpărarea de produse, implică acceptarea integrală a termenilor și condițiilor enumerate mai jos. Dacă nu sunteți de acord cu acești termeni, aveti posibilitatea de a inceta folosirea site-ului.
 
-1.Definiții
+1. Definiții
 TNG GRUP AG – Societatea TNG GRUP AG, organizată în baza legii române, cu sediul în București, Sector 1, Str. Costache Sibiceanu, nr. 8, CUI: ??????, ce administrează site-ul www.tng-grup.ro.
 
 SITE 
@@ -13,7 +13,7 @@ Informații legate de produsele, serviciile și/sau tarifele practicate de TNG G
 DREPTURI DE AUTOR (COPYRIGHT) 
 Întregul conținut al site-ului www.tng-grup.ro, incluzând texte, animații și orice alte date, este proprietatea TNG GRUP AG și este protejat conform Legii nr. 8/1996 privind dreptul de autor și drepturile conexe, cu modificările și completările ulterioare. Folosirea fără acordul scris al TNG GRUP AG a oricăror elemente enumerate mai sus se pedepsește conform legilor în vigoare. Pentru raportarea problemelor legate de drepturile de proprietate intelectuală vă rugăm să ne contactați, în scris, la adresa de email: office@tngag.ro.
 
-2.Generalități
+2. Generalități
 2.1. Prin prezentul document se stabilesc termenii și condițiile de utilizare a siteului / conținutului / serviciului de către utilizator.
 2.2. Folosirea, inclusiv dar nelimitându-se la aceasta, accesarea, vizitarea și vizualizarea, conținutului / serviciului, implică aderarea utilizatorului la Termeni și condiții și asumarea obligației de a monitoriza permanent termenii și condițiile care pot fi oricând actualizate, modificate și completate de către proprietarul sau administratorul site-ului.
 2.3. Prin folosirea siteul-ui / conținutului / serviciului, utilizatorul este singurul responsabil pentru toate activitățile care decurg din aceasta. De asemenea, utilizatorul răspunde pentru orice daune materiale, intelectuale sau electronice sau de orice altă natură produse siteul-ui, conținutului, în conformitate cu legislația română în vigoare.
@@ -21,7 +21,7 @@ DREPTURI DE AUTOR (COPYRIGHT)
 2.5. Utilizatorul poate reveni în orice moment asupra deciziei sale de a nu fi de acord și/sau a nu accepta documentul, sub forma în care acesta va fi disponibil în acel moment.
 2.6. Pentru a-și exercita dreptul prevăzut la art 2.5, utilizatorul poate să contacteze TNG GRUP AG.
 
-3.Conținut
+3. Conținut
 3.1. Conținutul, incluzând dar nelimitându-se la logo-uri, reprezentări stilizate, text și/sau conținut multimedia(sectiunea portofoliu) prezentate pe site, este proprietatea exclusivă a TNG GRUP AG, acesteia fiindu-i rezervate toate drepturile obținute în acest sens în mod direct sau indirect (prin licențe de utilizare și/sau publicare). TNG GRUP AG își rezervă dreptul să completeze și să modifice orice informație de pe site.
 3.2. Utilizatorului nu îi este permisă copierea, distribuirea, publicarea, transferul către terțe părți, modificarea și/sau alterarea, folosirea, legarea la, expunerea, includerea oricărui conținut în orice alt context decât cel original intenționat de TNG GRUP AG, includerea oricărui conținut în afara site-ului TNG GRUP AG, îndepărtarea însemnelor care semnifică dreptul de autor al TNG GRUP AG asupra conținutului precum și participarea la transferul, vânzarea, distribuția unor materiale realizate prin reproducerea, modificarea sau afișarea conținutului, decât cu acordul expres al TNG GRUP AG.
 3.3. Orice conținut la care utilizatorul are și/sau obține acces prin orice mijloc se află sub incidența documentului intitulat termeni și condiții, în cazul în care conținutul nu este însoțit de un acord de utilizare specific și valid încheiat între TNG GRUP AG și acesta, și fără nicio garanție implicit sau expres formulată din partea TNG GRUP AG cu referire la acel conținut.
@@ -30,11 +30,11 @@ DREPTURI DE AUTOR (COPYRIGHT)
 3.6. Niciun conținut transmis către utilizator, prin orice mijloc de comunicare (electronic, telefonic etc.) sau dobândit de acesta prin accesare, vizitare și/sau vizualizare nu constituie o obligație contractuală din partea TNG GRUP AG și/sau al angajatului sau colaboratorului TNG GRUP AG care a mijlocit transferul de conținut, în cazul în care aceasta există, față de respectivul conținut.
 3.7. Este interzisă orice utilizare a conținutului în alte scopuri decât cele permise expres prin documentul intitulat Termeni și condiții sau prin acordul de utilizare care îl însoțește, în cazul în care acesta există.
 
-4.Contact pentru clienți și membri
+4. Contact pentru clienți și membri
 4.1. TNG GRUP AG publică pe site datele complete și corecte de identificare și contactare de către utilizator.
 4.2. Accesarea site-ului, folosirea informațiilor prezentate în cadrul acestuia, vizitarea paginilor sau trimiterea de e-mail-uri sau notificări adresate TNG GRUP AG se realizează în mod electronic, telefonic, sau prin orice alt mod de comunicare disponibil utilizatorului și TNG GRUP AG, considerându-se astfel că acesta consimte la primirea notificărilor din partea TNG GRUP AG în modalitate electronică și/sau telefonică, incluzând și comunicări prin e-mail sau prin anunțuri pe site.
 
-5.Produse și servicii
+5. Produse și servicii
 5.1. TNG GRUP AG publică pe site informații despre servicii și/sau promoții practicate de către acesta sau de către oricare alt terț cu care TNG GRUP AG are încheiate contracte sau acorduri de parteneriat, într-o anumită perioadă și în limita posibilităților tehnice existente.
 
 5.2. TNG GRUP AG oferă clientului posibilitatea de realizare, în mod gratuit, a unei modificări față de proiectul prezentat pe www.tng-grup.ro.
@@ -68,3 +68,31 @@ Informațiile despre produse și servicii prezentate pe site, inclusiv imaginile
 
 5.14. Anularea Comenzilor pentru Produse Indisponibile
 În cazul improbabil în care TNG GRUP AG nu poate onora o comandă din cauza indisponibilității unor produse, clientul va fi notificat și i se va oferi posibilitatea de a anula comanda sau de a elimina produsul respectiv din comandă.
+
+6. Calitate, garanții, livrarea produselor
+
+6.1. TNG GRUP AG respectă prevederile de garanție conform legislației românești în vigoare. Garanția se aplică condițiilor normale de utilizare și este valabilă numai pentru produsele achiziționate și plătite de client de la TNG GRUP AG. Garanția presupune rambursarea valorii pentru produsele neconforme pentru care clientul notifică societatea în scris în termenul legal.
+
+6.2. TNG GRUP AG va emite și transmite către client toate documentele necesare care să ateste achiziționarea produselor/serviciilor de către client conform legislației în vigoare.
+
+6.3. TNG GRUP AG va facilita informarea clientului asupra stadiului în care se află comanda sa prin trimiterea unui e-mail de informare la adresa indicată de acesta.
+
+6.4. În cazul în care clientul renunță la o comandă cu plată efectuată în avans, prin transfer bancar confirmat sau prin soluția online de plată cu cardul și în care banca emitentă a cardului clientului a autorizat tranzacția bancară, suma aceasta va fi rambursată de către TNG GRUP AG în maximum 14 zile de la data la care TNG GRUP AG a luat la cunoștință de acest fapt.
+
+7. Frauda
+
+7.1. TNG GRUP AG nu solicită utilizatorilor, prin niciun mijloc de comunicare (e-mail/telefonic/SMS/etc.), informații referitoare la date confidențiale, conturi/carduri bancare sau parole personale.
+
+7.2. Utilizatorul/clientul își asumă întreaga responsabilitate pentru divulgarea către un terț a datelor sale confidențiale.
+
+7.3. TNG GRUP AG declină orice responsabilitate, în situația în care un utilizator/client ar fi/este prejudiciat sub orice formă de către un terț care ar pretinde că este/reprezintă interesele TNG GRUP AG.
+
+7.4. Utilizatorul/clientul va informa TNG GRUP AG asupra unor asemenea tentative, folosind datele de contact.
+
+8. Limitare de responsabilitate
+
+8.1. TNG GRUP AG este exonerată de responsabilitate în situația în care site-ul sau conținutul sunt utilizate altfel decât în limita articolelor ce constituie prezentele Termeni și condiții.
+
+8.2. În cazul în care un utilizator consideră că un conținut expediat prin orice mijloc de către TNG GRUP AG încalcă drepturile de copyright sau orice alte drepturi, acesta va contacta, pentru detalii, TNG GRUP AG la office@tngag.ro sau telefon 0728.873.254.
+
+8.3. TNG GRUP AG nu răspunde de conținutul, calitatea sau natura altor site-uri la care se ajunge prin legături din conținut, indiferent de natura acestora. Pentru respectivele site-uri, răspunderea o poartă, integral, proprietarii lor.
