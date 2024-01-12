@@ -133,7 +133,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                         <DrawerContent as='div' className="rounded-t-2xl">
                           <DrawerHeader>
                             <DrawerTitle className='text-accent'>
-                              <div className="absolute top-2 right-[40%] px-10 h-[0.65rem] rounded-full bg-white/20"></div>
+                              <div className="absolute top-2 right-[40%] px-10 h-[0.55rem] rounded-full bg-white/20"></div>
                               Servicii de Construcții Premium
                             </DrawerTitle>
                             <DrawerDescription className='text-base font-semibold'>
