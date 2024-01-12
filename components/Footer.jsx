@@ -54,6 +54,25 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        {/* Terms */}
+        <div className="flex flex-col items-center xl:items-start justify-center gap-y-4">
+          <h4 className="text-lg text-accent">Detalii</h4>
+          <div className="flex flex-col items-center xl:items-start justify-center text-white/85">
+            <Link
+              href='/termeni-si-conditii'
+              className='leading-relaxed hover:underline underline-offset-4 decoration-2 decoration-accent'
+            >
+              Termeni și Condiții
+            </Link>
+            <Link
+              href='/politica-de-confidentialitate'
+              target='blank'
+              className='leading-relaxed hover:underline underline-offset-4 decoration-2 decoration-accent'
+            >
+              Politica de Confidențialitate
+            </Link>
+          </div>
+        </div>
       </div>
 
     </footer>
