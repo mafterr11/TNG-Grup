@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import p1 from "../../../public/HeroCarousel/1.webp";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 
@@ -10,24 +9,31 @@ export const angajati = [
     rol: "Inginer Pleb",
     descriere:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+    image: "/despre/4.jpeg"
   },
   {
     nume: "Munteanu Bogdan",
     rol: "Inginer Sef",
     descriere:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+    image: "/despre/5.jpeg"
+
   },
   {
     nume: "Vladimir",
     rol: "Are ciobanesc",
     descriere:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+    image: "/despre/6.jpeg"
+
   },
   {
     nume: "Marius",
     rol: "Pare rau de mailuri",
     descriere:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit.Dolor, eveniet labore aut nisi perspiciatis non alias molestiae nemo a libero!",
+    image: "/despre/7.jpeg"
+
   },
 ];
 const Team = () => {
@@ -64,8 +70,10 @@ const Team = () => {
               <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
                 <Image
                   alt='team'
+                  height={800}
+                  width={800}
                   className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'
-                  src={p1}
+                  src={angajat.image}
                 />
                 {/* Text */}
                 <div className='flex-grow sm:pl-8'>
