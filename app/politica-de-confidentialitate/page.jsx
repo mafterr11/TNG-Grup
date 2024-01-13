@@ -19,16 +19,16 @@ const PoliticaDeConfidentialitate = () => {
             <p className="text-sm my-4"><span className="text-accent">-</span> Pentru a vă oferi servicii de înaltă calitate și pentru a respecta obligațiile legale, putem partaja unele dintre datele dumneavoastră personale cu autorități publice, furnizori de utilități, instanțe judiciare, notari, experți și consultanți externi. Aceasta se face numai când este necesar și asigurăm întotdeauna protecția adecvată a informațiilor dumneavoastră.
                 Datele dumneavoastră personale vor fi prelucrate pe durata întregii noastre relații contractuale. După finalizarea acesteia, vom păstra datele conform perioadei stabilite de legislația aplicabilă, care include și termenele pentru arhivarea documentelor comerciale.</p>
 
-            <p className="text-sm text-lg mb-6 mt-8">Aveți următoarele drepturi legale referitoare la datele dumneavoastră personale:</p>
+            <p className="text-lg mb-6 mt-8">Aveți următoarele drepturi legale referitoare la datele dumneavoastră personale:</p>
 
-            <p className="text-sm text-accent">1. Dreptul la informare: Puteți cere confirmarea procesării datelor dvs. și detalii despre cum sunt folosite.</p>
-            <p className="text-sm text-accent">2. Dreptul la rectificare: Aveți posibilitatea de a corecta datele inexacte.</p>
-            <p className="text-sm text-accent">3. Dreptul la ștergerea datelor: Puteți solicita ștergerea datelor când nu mai sunt necesare, când ați retras consimțământul, când vă opuneți procesării lor, sau când procesarea este neconformă cu GDPR.</p>
-            <p className="text-sm text-accent">4. Dreptul la restricționarea prelucrării: Aveți dreptul de a limita prelucrarea datelor în anumite condiții, cum ar fi contestarea exactității datelor sau opoziția față de prelucrare.</p>
-            <p className="text-sm text-accent">5. Dreptul la portabilitatea datelor: Puteți primi datele personale furnizate într-un format structurat sau puteți cere transmiterea lor altui operator.</p>
-            <p className="text-sm text-accent">6. Dreptul de opoziție: Puteți obiecta prelucrării datelor din motive personale specifice.</p>
-            <p className="text-sm text-accent">7. Dreptul de a depune plângere: Puteți face plângere la autoritatea de supraveghere dacă considerați că prelucrarea datelor dvs. personale nu respectă regulamentele.</p>
-            <p className="text-sm text-accent">8. Dreptul de retragere a consimțământului: Puteți retrage consimțământul pentru prelucrarea bazată pe acesta, oricând.</p>
+            <p className="text-sm text-accent mb-2">1. Dreptul la informare: Puteți cere confirmarea procesării datelor dvs. și detalii despre cum sunt folosite.</p>
+            <p className="text-sm text-accent mb-2">2. Dreptul la rectificare: Aveți posibilitatea de a corecta datele inexacte.</p>
+            <p className="text-sm text-accent mb-2">3. Dreptul la ștergerea datelor: Puteți solicita ștergerea datelor când nu mai sunt necesare, când ați retras consimțământul, când vă opuneți procesării lor, sau când procesarea este neconformă cu GDPR.</p>
+            <p className="text-sm text-accent mb-2">4. Dreptul la restricționarea prelucrării: Aveți dreptul de a limita prelucrarea datelor în anumite condiții, cum ar fi contestarea exactității datelor sau opoziția față de prelucrare.</p>
+            <p className="text-sm text-accent mb-2">5. Dreptul la portabilitatea datelor: Puteți primi datele personale furnizate într-un format structurat sau puteți cere transmiterea lor altui operator.</p>
+            <p className="text-sm text-accent mb-2">6. Dreptul de opoziție: Puteți obiecta prelucrării datelor din motive personale specifice.</p>
+            <p className="text-sm text-accent mb-2">7. Dreptul de a depune plângere: Puteți face plângere la autoritatea de supraveghere dacă considerați că prelucrarea datelor dvs. personale nu respectă regulamentele.</p>
+            <p className="text-sm text-accent mb-2">8. Dreptul de retragere a consimțământului: Puteți retrage consimțământul pentru prelucrarea bazată pe acesta, oricând.</p>
             <p className="text-sm text-accent mb-8">9. Drepturi legate de deciziile automate: În cazul prelucrării automate a datelor, puteți cere revizuirea umană, puteți exprima un punct de vedere sau puteți contesta decizia.</p>
 
             <p>TNG GRUP AG poate actualiza periodic politicile de confidențialitate, conform schimbărilor în legislația privind protecția datelor. Orice modificări vor fi publicate pe site-ul nostru, unde veți găsi informații actualizate</p>
