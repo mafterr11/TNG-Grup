@@ -1,22 +1,21 @@
 "use client"
 import { useParams } from "next/navigation";
-import { projects } from "../../../utils/projects"; 
+import { proiecte } from "../../../utils/proiecte"; 
 
 const PortofoliuDetails = () => {
   const { slug } = useParams(); 
 
-  const project = projects.find((p) => p.slug === slug);
+  const proiect = proiecte.find((p) => p.slug === slug);
 
-  if (!project) {
+  if (!proiect) {
     return (
-      <div className='container mx-auto py-[20rem]'>Project not found.</div>
+      <div className='container mx-auto py-[20rem]'>Proiect not found.</div>
     );
   }
 
   return (
     <div className='container mx-auto py-[20rem]'>
-      <h1>Detalii Portofoliu: {project.name}</h1>
-      <p>{project.description}</p>
+      <h1>Detalii Portofoliu: {proiect.nume}</h1>
     </div>
   );
 };
