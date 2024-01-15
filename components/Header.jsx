@@ -34,7 +34,7 @@ const Header = () => {
               src={logo}
               width={70}
               height={70}
-              alt='Tng Grup Logo'
+              alt='Tng Grup logo'
               className='rounded-[50%] border-2 border-accent'
             />
             <h3>

@@ -69,7 +69,7 @@ const Team = () => {
             >
               <div className='h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left mb-12'>
                 <Image
-                  alt='team'
+                  alt='Membrii echipei TNG Grup'
                   height={800}
                   width={800}
                   className='flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4'

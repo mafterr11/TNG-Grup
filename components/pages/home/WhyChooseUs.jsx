@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
       viewport={{once:true, ammount:0.4}}
       className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className="rounded-lg h-64 overflow-hidden ">
-          <Image alt="content" className="object-cover object-center h-full w-full" width={800} height={800} src={p1}/>
+          <Image alt="De ce sa alegeti TNG Grup" className="object-cover object-center h-full w-full" width={800} height={800} src={p1}/>
         </div>
         <h2 className="text-xl font-medium mt-6 text-accent ">Excelentă</h2>
         <p className="text-base leading-relaxed mt-4">Punem în practică un standard de excelență în fiecare proiect pe care îl întreprindem, urmărind nu doar să satisfacem, ci să impresionăm și să inovăm în mod constant.</p>
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
       viewport={{once:true, ammount:0.4}}
       className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className="rounded-lg h-64 overflow-hidden">
-          <Image alt="content" className="object-cover object-center h-full w-full" width={800} height={800} src={p2}/>
+          <Image alt="De ce sa alegeti TNG Grup" className="object-cover object-center h-full w-full" width={800} height={800} src={p2}/>
         </div>
         <h2 className="text-xl font-medium mt-6 text-accent ">Profesionalism</h2>
         <p className="text-base leading-relaxed mt-4">Profesionalismul nostru se manifestă prin angajamentul neclintit de a satisface și depăși așteptările clienților. Fiecare membru al echipei noastre este instruit să ofere soluții eficiente, cu o atenție meticuloasă la detalii.</p>
@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
       viewport={{once:true, ammount:0.4}}
       className="p-4 md:w-1/3 sm:mb-0 mb-6">
         <div className="rounded-lg h-64 overflow-hidden">
-          <Image alt="content" className="object-cover object-center h-full w-full" width={800} height={800}  src={p3}/>
+          <Image alt="De ce sa alegeti TNG Grup" className="object-cover object-center h-full w-full" width={800} height={800}  src={p3}/>
         </div>
         <h2 className="text-xl font-medium mt-6 text-accent ">Expertiză</h2>
         <p className="text-base leading-relaxed mt-4">Cunoașterea noastră intimă a industriei ne permite să identificăm și să anticipăm nevoile specifice ale afacerii voastre, creând soluții personalizate care se aliniază perfect cu viziunea și obiectivele dvs.</p>

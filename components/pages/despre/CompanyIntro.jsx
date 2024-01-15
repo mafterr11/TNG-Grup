@@ -31,7 +31,7 @@ const CompanyIntro = () => {
           </p>
         </div>
         <div className='w-full xl:w-[40%] h-42 '>
-          <Image src={p1} alt='TNG logo' className='rounded-3xl object-cover' />
+          <Image src={p1} alt='TNG Grup logo' className='rounded-3xl object-cover' />
         </div>
       </div>
     </motion.div>

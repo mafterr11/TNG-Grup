@@ -1,12 +1,12 @@
-import { proiecte } from '../../../utils/proiecte';
-import Image from 'next/image';
+import { proiecte } from "../../../utils/proiecte";
+import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { SolicitatiOferta } from '@/components/SolicitatiOferta';
+} from "@/components/ui/accordion";
+import { SolicitatiOferta } from "@/components/SolicitatiOferta";
 
 export const Proiecte = () => {
   return (
@@ -17,10 +17,7 @@ export const Proiecte = () => {
       <span className='border-t-2 mt-4 mb-24 border-accent block w-2/4'></span>
 
       {proiecte.map((proiect, proiectIndex) => (
-        <div
-          className='mb-24 md:mb-32 lg:mb-44'
-          key={proiectIndex}
-        >
+        <div className='mb-24 md:mb-32 lg:mb-44' key={proiectIndex}>
           <div className='mb-4 flex flex-col md:flex-row items-center'>
             <div className='mb-4 md:mb-0 w-full md:w-1/2'>
               <h3 className='mb-2 block md:hidden text-accent text-2xl text-center md:text-left'>
@@ -30,7 +27,7 @@ export const Proiecte = () => {
                 src={proiect.imagine}
                 width={500}
                 height={500}
-                alt='Imagine proiect'
+                alt='Imagine principala proiect de executie'
                 className='rounded-xl'
               />
             </div>
@@ -51,8 +48,12 @@ export const Proiecte = () => {
                 {/* Dormitoare */}
                 <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
                   <div className='flex items-center justify-center gap-x-2'>
-                    <div className='text-lg'>{proiect.detalii.numarDormitoare}</div>
-                    <div className='text-3xl text-accent'>{proiect.detalii.iconDormitoare}</div>
+                    <div className='text-lg'>
+                      {proiect.detalii.numarDormitoare}
+                    </div>
+                    <div className='text-3xl text-accent'>
+                      {proiect.detalii.iconDormitoare}
+                    </div>
                   </div>
                   <div className='text-sm'>Dormitoare</div>
                 </div>
@@ -60,7 +61,9 @@ export const Proiecte = () => {
                 <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
                   <div className='flex items-center justify-center gap-x-2'>
                     <div className='text-lg'>{proiect.detalii.numarBai}</div>
-                    <div className='text-3xl text-accent'>{proiect.detalii.iconBai}</div>
+                    <div className='text-3xl text-accent'>
+                      {proiect.detalii.iconBai}
+                    </div>
                   </div>
                   <div className='text-sm'>Băi</div>
                 </div>
@@ -68,16 +71,24 @@ export const Proiecte = () => {
                 {/* Amp la Sol */}
                 <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
                   <div className='flex items-center justify-center gap-x-2'>
-                    <div className='text-lg'>{proiect.detalii.numarAmprentaLaSol}</div>
-                    <div className='text-3xl text-accent'>{proiect.detalii.iconAmprentaLaSol}</div>
+                    <div className='text-lg'>
+                      {proiect.detalii.numarAmprentaLaSol}
+                    </div>
+                    <div className='text-3xl text-accent'>
+                      {proiect.detalii.iconAmprentaLaSol}
+                    </div>
                   </div>
                   <div className='text-sm'>Ampr. Sol</div>
                 </div>
                 {/* MP utili */}
                 <div className='flex flex-col items-center justify-center gap-y-1'>
                   <div className='flex items-center justify-center gap-x-2'>
-                    <div className='text-lg'>{proiect.detalii.numarMpUtili}</div>
-                    <div className='text-3xl text-accent'>{proiect.detalii.iconMpUtili}</div>
+                    <div className='text-lg'>
+                      {proiect.detalii.numarMpUtili}
+                    </div>
+                    <div className='text-3xl text-accent'>
+                      {proiect.detalii.iconMpUtili}
+                    </div>
                   </div>
                   <div className='text-sm'>MP utili</div>
                 </div>
@@ -99,66 +110,50 @@ export const Proiecte = () => {
                   Mai multe detalii:
                 </AccordionTrigger>
                 <AccordionContent className=''>
-                  <section class="text-gray-600 body-font">
-                    <div class="container px-5 py-24 mx-auto">
-                      <div class="flex flex-wrap -m-4">
-                        <div class="lg:w-1/3 sm:w-1/2 p-4">
-                          <div class="flex relative">
-                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x360"/>
-                              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="lg:w-1/3 sm:w-1/2 p-4">
-                          <div class="flex relative">
-                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/601x361"/>
-                              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="lg:w-1/3 sm:w-1/2 p-4">
-                          <div class="flex relative">
-                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/603x363"/>
-                              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="lg:w-1/3 sm:w-1/2 p-4">
-                          <div class="flex relative">
-                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/602x362"/>
-                              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Neptune</h1>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="lg:w-1/3 sm:w-1/2 p-4">
-                          <div class="flex relative">
-                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/605x365"/>
-                              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Holden Caulfield</h1>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="lg:w-1/3 sm:w-1/2 p-4">
-                          <div class="flex relative">
-                            <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/606x366"/>
-                              <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Alper Kamu</h1>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
+                  <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-6'>
+                    <Image
+                      alt='Imagine proiect portofoliu 1'
+                      className='object-cover w-full h-60 rounded-lg'
+                      height={200}
+                      src={proiect.imagine}
+                      width={200}
+                    />
+                    <Image
+                      alt='Imagine proiect portofoliu 2'
+                      className='object-cover w-full h-60 rounded-lg'
+                      height={200}
+                      src={proiect.imagine}
+                      width={200}
+                    />
+                    <Image
+                      alt='Imagine proiect portofoliu 3'
+                      className='object-cover w-full h-60 rounded-lg'
+                      height={200}
+                      src={proiect.imagine}
+                      width={200}
+                    />
+                    <Image
+                      alt='Imagine proiect portofoliu 4'
+                      className='object-cover w-full h-60 rounded-lg'
+                      height={200}
+                      src={proiect.imagine}
+                      width={200}
+                    />
+                    <Image
+                      alt='Imagine proiect portofoliu 5'
+                      className='object-cover w-full h-60 rounded-lg'
+                      height={200}
+                      src={proiect.imagine}
+                      width={200}
+                    />
+                    <Image
+                      alt='Imagine proiect portofoliu 6'
+                      className='object-cover w-full h-60 rounded-lg'
+                      height={200}
+                      src={proiect.imagine}
+                      width={200}
+                    />
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

@@ -10,7 +10,7 @@ const Intro = () => {
       <div className='w-full xl:h-[28rem] h-64 relative overflow-hidden'>
         <Image
           src={p1}
-          alt='imagine despre TNG'
+          alt='Despre TNG imagine'
           fill
           priority={true}
           className='object-cover'
