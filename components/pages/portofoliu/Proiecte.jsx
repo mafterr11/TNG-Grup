@@ -23,6 +23,9 @@ export const Proiecte = () => {
         >
           <div className='mb-4 flex flex-col md:flex-row items-center'>
             <div className='mb-4 md:mb-0 w-full md:w-1/2'>
+              <h3 className='mb-2 block md:hidden text-accent text-2xl text-center md:text-left'>
+                {proiect.nume}
+              </h3>
               <Image
                 src={proiect.imagine}
                 width={500}
@@ -32,8 +35,8 @@ export const Proiecte = () => {
               />
             </div>
             <div className='w-full md:w-1/2'>
-              <div className='mb-4'>
-                <h3 className='mb-2 text-accent text-2xl text-center md:text-left'>
+              <div className='mb-4 text-center md:text-left'>
+                <h3 className='mb-2 hidden md:block text-accent text-2xl '>
                   {proiect.nume}
                 </h3>
                 <p className='leading-6'>
@@ -45,39 +48,39 @@ export const Proiecte = () => {
               </div>
               <div className='flex gap-4 justify-center md:justify-start'>
                 {/* Container 1 */}
-                  {/* Dormitoare */}
-                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>{proiect.detalii.numarDormitoare}</div>
-                      <div className='text-3xl text-accent'>{proiect.detalii.iconDormitoare}</div>
-                    </div>
-                    <div className='text-sm'>Dormitoare</div>
+                {/* Dormitoare */}
+                <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
+                  <div className='flex items-center justify-center gap-x-2'>
+                    <div className='text-lg'>{proiect.detalii.numarDormitoare}</div>
+                    <div className='text-3xl text-accent'>{proiect.detalii.iconDormitoare}</div>
                   </div>
-                  {/* Bai */}
-                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>{proiect.detalii.numarBai}</div>
-                      <div className='text-3xl text-accent'>{proiect.detalii.iconBai}</div>
-                    </div>
-                    <div className='text-sm'>Băi</div>
+                  <div className='text-sm'>Dormitoare</div>
+                </div>
+                {/* Bai */}
+                <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
+                  <div className='flex items-center justify-center gap-x-2'>
+                    <div className='text-lg'>{proiect.detalii.numarBai}</div>
+                    <div className='text-3xl text-accent'>{proiect.detalii.iconBai}</div>
                   </div>
+                  <div className='text-sm'>Băi</div>
+                </div>
                 {/* Container 2 */}
-                  {/* Amp la Sol */}
-                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>{proiect.detalii.numarAmprentaLaSol}</div>
-                      <div className='text-3xl text-accent'>{proiect.detalii.iconAmprentaLaSol}</div>
-                    </div>
-                    <div className='text-sm'>Ampr. Sol</div>
+                {/* Amp la Sol */}
+                <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
+                  <div className='flex items-center justify-center gap-x-2'>
+                    <div className='text-lg'>{proiect.detalii.numarAmprentaLaSol}</div>
+                    <div className='text-3xl text-accent'>{proiect.detalii.iconAmprentaLaSol}</div>
                   </div>
-                  {/* MP utili */}
-                  <div className='flex flex-col items-center justify-center gap-y-1'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>{proiect.detalii.numarMpUtili}</div>
-                      <div className='text-3xl text-accent'>{proiect.detalii.iconMpUtili}</div>
-                    </div>
-                    <div className='text-sm'>MP utili</div>
+                  <div className='text-sm'>Ampr. Sol</div>
+                </div>
+                {/* MP utili */}
+                <div className='flex flex-col items-center justify-center gap-y-1'>
+                  <div className='flex items-center justify-center gap-x-2'>
+                    <div className='text-lg'>{proiect.detalii.numarMpUtili}</div>
+                    <div className='text-3xl text-accent'>{proiect.detalii.iconMpUtili}</div>
                   </div>
+                  <div className='text-sm'>MP utili</div>
+                </div>
               </div>
               <span className='block border-b border-accent mt-4'></span>
               <div className='flex items-center justify-between px-2 py-4'>
