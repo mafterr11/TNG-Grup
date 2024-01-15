@@ -1,133 +1,108 @@
-"use client";
-import * as React from "react";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-import { Card, CardContent } from "@/components/ui/card";
+import { proiecte } from '../../../utils/proiecte';
+import Image from 'next/image';
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { proiecte } from "../../../utils/proiecte";
-import { SolicitatiOferta } from "@/components/SolicitatiOferta";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { SolicitatiOferta } from '@/components/SolicitatiOferta';
 
 export const Proiecte = () => {
-  const [groupSize, setGroupSize] = useState(4); // Default to 4 for desktop
-
-  // Update group size based on screen width
-  useEffect(() => {
-    const updateGroupSize = () => {
-      setGroupSize(window.innerWidth < 768 ? 1 : 4);
-    };
-
-    window.addEventListener("resize", updateGroupSize);
-    updateGroupSize();
-
-    return () => window.removeEventListener("resize", updateGroupSize);
-  }, []);
-  // Group the services based on groupSize
-  const groupedProiecte = [];
-  for (let i = 0; i < proiecte.length; i += groupSize) {
-    groupedProiecte.push(proiecte.slice(i, i + groupSize));
-  }
-
   return (
-    <div className='container mx-auto max-w-[1400px]'>
-      <div>
-        <h1 className='text-accent'>Proiecte civile</h1>
-        <span className='border-t-2 mt-4 border-accent block w-2/4'></span>
-      </div>
-      <div>
-        <Carousel
-          plugins={[
-            Autoplay({
-              delay: 5000,
-              stopOnInteraction: true,
-            }),
-          ]}
-          className='w-full mt-10'
+    <div className='container mx-auto'>
+      <h1 className='text-accent font-normal text-3xl md:text-4xl '>
+        Proiecte civile
+      </h1>
+      <span className='border-t-2 mt-4 mb-24 border-accent block w-2/4'></span>
+
+      {proiecte.map((proiect, proiectIndex) => (
+        <div
+          className='mb-24 md:mb-32 lg:mb-44'
+          key={proiectIndex}
         >
-          <CarouselContent className='flex -ml-1'>
-            {groupedProiecte.map((group, index) => (
-              <CarouselItem key={index} className='flex-shrink-0 px-3 w-full '>
-                <div className='flex flex-col xl:flex-row xl:gap-x-6 items-center justify-center gap-y-4 '>
-                  {group.map((proiect, proiectIndex) => (
-                    <div key={proiectIndex} className='w-full'>
-                      {" "}
-                        <Card className='rounded-xl group'>
-                          <CardContent className='bg-grey p-0 rounded-xl group-hover:bg-grey/95'>
-                      <Link
-                        href={`/portofoliu/${encodeURIComponent(proiect.slug)}`}
-                      >
-                            <div className='w-full'>
-                              <Image
-                                src={proiect.imagine}
-                                width={500}
-                                height={500}
-                                alt='Imagine proiect'
-                                className=' rounded-t-xl border-b border-accent'
-                              />
-                            </div>
-                            <div className="">
-                              <h4 className='p-4 text-lg'>{proiect.nume}</h4>
-                              {/* Details */}
-                              <div className="flex gap-x-4 items-center justify-center ">
-                                {/* Dormitoare */}
-                                <div className="flex flex-col items-center justify-center gap-y-1 border-r border-accent xl:pr-6 pr-[0.6rem]">
-                                  <div className='flex items-center justify-center gap-x-1'>
-                                    <div className="text-xs xl:text-sm">{proiect.detalii.numarDormitoare}</div>
-                                    <div className="text-xl xl:text-2xl text-accent">{proiect.detalii.iconDormitoare}</div>
-                                  </div>
-                                  <div className="text-xs">Dormitoare</div>
-                                </div>
-                                {/* Bai */}
-                                <div className="flex flex-col items-center justify-center gap-y-1 border-r border-accent xl:pr-6 pr-[0.6rem]">
-                                  <div className='flex items-center justify-center gap-x-1'>
-                                    <div className="text-xs xl:text-sm">{proiect.detalii.numarBai}</div>
-                                    <div className="text-xl xl:text-2xl text-accent">{proiect.detalii.iconBai}</div>
-                                  </div>
-                                  <div className="text-xs">Băi</div>
-                                </div>
-                                {/* Amprenta Sol */}
-                                <div className="flex flex-col items-center justify-center gap-y-1 border-r border-accent xl:pr-6 pr-[0.6rem]">
-                                  <div className='flex items-center justify-center gap-x-1'>
-                                    <div className="text-xs xl:text-sm">{proiect.detalii.numarAmprentaLaSol}</div>
-                                    <div className="text-xl xl:text-2xl text-accent">{proiect.detalii.iconAmprentaLaSol}</div>
-                                  </div>
-                                  <div className="text-xs">Ampr. la Sol</div>
-                                </div>
-                                {/* MP utili */}
-                                <div className="flex flex-col items-center justify-center gap-y-1">
-                                  <div className='flex items-center justify-center gap-x-1'>
-                                    <div className="text-xs xl:text-sm">{proiect.detalii.numarMpUtili}</div>
-                                    <div className="text-xl xl:text-2xl text-accent">{proiect.detalii.iconMpUtili}</div>
-                                  </div>
-                                  <div className="text-xs">MP utili</div>
-                                </div>
-                              </div>
-                              <span className="border-b border-accent block mt-4"></span>
-                            </div>
-                            {/* Pret */}
-                      </Link>
-                            <div className="flex items-center justify-between">
-                              <h4 className='p-4 text-lg'>Preț execuție:</h4>
-                              <div className="flex flex-col items-center justify-center p-4">
-                                <span className="text-sm">Pornind de la</span>
-                                  <SolicitatiOferta customStyle="rounded-full text-xs px-2 py-0 h-8"/>
-                              </div>
-                            </div>
-                          </CardContent>
-                        </Card>
+          <div className='mb-4 flex flex-col md:flex-row items-center'>
+            <div className='mb-4 md:mb-0 w-full md:w-1/2'>
+              <Image
+                src={proiect.imagine}
+                width={500}
+                height={500}
+                alt='Imagine proiect'
+                className='rounded-xl'
+              />
+            </div>
+            <div className='w-full md:w-1/2'>
+              <div className='mb-4'>
+                <h3 className='mb-2 text-accent text-2xl text-center md:text-left'>
+                  {proiect.nume}
+                </h3>
+                <p className='leading-6'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Veritatis, itaque facilis. Id earum dignissimos deleniti eaque
+                  culpa ut quam corporis tempora possimus, ipsa ab impedit
+                  voluptas enim quo deserunt? Vero.
+                </p>
+              </div>
+              <div className='flex gap-4 justify-center md:justify-start'>
+                {/* Container 1 */}
+                  {/* Dormitoare */}
+                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
+                    <div className='flex items-center justify-center gap-x-2'>
+                      <div className='text-lg'>{proiect.detalii.numarDormitoare}</div>
+                      <div className='text-3xl text-accent'>{proiect.detalii.iconDormitoare}</div>
                     </div>
-                  ))}
+                    <div className='text-sm'>Dormitoare</div>
+                  </div>
+                  {/* Bai */}
+                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
+                    <div className='flex items-center justify-center gap-x-2'>
+                      <div className='text-lg'>{proiect.detalii.numarBai}</div>
+                      <div className='text-3xl text-accent'>{proiect.detalii.iconBai}</div>
+                    </div>
+                    <div className='text-sm'>Băi</div>
+                  </div>
+                {/* Container 2 */}
+                  {/* Amp la Sol */}
+                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-6'>
+                    <div className='flex items-center justify-center gap-x-2'>
+                      <div className='text-lg'>{proiect.detalii.numarAmprentaLaSol}</div>
+                      <div className='text-3xl text-accent'>{proiect.detalii.iconAmprentaLaSol}</div>
+                    </div>
+                    <div className='text-sm'>Ampr. Sol</div>
+                  </div>
+                  {/* MP utili */}
+                  <div className='flex flex-col items-center justify-center gap-y-1'>
+                    <div className='flex items-center justify-center gap-x-2'>
+                      <div className='text-lg'>{proiect.detalii.numarMpUtili}</div>
+                      <div className='text-3xl text-accent'>{proiect.detalii.iconMpUtili}</div>
+                    </div>
+                    <div className='text-sm'>MP utili</div>
+                  </div>
+              </div>
+              <span className='block border-b border-accent mt-4'></span>
+              <div className='flex items-center justify-between px-2 py-4'>
+                <div className='flex flex-col items-start justify-center'>
+                  <h4 className='text-lg md:text-xl'>Preț execuție:</h4>
+                  <span className='text-sm'>Pornind de la</span>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
+                <SolicitatiOferta customStyle='rounded-full text-xs px-4 h-8' />
+              </div>
+            </div>
+          </div>
+          <div className='mt-4'>
+            <Accordion type='single' collapsible>
+              <AccordionItem value={`item-${proiectIndex}`}>
+                <AccordionTrigger className='text-lg text-start'>
+                  Mai multe detalii:
+                </AccordionTrigger>
+                <AccordionContent className=''>
+
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

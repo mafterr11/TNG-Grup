@@ -6,13 +6,14 @@ export const proiecte = [
     imagine: "/test.jpg",
     detalii: {
       numarDormitoare: 3,
-      iconDormitoare: <LiaBedSolid /> ,
-      numarBai: 2, 
-      iconBai: <LiaBathSolid /> ,
-      numarAmprentaLaSol: 162, 
-      iconAmprentaLaSol: <LiaDraftingCompassSolid /> ,
+      iconDormitoare: <LiaBedSolid />,
+      numarBai: 2,
+      iconBai: <LiaBathSolid />,
+      numarAmprentaLaSol: 162,
+      iconAmprentaLaSol: <LiaDraftingCompassSolid />,
       numarMpUtili: 135,
-      iconMpUtili: <LiaRulerCombinedSolid /> 
+      iconMpUtili: <LiaRulerCombinedSolid />,
+      descriere: "lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum "
     }
   },
   {
@@ -21,13 +22,14 @@ export const proiecte = [
     imagine: "/test.jpg",
     detalii: {
       numarDormitoare: 3,
-      iconDormitoare: <LiaBedSolid /> ,
-      numarBai: 2, 
-      iconBai: <LiaBathSolid /> ,
-      numarAmprentaLaSol: 162, 
-      iconAmprentaLaSol: <LiaDraftingCompassSolid /> ,
+      iconDormitoare: <LiaBedSolid />,
+      numarBai: 2,
+      iconBai: <LiaBathSolid />,
+      numarAmprentaLaSol: 162,
+      iconAmprentaLaSol: <LiaDraftingCompassSolid />,
       numarMpUtili: 135,
-      iconMpUtili: <LiaRulerCombinedSolid /> 
+      iconMpUtili: <LiaRulerCombinedSolid />,
+      descriere: "lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum "
     }
   },
   {
@@ -36,13 +38,14 @@ export const proiecte = [
     imagine: "/test.jpg",
     detalii: {
       numarDormitoare: 3,
-      iconDormitoare: <LiaBedSolid /> ,
-      numarBai: 2, 
-      iconBai: <LiaBathSolid /> ,
-      numarAmprentaLaSol: 162, 
-      iconAmprentaLaSol: <LiaDraftingCompassSolid /> ,
+      iconDormitoare: <LiaBedSolid />,
+      numarBai: 2,
+      iconBai: <LiaBathSolid />,
+      numarAmprentaLaSol: 162,
+      iconAmprentaLaSol: <LiaDraftingCompassSolid />,
       numarMpUtili: 135,
-      iconMpUtili: <LiaRulerCombinedSolid /> 
+      iconMpUtili: <LiaRulerCombinedSolid />,
+      descriere: "lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum lorem ispum "
     }
   },
 ];
