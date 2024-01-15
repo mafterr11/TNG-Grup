@@ -1,7 +1,7 @@
 import { LiaBedSolid, LiaBathSolid, LiaRulerCombinedSolid, LiaDraftingCompassSolid } from "react-icons/lia";
 export const proiecte = [
   {
-    nume: "Proiect casa Parter - Nana - Calarasi",
+    nume: "Casa Parter - Nana - Calarasi",
     slug: "project-one",
     imagine: "/test.jpg",
     detalii: {
@@ -17,7 +17,7 @@ export const proiecte = [
     }
   },
   {
-    nume: "Proiect casa P+1E - Sector 4 - Bucuresti",
+    nume: "Casa P+1E - Sector 4 - Bucuresti",
     slug: "project-two",
     imagine: "/test.jpg",
     detalii: {
@@ -33,7 +33,7 @@ export const proiecte = [
     }
   },
   {
-    nume: "Proiect casa P+1E - Clinceni - Ilfov",
+    nume: "Casa P+1E - Clinceni - Ilfov",
     slug: "project-three",
     imagine: "/test.jpg",
     detalii: {
