@@ -20,7 +20,7 @@ export const Proiecte = () => {
         <div className='mb-24 md:mb-32 lg:mb-44' key={proiectIndex}>
           <div>
             {/* MD TITLE */}
-            <h3 className='mb-6 block xl:hidden text-accent text-2xl text-center'>
+            <h3 className='mb-6 xl:hidden md:block hidden text-accent text-2xl text-center'>
               {proiect.nume}
             </h3>
 
