@@ -10,7 +10,7 @@ import {
 
 export const ServiciiContent = () => {
   return (
-    <>
+    <div>
       {/* Header */}
       <motion.div
         variants={fadeIn("down", 0.2)}
@@ -1193,6 +1193,6 @@ export const ServiciiContent = () => {
           </motion.div>
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
