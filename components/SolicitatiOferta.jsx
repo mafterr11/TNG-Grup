@@ -24,7 +24,7 @@ export function SolicitatiOferta({customStyle}) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant='orange' className={` ${customStyle}`}>Solicitați o ofertă</Button>
+          <Button variant='orange' className={` ${customStyle} text-[15px]`}>Solicitați o ofertă</Button>
         </DialogTrigger>
         <DialogContent className='sm:max-w-[425px]'>
           <SolicitatiOfertaForm />
@@ -36,7 +36,7 @@ export function SolicitatiOferta({customStyle}) {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant='orange' className={` ${customStyle}`}>Solicitați o ofertă</Button>
+        <Button variant='orange' className={` ${customStyle} text-[15px]`}>Solicitați o ofertă</Button>
       </DrawerTrigger>
       <DrawerContent>
         <SolicitatiOfertaForm onClose={() => setOpen(false)}/>

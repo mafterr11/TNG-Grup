@@ -30,9 +30,9 @@ const ContactMap = () => {
         initial='hidden'
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
-        className='w-full xl:w-[80%] xl:px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[1000px] gap-y-10'
+        className='w-full md:w-[95%] xl:w-[80%] xl:px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[1000px] gap-y-10'
       >
-        <div className='w-full h-full bg-gray-300 rounded-lg overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative pt-[56.25%]'>
+        <div className='w-full h-full bg-gray-300 overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative pt-[56.25%]'>
           <iframe
             width='100%'
             height='100%'
@@ -42,7 +42,7 @@ const ContactMap = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
           {/* Detalii */}
-          <div className=' bg-grey absolute top-16 right-12 hidden md:flex flex-col flex-wrap py-8 rounded items-start justify-center'>
+          <div className=' bg-grey absolute xl:top-16 xl:right-12 md:top-8 md:right-8 hidden md:flex flex-col flex-wrap py-8 rounded items-start justify-center'>
             <div className=' px-8'>
               <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm uppercase'>
                 Adresă
@@ -88,7 +88,7 @@ const ContactMap = () => {
             </div>
           </div>
           {/* Program */}
-          <div className='xl:w-1/3 md:w-1/2  bg-grey z-[7] hidden md:flex flex-col  w-full p-4  rounded absolute bottom-52 left-16'>
+          <div className='xl:w-[22%] lg:w-[35%] md:w-[43%]  bg-grey z-[7] hidden md:flex flex-col w-full p-4  rounded absolute md:bottom-44 md:left-4 xl:bottom-52 xl:left-16'>
             <h3 className='font-semibold text-xl tracking-widest mb-4'>
               Program:
             </h3>

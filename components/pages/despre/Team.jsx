@@ -38,7 +38,7 @@ export const angajati = [
 ];
 const Team = () => {
   return (
-    <section className=' mt-24'>
+    <section className='xl:mt-24'>
       <div className='container px-5 py-24 mx-auto'>
         <motion.div
           variants={fadeIn("down", 0.2)}

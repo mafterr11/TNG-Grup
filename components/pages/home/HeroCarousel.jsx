@@ -49,7 +49,7 @@ export function HeroCarousel() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className='absolute top-0 left-0 w-full max-w-4xl h-full xl:pl-60 xl:pb-40 flex flex-col items-center xl:items-start justify-center z-20 text-white gap-y-2'>
+      <div className='absolute top-0 left-0 w-full max-w-4xl lg:max-w-6xl xl:max-w-4xl h-full xl:pl-60 xl:pb-40 flex flex-col items-center xl:items-start justify-center z-20 text-white gap-y-2'>
         <motion.h2
         variants={fadeIn('down', 0.2)}
         initial="hidden"
@@ -64,7 +64,7 @@ export function HeroCarousel() {
         initial="hidden"
         whileInView={"show"}
         viewport={{once:true, ammount:0.4}}
-        className='flex flex-col items-center xl:items-start xl:flex-row xl:gap-x-2 font-normal'>
+        className='flex flex-col items-center md:items-start md:flex-row md:gap-x-2 font-normal'>
           Construcții<span className='text-accent'> România</span>
         </motion.h1>
         <motion.p
@@ -72,7 +72,7 @@ export function HeroCarousel() {
         initial="hidden"
         whileInView={"show"}
         viewport={{once:true, ammount:0.4}}
-        className='text-white my-4 hidden md:flex'>
+        className='text-white my-4 hidden md:flex md:px-12 md:text-center xl:text-left xl:px-0'>
           Avem o viziune a unui viitor sustenabil. Înțelegem că fiabilitatea
           este cheia și lucrăm îndeaproape cu clienții noștri pentru a ne
           asigura că îndeplinim nevoile lor și nu îi lăsăm la greu.

@@ -14,9 +14,10 @@ const WhyChooseUs = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{once:true, ammount:0.4}}
-      className=" mb-12">
+      className="mb-12">
         <h3 className="text-accent">De ce să ne alegeți</h3>
         <h4 className="text-lg text-white/95">Un pas în direcția cea bună!</h4>
+        <span className="inline-block border-b-2 mt-4 border-accent w-[90%] md:w-[80%] xl:w-[50%]"></span>
       </motion.div>
     <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
       <motion.div

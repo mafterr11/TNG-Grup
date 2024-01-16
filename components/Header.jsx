@@ -27,7 +27,7 @@ const Header = () => {
       } fixed top-0 right-0 left-0 w-full z-50 transition-all duration-200 border-b-[2px] border-accent`}
     >
       <div className=''>
-        <div className='flex items-center justify-evenly'>
+        <div className='flex items-center justify-evenly md:justify-between md:px-16 xl:justify-evenly xl:px-0'>
           {/* logo */}
           <Link href='/' className='flex items-center justify-center gap-x-4'>
             <Image

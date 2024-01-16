@@ -28,7 +28,7 @@ const Servicii = () => {
         </h3>
       </motion.div>
       {/* Content container */}
-      <div className='w-[90%] mx-auto'>
+      <div className='xl:w-[90%] px-3 md:px-6 mx-auto'>
         {/* Execuție construcții civile 1 */}
         <motion.div
           variants={fadeIn("down", 0.2)}
