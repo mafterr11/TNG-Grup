@@ -11,7 +11,7 @@ import { SolicitatiOferta } from "@/components/SolicitatiOferta";
 export const Proiecte = () => {
   return (
     <div className='container mx-auto'>
-      <h1 className='text-accent font-normal text-3xl md:text-4xl text-center xl:text-left '>
+      <h1 className='font-normal text-3xl md:text-4xl text-center xl:text-left'>
         Proiecte civile
       </h1>
       <span className="block border-b-2 mt-4 mb-24 border-accent w-[90%] md:w-[80%] xl:w-[50%] mx-auto xl:mx-0"></span>
@@ -51,8 +51,8 @@ export const Proiecte = () => {
                     voluptas enim quo deserunt? Vero.
                   </p>
                 </div>
-                <div className='flex gap-4 justify-center md:justify-start'>
                   {/* Container 1 */}
+                <div className='flex gap-4 justify-center md:justify-start'>
                   {/* Dormitoare */}
                   <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-3 lg:pr-6'>
                     <div className='flex items-center justify-center gap-x-2'>
