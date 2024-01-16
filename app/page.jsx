@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { HeroCarousel } from "@/components/pages/home/HeroCarousel";
 import Services from "@/components/pages/home/Services";
 import WhyChooseUs from "@/components/pages/home/WhyChooseUs";

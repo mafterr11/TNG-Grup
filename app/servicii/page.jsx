@@ -10,7 +10,7 @@ const Servicii = () => {
   return (
     <div className='pt-[8rem]'>
       <ServiciiContent />
-    </div> 
+    </div>
   );
 };
 
