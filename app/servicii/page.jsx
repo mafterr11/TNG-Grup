@@ -1,7 +1,6 @@
-import { ServiciiContent } from "@/components/pages/servicii/ServiciiContent";
-("use client");
+"use client"
 import { motion } from "framer-motion";
-import { fadeIn } from "../../../variants";
+import { fadeIn } from "../../variants";
 import {
   Accordion,
   AccordionContent,

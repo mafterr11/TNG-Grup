@@ -1,6 +1,0 @@
-
-export const ServiciiContent = () => {
-  return (
-    
-  );
-};
