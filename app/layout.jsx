@@ -9,7 +9,13 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-
+export const metadata = {
+  title: "TNG GRUP - Lider în Construcții și Dezvoltare Durabilă",
+  description:
+    "Descoperiți inovația și calitatea în construcții cu TNG GRUP. Oferim soluții de top pentru proiecte civile, industriale și agricole.",
+  keywords:
+    "TNG GRUP, construcții România, dezvoltare durabilă, proiecte civile, industriale, agricole, servicii de construcții, proiecte de construcții",
+};
 
 export default function RootLayout({ children }) {
   return (
