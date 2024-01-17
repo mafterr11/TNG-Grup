@@ -1,4 +1,8 @@
+"use client"
 import { proiecte } from "../../../utils/proiecte";
+// Motion
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 import Image from "next/image";
 import {
   Accordion,
@@ -11,13 +15,25 @@ import { SolicitatiOferta } from "@/components/SolicitatiOferta";
 export const Proiecte = () => {
   return (
     <div className='container mx-auto'>
-      <h1 className='font-normal text-3xl md:text-4xl max-lg:text-center'>
-        Proiecte civile
-      </h1>
-      <span className="block border-b-2 mt-4 mb-24 border-accent w-[80%] xl:w-[45%] max-lg:mx-auto"></span>
+      <motion.div
+        variants={fadeIn("down", 0.2)}
+        initial='hidden'
+        whileInView={"show"}
+        viewport={{ once: true, ammount: 0.4 }}
+      >
+        <h1 className='font-normal text-3xl md:text-4xl max-lg:text-center'>
+          Proiecte civile
+        </h1>
+        <span className="block border-b-2 mt-4 mb-24 border-accent w-[80%] xl:w-[45%] max-lg:mx-auto"></span>
+      </motion.div>
 
       {proiecte.map((proiect, proiectIndex) => (
-        <div className='mb-24 md:mb-32 lg:mb-44' key={proiectIndex}>
+        <motion.div
+          variants={fadeIn("down", 0.2)}
+          initial='hidden'
+          whileInView={"show"}
+          viewport={{ once: true, ammount: 0.4 }}
+          className='mb-24 md:mb-32 lg:mb-44' key={proiectIndex}>
           <div>
             {/* MD TITLE */}
             <h3 className='mb-6 xl:hidden md:block hidden text-accent text-2xl text-center'>
@@ -51,7 +67,7 @@ export const Proiecte = () => {
                     voluptas enim quo deserunt? Vero.
                   </p>
                 </div>
-                  {/* Container 1 */}
+                {/* Container 1 */}
                 <div className='flex gap-4 justify-center md:justify-start'>
                   {/* Dormitoare */}
                   <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-3 lg:pr-6'>
@@ -167,7 +183,7 @@ export const Proiecte = () => {
               </AccordionItem>
             </Accordion>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
