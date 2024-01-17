@@ -1,5 +1,7 @@
 "use client";
+// Image
 import Image from "next/image";
+// Motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 
@@ -48,7 +50,7 @@ const Team = () => {
           className='flex flex-col text-center w-full mb-20'
         >
           <h3 className='mb-8 text-accent font-normal'>Echipa Noastră</h3>
-          <p className='lg:w-full mx-auto leading-relaxed text-base'>
+          <p className='lg:w-full mx-auto text-base leading-relaxed'>
             Inovarea și adaptabilitatea sunt calitățile cheie ale echipei TNG
             Grup. Tinerii noștri profesioniști sunt mereu la curent cu ultimele
             tendințe și tehnologii din domeniu, îmbrățișând noi metode și
@@ -77,7 +79,7 @@ const Team = () => {
                 />
                 {/* Text */}
                 <div className='flex-grow sm:pl-8'>
-                  <h2 className='font-medium text-lg'>{angajat.nume}</h2>
+                  <h2 className='text-lg font-medium'>{angajat.nume}</h2>
                   <h3 className='text-accent mb-6 font-normal '>
                     {angajat.rol}
                   </h3>

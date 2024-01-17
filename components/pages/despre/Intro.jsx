@@ -1,6 +1,8 @@
 "use client";
+// Image
 import Image from "next/image";
 import p1 from "../../../public/despre/2.jpg";
+// Motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 
@@ -34,7 +36,7 @@ const Intro = () => {
               G<span className='text-white'>eneration</span>
             </div>
           </h3>
-          <h3 className='font-normal text-xl xl:text-2xl text-white/80 flex flex-row items-center justify-center'>
+          <h3 className='flex flex-row items-center justify-center font-normal text-xl xl:text-2xl text-white/80'>
             <div>
               Inovație<span className='text-accent text-2xl'>.</span>
             </div>

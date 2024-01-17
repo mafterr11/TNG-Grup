@@ -1,6 +1,8 @@
 "use client"
+// Image
 import Image from "next/image";
 import p1 from "../../../public/logo.png";
+// Motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 
@@ -15,8 +17,8 @@ const CompanyIntro = () => {
     >
       <div className='flex flex-col xl:flex-row items-center justify-center gap-x-12 gap-y-12 xl:gap-y-0'>
         <div className='w-full xl:w-1/2'>
-          <h3 className='text-accent font-normal'>Cine suntem noi</h3>
-          <span className='border-b-2 border-accent block w-2/5 mb-8 mt-4'></span>
+          <h3 className='text-accent font-normal text-center md:text-start'>Cine suntem noi</h3>
+          <span className='border-b-2 border-accent flex w-[85%] md:w-[60%] max-md:mx-auto mb-8 mt-4'></span>
           <p>
             TNG GRUP AG este o societate de Antreprenoriat General, cu capital
             privat integral romanesc, infiintata in anul 2019 din dorinta de a

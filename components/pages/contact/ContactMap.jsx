@@ -1,4 +1,5 @@
 "use client";
+// Motion
 import { motion } from "framer-motion";
 import { fadeIn } from "../../../variants";
 // Icons
@@ -13,13 +14,13 @@ const ContactMap = () => {
         initial='hidden'
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
-        className='lg:mb-12 mb-0 text-center px-2'
+        className='text-center px-2 lg:mb-12'
       >
         <h2 className='mb-2'>
           <span className='text-accent'>Haideți</span> să ne{" "}
           <span className='text-accent'>conectăm.</span>
         </h2>
-        <h3 className="font-normal">
+        <h3 className="font-normal text-[1.7rem]">
           <span className='text-accent'>Construiește</span> cu noi -{" "}
           <span className='text-accent'>echipa TNG</span> îți aduce visul la{" "}
           <span className='text-accent'>realitate</span>
@@ -30,7 +31,7 @@ const ContactMap = () => {
         initial='hidden'
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
-        className='w-full md:w-[95%] xl:w-[80%] xl:px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[1000px] gap-y-10'
+        className='w-[95%] xl:w-[80%] xl:px-5 py-12 md:py-24 mx-auto flex flex-col-reverse h-[1000px] gap-y-10'
       >
         <div className='w-full h-full bg-gray-300 overflow-hidden p-10 flex flex-col md:flex-row md:items-end md:justify-start justify-end relative pt-[56.25%]'>
           <iframe
@@ -42,9 +43,10 @@ const ContactMap = () => {
             style={{ filter: "grayscale(0.4) contrast(1) opacity(0.7)" }}
           ></iframe>
           {/* Detalii */}
-          <div className=' bg-grey absolute xl:top-16 xl:right-12 md:top-8 md:right-8 hidden md:flex flex-col flex-wrap py-8 rounded items-start justify-center'>
-            <div className=' px-8'>
-              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm uppercase'>
+          <div className='absolute xl:top-16 xl:right-12 md:top-8 md:right-8 hidden md:flex flex-col'>
+            {/* Adresa */}
+            <div className='px-[1.8rem] bg-grey flex-wrap py-5 rounded items-start justify-center'>
+              <h2 className='text-sm font-semibold text-gray-900 tracking-widest uppercase'>
                 Adresă
               </h2>
               <a
@@ -54,16 +56,17 @@ const ContactMap = () => {
               >
                 Str. Costache Sibiceanu nr. 8,
                 <br />
-                Sector 1 București, Romania
+                Sc. 1 București, Romania
               </a>
             </div>
-            <div className='px-8 mt-4'>
-              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-sm'>
+            {/* Email */}
+            <div className='px-[1.8rem] mt-2 bg-grey flex gap-x-4 py-5 rounded items-center justify-start'>
+              <h2 className='text-sm font-semibold tracking-widest'>
                 EMAIL
               </h2>
               <a
                 href='mailto: office@tngag.ro'
-                className='text-accent mt-2 hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
+                className='text-accent  hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
@@ -71,13 +74,16 @@ const ContactMap = () => {
                 />
                 office@tngag.ro
               </a>
-              <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-sm'>
+            </div>
+            {/* Telefon */}
+            <div className='px-[1.8rem] mt-2 bg-grey flex gap-x-4 py-5 rounded items-center justify-start'>
+              <h2 className='font-semibold tracking-widest text-sm'>
                 TELEFON
               </h2>
               <a
                 href='tel:+40728873254'
                 target='blank'
-                className='text-accent mt-2 hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
+                className='text-accent  hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
               >
                 <FontAwesomeIcon
                   icon={faPhone}
@@ -88,19 +94,19 @@ const ContactMap = () => {
             </div>
           </div>
           {/* Program */}
-          <div className='xl:w-[22%] lg:w-[35%] md:w-[43%]  bg-grey z-[7] hidden md:flex flex-col w-full p-4  rounded absolute md:bottom-44 md:left-4 xl:bottom-52 xl:left-16'>
-            <h3 className='font-semibold text-xl tracking-widest mb-4'>
+          <div className=' hidden md:flex flex-col p-4 w-full md:w-[43%] lg:w-[35%] xl:w-[22%] bg-grey z-[7] rounded absolute md:bottom-44 md:left-4 xl:bottom-52 xl:left-16'>
+            <h3 className='font-semibold text-lg tracking-widest mb-4'>
               Program:
             </h3>
 
             <div className='relative mb-4'>
-              <p className='leading-relaxed text-gray-900 font-semibold flex flex-col lg:flex-row gap-x-1 text-base'>
+              <p className=' flex flex-col lg:flex-row gap-x-1 text-base font-semibold leading-relaxed text-gray-900'>
                 <span className='text-accent'>Luni-Vineri:</span> 08:00 am -
                 17:00 pm
               </p>
             </div>
             <div className='relative'>
-              <p className='leading-relaxed text-gray-900 font-semibold text-base'>
+              <p className='text-base font-semibold leading-relaxed text-gray-900'>
                 <span className='text-accent'>Sâmbătă-Duminică:</span> Închis
               </p>
             </div>
@@ -109,14 +115,15 @@ const ContactMap = () => {
         {/* Mobile Panel */}
         <div className='flex md:hidden flex-col gap-y-6'>
           {/* Detalii */}
-          <div className='  flex flex-col rounded text-center items-center justify-center'>
-            <div className='mb-6'>
-              <h2 className='title-font font-semibold text-gray-900 tracking-widest text-lg'>
+          <div className='  flex flex-col rounded text-center items-center justify-center gap-y-8'>
+            {/* email mobil */}
+            <div>
+              <h2 className='text-sm font-semibold text-gray-900 tracking-widest'>
                 EMAIL
               </h2>
               <a
                 href='mailto: office@tngag.ro'
-                className='text-accent mb-6 hover:underline hover:underline-offset-4 hover:decoration-2 font-bold items-center flex'
+                className='flex items-center text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
               >
                 <FontAwesomeIcon
                   icon={faEnvelope}
@@ -124,13 +131,16 @@ const ContactMap = () => {
                 />
                 office@tngag.ro
               </a>
-              <h2 className='font-semibold text-gray-900 tracking-widest mt-4 text-lg'>
+            </div>
+            {/* Telefon Mobil */}
+            <div>
+            <h2 className='font-semibold text-gray-900 tracking-widest text-sm'>
                 TELEFON
               </h2>
               <a
                 href='tel:+40728873254'
                 target='blank'
-                className='text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center'
+                className='flex items-center text-accent hover:underline hover:underline-offset-4 hover:decoration-2 font-bold'
               >
                 <FontAwesomeIcon
                   icon={faPhone}
@@ -140,7 +150,7 @@ const ContactMap = () => {
               </a>
             </div>
             <div className=''>
-              <h2 className='text-lg font-semibold text-gray-900 tracking-widest uppercase'>
+              <h2 className='text-sm font-semibold text-gray-900 tracking-widest uppercase'>
                 Adresă
               </h2>
               <a
@@ -154,8 +164,8 @@ const ContactMap = () => {
             </div>
           </div>
           {/* Program */}
-          <div className='lg:w-1/3 md:w-1/2 z-[7] flex flex-col md:ml-auto w-full p-4 text-center md:mt-0 mr-4 lg:mb-[24rem] rounded'>
-            <h3 className='font-semibold text-xl text-gray-900 tracking-widest mb-4'>
+          <div className='flex flex-col lg:w-1/3 md:w-1/2 z-[7] md:ml-auto w-full p-4 text-center md:mt-0 mr-4 lg:mb-[24rem] rounded'>
+            <h3 className='font-semibold text-lg text-gray-900 tracking-widest mb-4'>
               Program:
             </h3>
             <div className='mb-4'>

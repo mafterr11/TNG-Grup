@@ -26,7 +26,7 @@ const Footer = () => {
       {/* Content */}
       <div className="flex flex-col xl:flex-row gap-x-12 gap-y-8">
         <div className="flex flex-col items-center xl:items-start justify-center gap-y-4">
-          <h4 className="text-lg text-accent">Vizitează-ne</h4>
+          <h4 className="text-lg text-accent underline decoration-2 decoration-accent underline-offset-4">Vizitează-ne</h4>
             <a
               href='https://maps.app.goo.gl/w9r4k13rvdmXyXoQ6'
               target='_blank'
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
         {/* Contact */}
         <div className="flex flex-col items-center xl:items-start justify-center gap-y-4">
-          <h4 className="text-lg text-accent">Contactează-ne</h4>
+          <h4 className="text-lg text-accent underline decoration-2 decoration-accent underline-offset-4">Contactează-ne</h4>
           <div className="flex flex-col items-center xl:items-start justify-center text-white/85">
             <a
               href='mailto: office@tngag.ro'
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
         {/* Terms */}
         <div className="flex flex-col items-center xl:items-start justify-center gap-y-4">
-          <h4 className="text-lg text-accent">Detalii</h4>
+          <h4 className="text-lg text-accent underline decoration-2 decoration-accent underline-offset-4">Detalii</h4>
           <div className="flex flex-col items-center xl:items-start justify-center text-white/85">
             <Link
               href='/termeni-si-conditii'

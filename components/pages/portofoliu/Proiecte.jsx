@@ -11,10 +11,10 @@ import { SolicitatiOferta } from "@/components/SolicitatiOferta";
 export const Proiecte = () => {
   return (
     <div className='container mx-auto'>
-      <h1 className='font-normal text-3xl md:text-4xl text-center xl:text-left'>
+      <h1 className='font-normal text-3xl md:text-4xl max-lg:text-center'>
         Proiecte civile
       </h1>
-      <span className="block border-b-2 mt-4 mb-24 border-accent w-[90%] md:w-[80%] xl:w-[50%] mx-auto xl:mx-0"></span>
+      <span className="block border-b-2 mt-4 mb-24 border-accent w-[80%] xl:w-[45%] max-lg:mx-auto"></span>
 
       {proiecte.map((proiect, proiectIndex) => (
         <div className='mb-24 md:mb-32 lg:mb-44' key={proiectIndex}>
@@ -24,10 +24,10 @@ export const Proiecte = () => {
               {proiect.nume}
             </h3>
 
-            <div className='mb-4 flex flex-col md:flex-row items-center md:gap-x-4 xl:gap-x-0'>
+            <div className='mb-4 flex flex-col md:flex-row items-center md:max-lg:gap-x-4'>
               <div className='mb-4 md:mb-0 w-full md:w-1/2'>
                 {/* MOBILE TITLE */}
-                <h3 className='mb-2 block md:hidden text-accent text-2xl text-center md:text-left'>
+                <h3 className='mb-2 block md:hidden text-accent text-2xl max-md:text-center'>
                   {proiect.nume}
                 </h3>
                 <Image
@@ -39,7 +39,7 @@ export const Proiecte = () => {
                 />
               </div>
               <div className='w-full md:w-1/2'>
-                <div className='mb-4 text-center md:text-left'>
+                <div className='mb-4 max-md:text-center'>
                   {/* DESKTOP TITLE */}
                   <h3 className='mb-2 hidden xl:flex text-accent text-2xl '>
                     {proiect.nume}

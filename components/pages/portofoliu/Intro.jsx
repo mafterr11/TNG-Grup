@@ -7,11 +7,11 @@ import { fadeIn } from "../../../variants";
 const Intro = () => {
   return (
     <div className='mb-12 xl:mb-24'>
-      <div className='w-full xl:h-[28rem] h-64 relative overflow-hidden'>
+      <div className='w-full h-64 xl:h-[28rem] relative overflow-hidden'>
         <Image
           src={p1}
           alt='Imagine portofoliu TNG Grup'
-          fill
+          fill={true}
           priority={true}
           className='object-cover'
         />
