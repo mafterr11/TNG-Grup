@@ -64,7 +64,7 @@ export function HeroCarousel() {
         initial="hidden"
         whileInView={"show"}
         viewport={{once:true, ammount:0.4}}
-        className='flex flex-col items-center md:items-start md:flex-row md:gap-x-2 font-normal'>
+        className='flex flex-col items-center md:items-start md:flex-row md:gap-x-2 font-normal capitalize'>
           Construcții<span className='text-accent'> România</span>
         </motion.h1>
         <motion.p
