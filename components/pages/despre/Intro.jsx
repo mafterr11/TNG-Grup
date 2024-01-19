@@ -25,7 +25,7 @@ const Intro = () => {
           viewport={{ once: true, ammount: 0.4 }}
           className='absolute inset-0 z-10 flex flex-col gap-y-4 items-center justify-center'
         >
-          <h3 className=' max-md:text-3xl text-4xl gap-y-2 text-white/80 flex flex-col xl:flex-row items-start justify-center xl:gap-x-2'>
+          <h3 className='text-4xl gap-y-2 text-white/80 flex flex-col xl:flex-row items-start justify-center xl:gap-x-2'>
             <div className='text-accent'>
               T<span className='text-white'>he</span>
             </div>

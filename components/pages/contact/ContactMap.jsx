@@ -134,7 +134,7 @@ const ContactMap = () => {
             </div>
             {/* Telefon Mobil */}
             <div>
-            <h2 className='font-semibold text-gray-900 tracking-widest text-sm'>
+              <h2 className='font-semibold text-gray-900 tracking-widest text-sm'>
                 TELEFON
               </h2>
               <a
@@ -156,10 +156,10 @@ const ContactMap = () => {
               <a
                 href='https://maps.app.goo.gl/1st6m75wnDy4ryyJ8'
                 target='_blank'
-                className='mt-1 text-accent flex font-bold hover hover:underline-offset-4 hover:decoration-2'
+                className='mt-1 text-accent flex flex-col items-center justify-center font-bold hover hover:underline-offset-4 hover:decoration-2'
               >
-                Str. Costache Sibiceanu <br />
-                nr. 8, Sector 1 București
+                <span>Str. Costache Sibiceanu</span>
+                <span>nr. 8, Sector 1 București</span>
               </a>
             </div>
           </div>
