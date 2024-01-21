@@ -9,7 +9,7 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 const ContactMap = () => {
   return (
     <div className="lg:pt-44 py-32">
-      <div className="flex flex-col justify-center items-center md:gap-y-[6rem]">
+      <div className="flex flex-col justify-center items-center md:gap-y-[6rem] xxl:gap-y-[12rem]">
         {/* Text */}
         <motion.div
           variants={fadeIn("down", 0.2)}
