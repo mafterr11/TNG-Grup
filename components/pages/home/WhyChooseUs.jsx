@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
           <Image alt="De ce sa alegeti TNG Grup" className="object-cover object-center h-full w-full" width={800} height={800}  src={p3}/>
         </div>
         <h2 className="text-xl font-medium mt-6 text-accent capitalize">Expertiză</h2>
-        <p className="text-base leading-relaxed mt-4">Cunoașterea noastră intimă a industriei ne permite să identificăm și să anticipăm nevoile specifice ale afacerii voastre, creând soluții personalizate care se aliniază perfect cu viziunea și obiectivele dvs.</p>
+        <p className="text-base leading-relaxed mt-4">Cunoașterea noastră intimă a industriei ne permite să identificăm și să anticipăm nevoile specifice ale proiectului, creând soluții personalizate care se aliniază perfect cu viziunea și obiectivele dvs.</p>
  
       </motion.div>
     </div>

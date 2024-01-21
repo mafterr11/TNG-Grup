@@ -75,7 +75,7 @@ export function HeroCarousel() {
         className='text-white my-4 hidden md:flex md:px-12 md:text-center xl:text-left xl:px-0'>
           Avem o viziune a unui viitor sustenabil. Înțelegem că fiabilitatea
           este cheia și lucrăm îndeaproape cu clienții noștri pentru a ne
-          asigura că îndeplinim nevoile lor și nu îi lăsăm la greu.
+          asigura că îndeplinim nevoile lor.
         </motion.p>
         <motion.div
         variants={fadeIn('down', 0.4)}

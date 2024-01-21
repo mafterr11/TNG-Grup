@@ -43,10 +43,6 @@ const dropdownLinks = [
     name: "Execuție Construcții Industriale",
   },
   {
-    path: "/servicii#execuție-construcții-agricole",
-    name: "Execuție Construcții Agricole",
-  },
-  {
     path: "/servicii#supervizare-lucrări-de-execuție",
     name: "Supervizare Lucrări De Execuție",
   },

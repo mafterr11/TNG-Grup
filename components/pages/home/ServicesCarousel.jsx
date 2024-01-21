@@ -115,7 +115,7 @@ export function ServicesCarousel() {
     <Carousel
       plugins={[
         Autoplay({
-          delay: 5000,
+          delay: 10000,
           stopOnInteraction: true,
         }),
       ]}

@@ -69,17 +69,16 @@ export default function SolicitatiOfertaForm({ onClose }) {
             </SelectTrigger>
             <SelectContent position="popper">
             <SelectItem name="constructie" value='Construcții Civile - Parter'>
-                Construcții Civile - Parter
+                Construcții Civile
               </SelectItem>
-              <SelectItem value='Construcții Civile - Cu Etaj'>
-                Construcții Civile - Cu Etaj
+              <SelectItem value='Construcții Industriale/Agricole'>
+                Construcții Industriale/Agricole
               </SelectItem>
-              <SelectItem value='Construcții Industriale'>
-                Construcții Industriale
+              <SelectItem value='Consultantă/Diriginte De Șantier'>
+                Consultantă/Diriginte De Șantier
               </SelectItem>
-              <SelectItem value='Agricole'>Agricole</SelectItem>
-              <SelectItem value='Diriginte De Șantier'>
-                Diriginte De Șantier
+              <SelectItem value='Management de proiect'>
+                Management de proiect
               </SelectItem>
               <SelectItem value='Altceva'>Altceva</SelectItem>
             </SelectContent>
@@ -149,22 +148,6 @@ export default function SolicitatiOfertaForm({ onClose }) {
             <SelectItem name="inceput" value='Cât mai repede'>Cât mai repede</SelectItem>
               <SelectItem value='În următoarele 6 luni'>În următoarele 6 luni</SelectItem>
               <SelectItem value='Nu m-am hotărât încă'>Nu m-am hotărât încă</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        {/* Intrebarea 4 */}
-        <div>
-          <Label htmlFor="etapa">În ce etapă sunteți?</Label>
-          <Select onValueChange={setEtapa} id="etapa" name="etapa">
-            <SelectTrigger id="etapa">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-            <SelectItem name="etapa" value='Urmează să cumpăr terenul'>Urmează să cumpăr terenul</SelectItem>
-              <SelectItem value='Este planificată elaborarea proiectului'>Este planificată elaborarea proiectului</SelectItem>
-              <SelectItem value='Sunt în proces de a căpăta autorizația'>Sunt în proces de a căpăta autorizația</SelectItem>
-              <SelectItem value='Am obținut autorizația'>Am obținut autorizația</SelectItem>
-              <SelectItem value='Construcția a început deja'>Construcția a început deja</SelectItem>
             </SelectContent>
           </Select>
         </div>

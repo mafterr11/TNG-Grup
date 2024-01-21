@@ -49,7 +49,7 @@ const Team = () => {
           viewport={{ once: true, ammount: 0.4 }}
           className='flex flex-col text-center w-full mb-20'
         >
-          <h3 className='mb-8 text-accent font-normal'>Echipa Noastră</h3>
+          <h3 className='mb-8 text-accent font-normal'>Echipa de Management</h3>
           <p className='lg:w-full mx-auto text-base leading-relaxed'>
             Inovarea și adaptabilitatea sunt calitățile cheie ale echipei TNG
             Grup. Tinerii noștri profesioniști sunt mereu la curent cu ultimele
