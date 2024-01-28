@@ -1,74 +1,105 @@
-"use client"
-import { useState } from "react"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { DrawerClose } from "./ui/drawer"
-import { Button } from "@/components/ui/button"
-import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
+"use client";
+import { useState } from "react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { DrawerClose } from "./ui/drawer";
+import { Button } from "@/components/ui/button";
+import {
+  SelectValue,
+  SelectTrigger,
+  SelectItem,
+  SelectContent,
+  Select,
+} from "@/components/ui/select";
 
 export default function SolicitatiOfertaForm({ onClose }) {
-  const [constructie, setConstructie] = useState('');
-  const [judet, setJudet] = useState('');
-  const [inceput, setInceput] = useState('');
-  const [etapa, setEtapa] = useState('');
+  const [constructie, setConstructie] = useState("");
+  const [judet, setJudet] = useState("");
+  const [inceput, setInceput] = useState("");
+  const [etapa, setEtapa] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
     const formData = {
       nume: event.target.nume.value,
       prenume: event.target.prenume.value,
       email: event.target.email.value,
       telefon: event.target.telefon.value,
       mesaj: event.target.mesaj.value,
+      constructie,
+      judet,
+      inceput,
+      etapa,
     };
 
-    const emailBody = `Nume: ${formData.nume}\n` +
-                      `Prenume: ${formData.prenume}\n` +
-                      `Email: ${formData.email}\n` +
-                      `Telefon: ${formData.telefon}\n` +
-                      `Constructie: ${constructie}\n` +
-                      `Judet: ${judet}\n` +
-                      `Inceput: ${inceput}\n` +
-                      `Etapa: ${etapa}\n` +
-                      `Mesaj: ${formData.mesaj}`;
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    window.location.href = `mailto:mafterr11@gmail.com?subject=Solicitare Oferta&body=${encodeURIComponent(emailBody)}`;
+      const data = await response.json();
+      if (data.success) {
+        alert("Success");
+      } else {
+        alert("Failed");
+      }
+    } catch (error) {
+      alert("Catch error fail");
+    }
   };
-  
+
   return (
-    <div className="xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto">
-      <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
-      <form className="mt-4 space-y-2 xs:space-y-4" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-2 gap-4">
+    <div className='xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto'>
+      <h2 className='text-xl font-semibold text-accent'>Solicitați o ofertă</h2>
+      <form className='mt-4 space-y-2 xs:space-y-4' onSubmit={handleSubmit}>
+        <div className='grid grid-cols-2 gap-4'>
           <div>
-            <Label htmlFor="nume">Nume</Label>
-            <Input id="nume" placeholder="Nume" />
+            <Label htmlFor='nume'>Nume</Label>
+            <Input id='nume' placeholder='Nume' />
           </div>
           <div>
-            <Label htmlFor="prenume">Prenume</Label>
-            <Input id="prenume" placeholder="Prenume" />
+            <Label htmlFor='prenume'>Prenume</Label>
+            <Input id='prenume' placeholder='Prenume' />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className='grid grid-cols-2 gap-4'>
           <div>
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" placeholder="Email" type="email" autoComplete="email" /> 
+            <Label htmlFor='email'>Email</Label>
+            <Input
+              id='email'
+              name='email'
+              placeholder='Email'
+              type='email'
+              autoComplete='email'
+            />
           </div>
           <div>
-            <Label htmlFor="telefon">Telefon</Label>
-            <Input id="telefon" placeholder="Telefon" />
+            <Label htmlFor='telefon'>Telefon</Label>
+            <Input id='telefon' placeholder='Telefon' />
           </div>
         </div>
         {/* Intrebarea 1 */}
         <div>
-          <Label htmlFor="constructie">Ce doriți să construiți?</Label>
-          <Select onValueChange={setConstructie} id="constructie" name="constructie">
-            <SelectTrigger id="constructie">
-              <SelectValue placeholder="Select" />
+          <Label htmlFor='constructie'>Ce doriți să construiți?</Label>
+          <Select
+            onValueChange={setConstructie}
+            id='constructie'
+            name='constructie'
+          >
+            <SelectTrigger id='constructie'>
+              <SelectValue placeholder='Select' />
             </SelectTrigger>
-            <SelectContent position="popper">
-            <SelectItem name="constructie" value='Construcții Civile - Parter'>
+            <SelectContent position='popper'>
+              <SelectItem
+                name='constructie'
+                value='Construcții Civile - Parter'
+              >
                 Construcții Civile
               </SelectItem>
               <SelectItem value='Construcții Industriale/Agricole'>
@@ -86,13 +117,15 @@ export default function SolicitatiOfertaForm({ onClose }) {
         </div>
         {/* Intrebarea 2 */}
         <div>
-          <Label htmlFor="judet">În ce județ va fi construcția?</Label>
-          <Select onValueChange={setJudet} id="judet" name="judet">
-            <SelectTrigger id="judet">
-              <SelectValue placeholder="Select" />
+          <Label htmlFor='judet'>În ce județ va fi construcția?</Label>
+          <Select onValueChange={setJudet} id='judet' name='judet'>
+            <SelectTrigger id='judet'>
+              <SelectValue placeholder='Select' />
             </SelectTrigger>
-            <SelectContent position="popper">
-            <SelectItem name="judet" value='București'>București</SelectItem>
+            <SelectContent position='popper'>
+              <SelectItem name='judet' value='București'>
+                București
+              </SelectItem>
               <SelectItem value='Ilfov'>Ilfov</SelectItem>
               <SelectItem value='Alba'>Alba</SelectItem>
               <SelectItem value='Arad'>Arad</SelectItem>
@@ -139,30 +172,41 @@ export default function SolicitatiOfertaForm({ onClose }) {
         </div>
         {/* Intrebarea 3 */}
         <div>
-          <Label htmlFor="inceput" className="leading-5">Când v-ați dori să începeți construcția?</Label>
-          <Select onValueChange={setInceput} id="inceput" name="inceput">
-            <SelectTrigger id="inceput">
-              <SelectValue placeholder="Select" />
+          <Label htmlFor='inceput' className='leading-5'>
+            Când v-ați dori să începeți construcția?
+          </Label>
+          <Select onValueChange={setInceput} id='inceput' name='inceput'>
+            <SelectTrigger id='inceput'>
+              <SelectValue placeholder='Select' />
             </SelectTrigger>
-            <SelectContent position="popper">
-            <SelectItem name="inceput" value='Cât mai repede'>Cât mai repede</SelectItem>
-              <SelectItem value='În următoarele 6 luni'>În următoarele 6 luni</SelectItem>
-              <SelectItem value='Nu m-am hotărât încă'>Nu m-am hotărât încă</SelectItem>
+            <SelectContent position='popper'>
+              <SelectItem name='inceput' value='Cât mai repede'>
+                Cât mai repede
+              </SelectItem>
+              <SelectItem value='În următoarele 6 luni'>
+                În următoarele 6 luni
+              </SelectItem>
+              <SelectItem value='Nu m-am hotărât încă'>
+                Nu m-am hotărât încă
+              </SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div>
-          <Label htmlFor="mesaj">Mesaj</Label>
-          <Textarea id="mesaj" placeholder="Introduceți mesajul aici." />
+          <Label htmlFor='mesaj'>Mesaj</Label>
+          <Textarea id='mesaj' placeholder='Introduceți mesajul aici.' />
         </div>
-        <div className="text-right flex gap-x-4">
-          <Button type="submit" variant="orange" size="full">Trimite</Button>
+        <div className='text-right flex gap-x-4'>
+          <Button type='submit' variant='orange' size='full'>
+            Trimite
+          </Button>
           <DrawerClose asChild>
-          <Button variant="orange" size="full" onClick={onClose}>Închide</Button>
-        </DrawerClose>
+            <Button variant='orange' size='full' onClick={onClose}>
+              Închide
+            </Button>
+          </DrawerClose>
         </div>
       </form>
     </div>
-  )
+  );
 }
-
