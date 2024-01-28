@@ -37,6 +37,9 @@ module.exports = {
         DEFAULT: "#e68530",
         hover: "#da863c",
       },
+      red: {
+        DEFAULT: "#FE3939",
+      },
     },
     extend: { 
       boxShadow: {

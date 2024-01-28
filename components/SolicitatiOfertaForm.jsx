@@ -12,8 +12,10 @@ import {
   SelectContent,
   Select,
 } from "@/components/ui/select";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function SolicitatiOfertaForm({ onClose }) {
+  const { toast } = useToast();
   const [constructie, setConstructie] = useState("");
   const [judet, setJudet] = useState("");
   const [inceput, setInceput] = useState("");
@@ -45,12 +47,21 @@ export default function SolicitatiOfertaForm({ onClose }) {
 
       const data = await response.json();
       if (data.success) {
-        alert("Success");
+        toast({
+          title: "Informațiile au fost trimise cu success!",
+          description: "Vă vom contacta cât mai curând!",
+        });
       } else {
-        alert("Failed");
+        toast({
+          title: "Ceva nu a mers bine!",
+          description: "Vă rugăm să încercați mai târziu!",
+        });
       }
     } catch (error) {
-      alert("Catch error fail");
+      toast({
+        title: "Ceva nu a mers bine!",
+        description: "Vă rugăm să încercați mai târziu!",
+      });
     }
   };
 
@@ -197,9 +208,17 @@ export default function SolicitatiOfertaForm({ onClose }) {
           <Textarea id='mesaj' placeholder='Introduceți mesajul aici.' />
         </div>
         <div className='text-right flex gap-x-4'>
-          <Button type='submit' variant='orange' size='full'>
-            Trimite
-          </Button>
+          <DrawerClose asChild>
+            <Button
+              type='submit'
+              variant='orange'
+              size='full'
+              onClick={onClose}
+            >
+              Trimite
+            </Button>
+          </DrawerClose>
+
           <DrawerClose asChild>
             <Button variant='orange' size='full' onClick={onClose}>
               Închide
