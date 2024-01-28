@@ -84,7 +84,7 @@ export function HeroCarousel() {
         viewport={{once:true, ammount:0.4}}
         >
         <Link href='/portofoliu'>
-          <Button variant='orange' size='xl'>
+          <Button variant='orange' size='lg'>
             Portofoliu
           </Button>
         </Link>

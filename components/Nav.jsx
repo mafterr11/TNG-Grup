@@ -66,7 +66,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
               <NavigationMenuList>
                 <NavigationMenuItem as='div' className={`${linkStyles}`}>
                   <NavigationMenuTrigger as='span'>
-                    <Link href='/servicii' className={`${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-lg hover:scale-[0.97]' : 'capitalize text-lg hover hover:scale-[0.97]'}`}>
+                    <Link href='/servicii' className={`${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-base hover:scale-[0.97]' : 'capitalize text-base hover hover:scale-[0.97]'}`}>
                       <span>{link.name}</span>
                     </Link>
                   </NavigationMenuTrigger>
@@ -95,7 +95,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
           );
         } else {
           return (
-            <Link key={index} href={link.path} className={`${linkStyles} ${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-lg hover:scale-[0.97]' : 'capitalize text-lg hover hover:scale-[0.97]'}`}>
+            <Link key={index} href={link.path} className={`${linkStyles} ${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-base hover:scale-[0.97]' : 'capitalize text-base hover hover:scale-[0.97]'}`}>
               <span>{link.name}</span>
             </Link>
           );

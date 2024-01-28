@@ -14,7 +14,7 @@ const Despre = () => {
     <div className='py-[6rem]'>
       <Intro />
       <CompanyIntro />
-      <Team />
+      {/* <Team /> */}
     </div>
   );
 };

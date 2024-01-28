@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        active ? "bg-black-heavy py-4 text-white" : "bg-black/95 text-white py-3"
+        active ? "bg-black-heavy py-4 text-white" : "bg-black/95 text-white py-2"
       } fixed top-0 right-0 left-0 w-full z-50 transition-all duration-200 border-b-[2px] border-accent`}
     >
       <div>
