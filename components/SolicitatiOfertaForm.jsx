@@ -53,7 +53,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" placeholder="Email" type="email" autoComplete="email" />
+            <Input id="email" name="email" placeholder="Email" type="email" autoComplete="email" /> 
           </div>
           <div>
             <Label htmlFor="telefon">Telefon</Label>
