@@ -50,7 +50,7 @@ const ContactMap = () => {
               {/* Adresa */}
               <div className="px-[1.8rem] bg-grey flex-wrap py-5 rounded items-start justify-center">
                 <h2 className="text-sm font-semibold text-gray-900 tracking-widest uppercase">
-                  Adresă
+                  Adresă:
                 </h2>
                 <a
                   href="https://maps.app.goo.gl/1st6m75wnDy4ryyJ8"
@@ -63,8 +63,8 @@ const ContactMap = () => {
                 </a>
               </div>
               {/* Email */}
-              <div className="px-[1.8rem] mt-2 bg-grey flex gap-x-4 py-5 rounded items-center justify-start">
-                <h2 className="text-sm font-semibold tracking-widest">EMAIL</h2>
+              <div className="px-[1.8rem] mt-2 bg-grey flex gap-x-2 py-5 rounded items-center justify-start">
+                <h2 className="text-sm font-semibold tracking-widest">EMAIL:</h2>
                 <a
                   href="mailto: office@tngag.ro"
                   className="text-accent  hover:underline hover:underline-offset-4 hover:decoration-2 font-bold flex items-center"
@@ -77,9 +77,9 @@ const ContactMap = () => {
                 </a>
               </div>
               {/* Telefon */}
-              <div className="px-[1.8rem] mt-2 bg-grey flex gap-x-4 py-5 rounded items-center justify-start">
+              <div className="px-[1.8rem] mt-2 bg-grey flex gap-x-2 py-5 rounded items-center justify-start">
                 <h2 className="font-semibold tracking-widest text-sm">
-                  TELEFON
+                  TELEFON:
                 </h2>
                 <a
                   href="tel:+40728873254"
@@ -120,7 +120,7 @@ const ContactMap = () => {
               {/* email mobil */}
               <div>
                 <h2 className="text-sm font-semibold text-gray-900 tracking-widest">
-                  EMAIL
+                  EMAIL:
                 </h2>
                 <a
                   href="mailto: office@tngag.ro"
@@ -136,7 +136,7 @@ const ContactMap = () => {
               {/* Telefon Mobil */}
               <div>
                 <h2 className="font-semibold text-gray-900 tracking-widest text-sm">
-                  TELEFON
+                  TELEFON:
                 </h2>
                 <a
                   href="tel:+40728873254"

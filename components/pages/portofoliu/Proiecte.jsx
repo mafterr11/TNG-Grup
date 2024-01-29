@@ -123,7 +123,7 @@ export const Proiecte = () => {
                     <h4 className='text-lg md:text-xl'>Preț execuție:</h4>
                     <span className='text-sm'>Pornind de la</span>
                   </div>
-                  <SolicitatiOferta customStyle='rounded-full text-xs px-4 h-8' />
+                  <SolicitatiOferta customStyle='rounded text-xs px-4 h-8' />
                 </div>
               </div>
             </div>

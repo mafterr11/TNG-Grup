@@ -13,7 +13,7 @@ import {
 export const links = [
   {
     path: "/",
-    name: "acasa",
+    name: "acasă",
   },
   {
     path: "/despre",

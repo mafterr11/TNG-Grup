@@ -42,7 +42,7 @@ const dropdownLinks = [
 export const links = [
   {
     path: "/",
-    name: "acasa",
+    name: "acasă",
     icon: <IoHome />,
   },
   {

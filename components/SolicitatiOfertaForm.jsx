@@ -66,7 +66,8 @@ export default function SolicitatiOfertaForm({ onClose }) {
   };
 
   return (
-    <div className='xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto'>
+    <div className='xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto relative'>
+      <div className="fixed top-2 right-0 left-0 mx-auto bg-white/10 rounded-full h-[0.6rem] w-[4.5rem]"/>
       <h2 className='text-xl font-semibold text-accent'>Solicitați o ofertă</h2>
       <form className='mt-4 space-y-2 xs:space-y-4' onSubmit={handleSubmit}>
         <div className='grid grid-cols-2 gap-4'>
