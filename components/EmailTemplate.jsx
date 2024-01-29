@@ -8,7 +8,6 @@ export const EmailTemplate = ({
   constructie,
   judet,
   inceput,
-  etapa,
   mesaj,
 }) => (
   <div>
@@ -21,7 +20,6 @@ export const EmailTemplate = ({
     <p>Tipul de construcție: {constructie}</p>
     <p>În ce județ: {judet}</p>
     <p>Când vrem să începem: {inceput}</p>
-    <p>Etapa în care suntem: {etapa}</p>
     <p>Mesaj: {mesaj}</p>
   </div>
 );

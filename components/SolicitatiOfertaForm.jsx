@@ -19,7 +19,6 @@ export default function SolicitatiOfertaForm({ onClose }) {
   const [constructie, setConstructie] = useState("");
   const [judet, setJudet] = useState("");
   const [inceput, setInceput] = useState("");
-  const [etapa, setEtapa] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -33,7 +32,6 @@ export default function SolicitatiOfertaForm({ onClose }) {
       constructie,
       judet,
       inceput,
-      etapa,
     };
 
     try {
