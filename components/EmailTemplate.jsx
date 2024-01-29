@@ -11,7 +11,7 @@ export const EmailTemplate = ({
   etapa,
   mesaj,
 }) => (
-  <div>
+  <div> 
     <h1>
       Solicitare noua de oferta - TNG GRUP!
     </h1>
