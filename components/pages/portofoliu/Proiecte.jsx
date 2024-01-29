@@ -51,7 +51,7 @@ export const Proiecte = () => {
                   width={500}
                   height={500}
                   alt='Imagine principala proiect de executie'
-                  className='rounded-xl md:mb-16 lg:mb-0'
+                  className='rounded-xl md:mb-16 lg:mb-0 object-cover w-auto'
                 />
               </div>
               <div className='w-full md:w-1/2'>
