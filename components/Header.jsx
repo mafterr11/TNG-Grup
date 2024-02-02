@@ -34,6 +34,7 @@ const Header = () => {
               src={logo}
               width={70}
               height={70}
+              priority
               alt='Tng Grup logo'
               className='rounded-[50%] border-2 border-accent'
             />
