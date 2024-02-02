@@ -36,7 +36,7 @@ const CompanyIntro = () => {
             </p>
           </div>
         </div>
-        <div className='w-full md:w-[70%] xl:w-[40%] h-42'>
+        <div className='w-full md:w-[70%] xl:w-[30%] h-42'>
           <Image
             src={p1}
             alt='TNG Grup logo'
