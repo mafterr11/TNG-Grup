@@ -23,17 +23,17 @@ const Header = () => {
   return (
     <header
       className={`${
-        active ? "bg-black-heavy py-4 text-white" : "bg-black/95 text-white py-2"
+        active ? "bg-black-heavy py-3 text-white" : "bg-black/95 text-white py-2"
       } fixed top-0 right-0 left-0 w-full z-50 transition-all duration-200 border-b-[2px] border-accent`}
     >
       <div>
-        <div className='flex items-center justify-evenly md:justify-between md:px-16 xl:justify-evenly xl:px-0'>
+        <div className='flex items-center justify-evenly md:max-lg:justify-between max-md:px-16 xl:gap-x-32'>
           {/* logo */}
           <Link href='/' className='flex items-center justify-center gap-x-4'>
             <Image
               src={logo}
-              width={70}
-              height={70}
+              width={60}
+              height={60}
               priority
               alt='Tng Grup logo'
               className='rounded-[50%] border-2 border-accent'
@@ -49,7 +49,7 @@ const Header = () => {
           />
           {/* btn */}
           <div className="hidden xl:block">
-          <SolicitatiOferta />
+          <SolicitatiOferta customStyle={"p-3"}/>
           </div>
           {/* mobile nav */}
           <NavMobile
