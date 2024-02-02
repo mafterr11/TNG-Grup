@@ -154,7 +154,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                           <DrawerFooter>
                             <DrawerClose
                               as='div'
-                              className='text-white bg-orange hover:bg-orange-hover hover:scale-[0.98] w-[50%] py-4 mx-auto'
+                              className='text-white bg-orange hover:bg-orange-hover hover:scale-[0.98] w-[50%] py-3 px-3 mx-auto'
                             >
                               Închide
                             </DrawerClose>

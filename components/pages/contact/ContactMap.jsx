@@ -23,9 +23,9 @@ const ContactMap = () => {
             <span className="text-accent">conectăm.</span>
           </h2>
           <h3 className="font-normal text-[1.7rem]">
-            <span className="text-accent">Construiește</span> cu noi -{" "}
-            <span className="text-accent">echipa TNG</span> îți aduce visul la{" "}
-            <span className="text-accent">realitate</span>
+            Construiește cu noi -
+            echipa TNG îți aduce visul la
+            realitate
           </h3>
         </motion.div>
         {/* Harta */}
