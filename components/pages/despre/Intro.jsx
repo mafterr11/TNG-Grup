@@ -25,16 +25,10 @@ const Intro = () => {
           viewport={{ once: true, ammount: 0.4 }}
           className="absolute inset-0 z-10 flex flex-col gap-y-4 items-center justify-center"
         >
-          <div className="text-4xl font-bold gap-y-2 text-white/80 flex flex-col items-center justify-center xl:flex-row xl:gap-x-2">
-            <div className="text-white">
-              <span className="text-accent">T</span>he
-            </div>
-            <div className="text-white">
-              <span className="text-accent">N</span>ew
-            </div>
-            <div className="text-white">
-              <span className="text-accent">G</span>eneration
-            </div>
+          <div className="text-4xl font-bold text-white flex flex-col items-start justify-center xl:flex-row xl:justify-start space-x-0 xl:space-x-2">
+            <span className="inline-block tracking-wide"><span className="text-accent">T</span>he</span>
+            <span className="inline-block tracking-wide"><span className="text-accent">N</span>ew</span>
+            <span className="inline-block tracking-wide"> <span className="text-accent">G</span>eneration</span>
           </div>
 
           <h3 className="flex flex-row items-center justify-center font-normal text-xl xl:text-2xl text-white/80">
