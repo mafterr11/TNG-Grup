@@ -42,7 +42,7 @@ export function HeroCarousel() {
                 src={picture.image}
                 fill
                 priority={true}
-                alt='TNG Grup imagini de intro'
+                alt='TNG Grup imagini intro home page'
                 className='object-cover'
               />
             </CarouselItem>

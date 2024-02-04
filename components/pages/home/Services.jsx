@@ -17,7 +17,7 @@ const Services = () => {
       >
         <Image
           src={ServicesCarouselImg}
-          alt='TNG Grup lista de servicii'
+          alt='TNG Grup servicii'
           className='object-contain rounded-b-[30%]'
         />
         <span className='w-2/3 border-b-2 border-accent mt-10'></span>
