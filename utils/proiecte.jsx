@@ -3,7 +3,15 @@ export const proiecte = [
   {
     nume: "Casa Parter - Nana - Calarasi",
     slug: "project-one",
-    imagine: "/test.jpg",
+    imagine: {
+      prezentare: "/test.jpg",
+      extra1: "/test.jpg",
+      extra2: "/test.jpg",
+      extra3: "/test.jpg",
+      extra4: "/test.jpg",
+      extra5: "/test.jpg",
+      extra6: "/test.jpg",
+    },
     detalii: {
       numarDormitoare: 3,
       iconDormitoare: <LiaBedSolid />,
@@ -19,7 +27,15 @@ export const proiecte = [
   {
     nume: "Casa P+1E - Sector 4 - Bucuresti",
     slug: "project-two",
-    imagine: "/test.jpg",
+     imagine: {
+      prezentare: "/test.jpg",
+      extra1: "/test.jpg",
+      extra2: "/test.jpg",
+      extra3: "/test.jpg",
+      extra4: "/test.jpg",
+      extra5: "/test.jpg",
+      extra6: "/test.jpg",
+    },
     detalii: {
       numarDormitoare: 3,
       iconDormitoare: <LiaBedSolid />,
@@ -35,7 +51,15 @@ export const proiecte = [
   {
     nume: "Casa P+1E - Clinceni - Ilfov",
     slug: "project-three",
-    imagine: "/test.jpg",
+     imagine: {
+      prezentare: "/test.jpg",
+      extra1: "/test.jpg",
+      extra2: "/test.jpg",
+      extra3: "/test.jpg",
+      extra4: "/test.jpg",
+      extra5: "/test.jpg",
+      extra6: "/test.jpg",
+    },
     detalii: {
       numarDormitoare: 3,
       iconDormitoare: <LiaBedSolid />,
