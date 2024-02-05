@@ -14,6 +14,22 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 
+// const formSchema = z.object({
+//   nume: z.string().min(3, {
+//     message: "Cel putin 3 caractere",
+//   }),
+//   prenume: z.string().min(3, {
+//     message: "Cel putin 3 caractere",
+//   }),
+//   email: z.string().email(),
+//   telefon: z.string().min(10, {
+//     message: "Introduceti un numar valid",
+//   }),
+//   constructie: z.optional(z.string()),
+//   judet: z.optional(z.string()),
+//   inceput: z.optional(z.string()),
+// });
+
 export default function SolicitatiOfertaForm({ onClose }) {
   const { toast } = useToast();
   const [constructie, setConstructie] = useState("");
