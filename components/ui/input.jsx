@@ -14,6 +14,6 @@ const Input = React.forwardRef(({ className, type, ...props }, ref) => {
       {...props} />)
   );
 })
-Input.displayName = "Input"
+Input.displayName = "Input" 
 
 export { Input }
