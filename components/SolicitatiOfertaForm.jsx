@@ -220,7 +220,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                   >
                     <FormControl>
                       <SelectTrigger id="constructie">
-                        <SelectValue placeholder="Select" />
+                        <SelectValue placeholder="Selectati" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent position="popper">
@@ -260,7 +260,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                   >
                     <FormControl>
                       <SelectTrigger id="judet">
-                        <SelectValue placeholder="Select" />
+                        <SelectValue placeholder="Selectati" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent position="popper">
@@ -337,7 +337,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                   >
                     <FormControl>
                       <SelectTrigger id="inceput">
-                        <SelectValue placeholder="Select" />
+                        <SelectValue placeholder="Selectati" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent position="popper">
