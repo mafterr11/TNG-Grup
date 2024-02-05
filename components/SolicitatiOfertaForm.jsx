@@ -106,7 +106,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
     <div className="xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto relative">
       <div className="fixed top-2 right-0 left-0 mx-auto bg-white/10 rounded-full h-[0.6rem] w-[4.5rem]" />
       <Form {...form}>
-        <h2 className="text-xl font-semibold text-accent">
+        <h2 className="text-xl font-semibold text-accent text-center">
           Solicitați o ofertă
         </h2>
         <form
