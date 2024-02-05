@@ -1,4 +1,16 @@
 "use client";
+// import * as z from "zod";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import { useForm } from "react-hook-form";
+// import {
+//   Form,
+//   FormControl,
+//   FormDescription,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from "@/components/ui/form"
 import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -31,6 +43,19 @@ import { useToast } from "@/components/ui/use-toast";
 // });
 
 export default function SolicitatiOfertaForm({ onClose }) {
+  // const form = useForm({
+  //   resolver: zodResolver(formSchema),
+  //   defaultValues: {
+  //     nume: "",
+  //     prenume: "",
+  //     email: "",
+  //     telefon: "",
+  //     constructie: "",
+  //     judet: "",
+  //     inceput: "",
+  //   }
+  // })
+
   const { toast } = useToast();
   const [constructie, setConstructie] = useState("");
   const [judet, setJudet] = useState("");
