@@ -27,7 +27,7 @@ const Header = () => {
       } fixed top-0 right-0 left-0 w-full z-50 transition-all duration-200 border-b-[2px] border-accent`}
     >
       <div>
-        <div className='flex items-center justify-evenly md:max-lg:justify-between max-md:px-16 xl:gap-x-32'>
+        <div className='flex items-center justify-between md:max-lg:justify-between px-10 md:px-16 xl:gap-x-32'>
           {/* logo */}
           <Link href='/' className='flex items-center justify-center gap-x-4'>
             <Image
@@ -36,7 +36,7 @@ const Header = () => {
               height={60}
               priority
               alt='Tng Grup logo'
-              className='rounded-[50%] border-2 border-accent'
+              className='rounded-[50%] border-2 border-accent hidden xl:flex'
             />
             <h3>
               <span className='text-accent'>TNG</span> GRUP

@@ -127,6 +127,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                         placeholder="Numele dvs. aici"
                         type="name"
                         id="nume"
+                        autoComplete="name"
                         {...field}
                       />
                     </FormControl>
@@ -147,6 +148,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                         placeholder="Numele dvs. aici"
                         type="name"
                         id="prenume"
+                        autoComplete="name"
                         {...field}
                       />
                     </FormControl>
@@ -170,6 +172,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                         placeholder="exemplu@gmail.com"
                         type="email"
                         id="email"
+                        autoComplete="email"
                         {...field}
                       />
                     </FormControl>
@@ -191,6 +194,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                         placeholder="Telefonul dvs. aici"
                         type="tel"
                         id="telefon"
+                        autoComplete="tel"
                         {...field}
                       />
                     </FormControl>
