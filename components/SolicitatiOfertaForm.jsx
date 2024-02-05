@@ -1,18 +1,17 @@
 "use client";
-// import * as z from "zod";
-// import { zodResolver } from "@hookform/resolvers/zod";
-// import { useForm } from "react-hook-form";
-// import {
-//   Form,
-//   FormControl,
-//   FormDescription,
-//   FormField,
-//   FormItem,
-//   FormLabel,
-//   FormMessage,
-// } from "@/components/ui/form"
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useState } from "react";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { DrawerClose } from "./ui/drawer";
@@ -26,55 +25,48 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 
-// const formSchema = z.object({
-//   nume: z.string().min(3, {
-//     message: "Cel putin 3 caractere",
-//   }),
-//   prenume: z.string().min(3, {
-//     message: "Cel putin 3 caractere",
-//   }),
-//   email: z.string().email(),
-//   telefon: z.string().min(10, {
-//     message: "Introduceti un numar valid",
-//   }),
-//   constructie: z.optional(z.string()),
-//   judet: z.optional(z.string()),
-//   inceput: z.optional(z.string()),
-// });
+const formSchema = z.object({
+  nume: z.string().min(3, {
+    message: "Min 3 caractere",
+  }),
+  prenume: z.string().min(3, {
+    message: "Min 3 caractere",
+  }),
+  email: z.string().email(),
+  telefon: z.string().min(10, {
+    message: "Introduceti numarul",
+  }),
+  mesaj: z
+    .string()
+    .max(200, {
+      message: "Max 200 caractere.",
+    }),
+  constructie: z.optional(z.string()),
+  judet: z.optional(z.string()),
+  inceput: z.optional(z.string()),
+});
 
 export default function SolicitatiOfertaForm({ onClose }) {
-  // const form = useForm({
-  //   resolver: zodResolver(formSchema),
-  //   defaultValues: {
-  //     nume: "",
-  //     prenume: "",
-  //     email: "",
-  //     telefon: "",
-  //     constructie: "",
-  //     judet: "",
-  //     inceput: "",
-  //   }
-  // })
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      nume: "",
+      prenume: "",
+      email: "",
+      telefon: "",
+      mesaj: "",
+      constructie: "",
+      judet: "",
+      inceput: "",
+    },
+  });
 
   const { toast } = useToast();
   const [constructie, setConstructie] = useState("");
   const [judet, setJudet] = useState("");
   const [inceput, setInceput] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = {
-      nume: event.target.nume.value,
-      prenume: event.target.prenume.value,
-      email: event.target.email.value,
-      telefon: event.target.telefon.value,
-      mesaj: event.target.mesaj.value,
-      constructie,
-      judet,
-      inceput,
-    };
-
+  const onSubmit = async (formData) => {
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -83,189 +75,320 @@ export default function SolicitatiOfertaForm({ onClose }) {
         },
         body: JSON.stringify(formData),
       });
-
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
       const data = await response.json();
       if (data.success) {
         toast({
-          title: "Informațiile au fost trimise cu success!",
+          title: "Informațiile au fost trimise cu succes!",
           description: "Vă vom contacta cât mai curând!",
         });
+        setTimeout(onClose, 500);
       } else {
         toast({
           title: "Ceva nu a mers bine!",
-          description: "Vă rugăm să încercați mai târziu!",
+          description: data.message || "Vă rugăm să încercați mai târziu!",
         });
       }
     } catch (error) {
       toast({
         title: "Ceva nu a mers bine!",
-        description: "Vă rugăm să încercați mai târziu!",
+        description: error.message || "Vă rugăm să încercați mai târziu!",
       });
     }
   };
+  
 
   return (
     <div className="xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto relative">
       <div className="fixed top-2 right-0 left-0 mx-auto bg-white/10 rounded-full h-[0.6rem] w-[4.5rem]" />
-      <h2 className="text-xl font-semibold text-accent">Solicitați o ofertă</h2>
-      <form className="mt-4 space-y-2 xs:space-y-4" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <Label htmlFor="nume">Nume</Label>
-            <Input id="nume" placeholder="Nume" />
+      <Form {...form}>
+        <h2 className="text-xl font-semibold text-accent">
+          Solicitați o ofertă
+        </h2>
+        <form
+          className="mt-4 space-y-2 xs:space-y-4"
+          onSubmit={form.handleSubmit(onSubmit)}
+        >
+          <div className="grid grid-cols-2 gap-4">
+            {/* Nume si Prenume */}
+            <div>
+              <FormField
+                control={form.control}
+                name="nume"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel htmlFor="nume">Nume</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Numele dvs. aici"
+                        type="name"
+                        id="nume"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red"/>
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div>
+              <FormField
+                control={form.control}
+                name="prenume"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel htmlFor="prenume">Prenume</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Numele dvs. aici"
+                        type="name"
+                        id="prenume"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red"/>
+                  </FormItem>
+                )}
+              />
+            </div>
           </div>
-          <div>
-            <Label htmlFor="prenume">Prenume</Label>
-            <Input id="prenume" placeholder="Prenume" />
+          <div className="grid grid-cols-2 gap-4">
+            {/* Email */}
+            <div>
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel htmlFor="email">Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="exemplu@gmail.com"
+                        type="email"
+                        id="email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red"/>
+                  </FormItem>
+                )}
+              />
+            </div>
+            {/* Tel */}
+            <div>
+              <FormField
+                control={form.control}
+                name="telefon"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel htmlFor="telefon">Telefon</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Telefonul dvs. aici"
+                        type="tel"
+                        id="telefon"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage className="text-red"/>
+                  </FormItem>
+                )}
+              />
+            </div>
           </div>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
+          {/* Intrebarea 1 */}
           <div>
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              name="email"
-              placeholder="Email"
-              type="email"
-              autoComplete="email"
+            <FormField
+              control={form.control}
+              name="constructie"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="constructie">Ce doriți să construiți?</FormLabel>
+                  <Select
+                    onValueChange={value => field.onChange(value)}
+                    selectedValue={field.value}
+                    id="constructie"
+                    name="constructie"
+                  >
+                    <FormControl>
+                      <SelectTrigger id="constructie">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent position="popper">
+                      <SelectItem value="Construcții Civile - Parter">
+                        Construcții Civile
+                      </SelectItem>
+                      <SelectItem value="Construcții Industriale/Agricole">
+                        Construcții Industriale/Agricole
+                      </SelectItem>
+                      <SelectItem value="Consultantă/Diriginte De Șantier">
+                        Consultantă/Diriginte De Șantier
+                      </SelectItem>
+                      <SelectItem value="Management de proiect">
+                        Management de proiect
+                      </SelectItem>
+                      <SelectItem value="Altceva">Altceva</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage className="text-red"/>
+                </FormItem>
+              )}
+            />
+          </div>
+          {/* Intrebarea 2 */}
+          <div>
+            <FormField
+              control={form.control}
+              name="judet"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="judet">În ce județ va fi construcția?</FormLabel>
+                  <Select
+                    onValueChange={value => field.onChange(value)}
+                    selectedValue={field.value}
+                    id="judet"
+                    name="judet"
+                  >
+                    <FormControl>
+                      <SelectTrigger id="judet">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent position="popper">
+                      <SelectItem name="judet" value="București">
+                        București
+                      </SelectItem>
+                      <SelectItem value="Ilfov">Ilfov</SelectItem>
+                      <SelectItem value="Alba">Alba</SelectItem>
+                      <SelectItem value="Arad">Arad</SelectItem>
+                      <SelectItem value="Argeș">Argeș</SelectItem>
+                      <SelectItem value="Bacău">Bacău</SelectItem>
+                      <SelectItem value="Bihor">Bihor</SelectItem>
+                      <SelectItem value="Bistrița-Năsăud">
+                        Bistrița-Năsăud
+                      </SelectItem>
+                      <SelectItem value="Botoșani">Botoșani</SelectItem>
+                      <SelectItem value="Brăila">Brăila</SelectItem>
+                      <SelectItem value="Brașov">Brașov</SelectItem>
+                      <SelectItem value="Buzău">Buzău</SelectItem>
+                      <SelectItem value="Călărași">Călărași</SelectItem>
+                      <SelectItem value="Caraș-Severin">
+                        Caraș-Severin
+                      </SelectItem>
+                      <SelectItem value="Cluj">Cluj</SelectItem>
+                      <SelectItem value="Constanța">Constanța</SelectItem>
+                      <SelectItem value="Covasna">Covasna</SelectItem>
+                      <SelectItem value="Dâmbovița">Dâmbovița</SelectItem>
+                      <SelectItem value="Dolj">Dolj</SelectItem>
+                      <SelectItem value="Galați">Galați</SelectItem>
+                      <SelectItem value="Giurgiu">Giurgiu</SelectItem>
+                      <SelectItem value="Gorj">Gorj</SelectItem>
+                      <SelectItem value="Harghita">Harghita</SelectItem>
+                      <SelectItem value="Hunedoara">Hunedoara</SelectItem>
+                      <SelectItem value="Ialomița">Ialomița</SelectItem>
+                      <SelectItem value="Iași">Iași</SelectItem>
+                      <SelectItem value="Maramureș">Maramureș</SelectItem>
+                      <SelectItem value="Mehedinți">Mehedinți</SelectItem>
+                      <SelectItem value="Mureș">Mureș</SelectItem>
+                      <SelectItem value="Neamț">Neamț</SelectItem>
+                      <SelectItem value="Olt">Olt</SelectItem>
+                      <SelectItem value="Prahova">Prahova</SelectItem>
+                      <SelectItem value="Sălaj">Sălaj</SelectItem>
+                      <SelectItem value="Satu Mare">Satu Mare</SelectItem>
+                      <SelectItem value="Sibiu">Sibiu</SelectItem>
+                      <SelectItem value="Suceava">Suceava</SelectItem>
+                      <SelectItem value="Teleorman">Teleorman</SelectItem>
+                      <SelectItem value="Timiș">Timiș</SelectItem>
+                      <SelectItem value="Tulcea">Tulcea</SelectItem>
+                      <SelectItem value="Vaslui">Vaslui</SelectItem>
+                      <SelectItem value="Vâlcea">Vâlcea</SelectItem>
+                      <SelectItem value="Vrancea">Vrancea</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage className="text-red"/>
+                </FormItem>
+              )}
+            />
+          </div>
+          {/* Intrebarea 3 */}
+          <div>
+            <FormField
+              control={form.control}
+              name="inceput"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="inceput">
+                    Când v-ați dori să începeți construcția?
+                  </FormLabel>
+                  <Select
+                    onValueChange={value => field.onChange(value)}
+                    selectedValue={field.value}
+                    id="inceput"
+                    name="inceput"
+                  >
+                    <FormControl>
+                      <SelectTrigger id="inceput">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent position="popper">
+                      <SelectItem name="inceput" value="Cât mai repede">
+                        Cât mai repede
+                      </SelectItem>
+                      <SelectItem value="În următoarele 6 luni">
+                        În următoarele 6 luni
+                      </SelectItem>
+                      <SelectItem value="Nu m-am hotărât încă">
+                        Nu m-am hotărât încă
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage className="text-red"/>
+                </FormItem>
+              )}
             />
           </div>
           <div>
-            <Label htmlFor="telefon">Telefon</Label>
-            <Input id="telefon" placeholder="Telefon" />
+            <FormField
+              control={form.control}
+              name="mesaj"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="mesaj">Mesaj</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Introduceți mesajul aici."
+                      id="mesaj"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage className="text-red"/>
+                </FormItem>
+              )}
+            />
           </div>
-        </div>
-        {/* Intrebarea 1 */}
-        <div>
-          <Label htmlFor="constructie">Ce doriți să construiți?</Label>
-          <Select
-            onValueChange={setConstructie}
-            id="constructie"
-            name="constructie"
-          >
-            <SelectTrigger id="constructie">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem
-                name="constructie"
-                value="Construcții Civile - Parter"
+          <div className="text-right flex gap-x-4">
+              <Button
+                type="submit"
+                variant="orange"
+                size="full"
               >
-                Construcții Civile
-              </SelectItem>
-              <SelectItem value="Construcții Industriale/Agricole">
-                Construcții Industriale/Agricole
-              </SelectItem>
-              <SelectItem value="Consultantă/Diriginte De Șantier">
-                Consultantă/Diriginte De Șantier
-              </SelectItem>
-              <SelectItem value="Management de proiect">
-                Management de proiect
-              </SelectItem>
-              <SelectItem value="Altceva">Altceva</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        {/* Intrebarea 2 */}
-        <div>
-          <Label htmlFor="judet">În ce județ va fi construcția?</Label>
-          <Select onValueChange={setJudet} id="judet" name="judet">
-            <SelectTrigger id="judet">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem name="judet" value="București">
-                București
-              </SelectItem>
-              <SelectItem value="Ilfov">Ilfov</SelectItem>
-              <SelectItem value="Alba">Alba</SelectItem>
-              <SelectItem value="Arad">Arad</SelectItem>
-              <SelectItem value="Argeș">Argeș</SelectItem>
-              <SelectItem value="Bacău">Bacău</SelectItem>
-              <SelectItem value="Bihor">Bihor</SelectItem>
-              <SelectItem value="Bistrița-Năsăud">Bistrița-Năsăud</SelectItem>
-              <SelectItem value="Botoșani">Botoșani</SelectItem>
-              <SelectItem value="Brăila">Brăila</SelectItem>
-              <SelectItem value="Brașov">Brașov</SelectItem>
-              <SelectItem value="Buzău">Buzău</SelectItem>
-              <SelectItem value="Călărași">Călărași</SelectItem>
-              <SelectItem value="Caraș-Severin">Caraș-Severin</SelectItem>
-              <SelectItem value="Cluj">Cluj</SelectItem>
-              <SelectItem value="Constanța">Constanța</SelectItem>
-              <SelectItem value="Covasna">Covasna</SelectItem>
-              <SelectItem value="Dâmbovița">Dâmbovița</SelectItem>
-              <SelectItem value="Dolj">Dolj</SelectItem>
-              <SelectItem value="Galați">Galați</SelectItem>
-              <SelectItem value="Giurgiu">Giurgiu</SelectItem>
-              <SelectItem value="Gorj">Gorj</SelectItem>
-              <SelectItem value="Harghita">Harghita</SelectItem>
-              <SelectItem value="Hunedoara">Hunedoara</SelectItem>
-              <SelectItem value="Ialomița">Ialomița</SelectItem>
-              <SelectItem value="Iași">Iași</SelectItem>
-              <SelectItem value="Maramureș">Maramureș</SelectItem>
-              <SelectItem value="Mehedinți">Mehedinți</SelectItem>
-              <SelectItem value="Mureș">Mureș</SelectItem>
-              <SelectItem value="Neamț">Neamț</SelectItem>
-              <SelectItem value="Olt">Olt</SelectItem>
-              <SelectItem value="Prahova">Prahova</SelectItem>
-              <SelectItem value="Sălaj">Sălaj</SelectItem>
-              <SelectItem value="Satu Mare">Satu Mare</SelectItem>
-              <SelectItem value="Sibiu">Sibiu</SelectItem>
-              <SelectItem value="Suceava">Suceava</SelectItem>
-              <SelectItem value="Teleorman">Teleorman</SelectItem>
-              <SelectItem value="Timiș">Timiș</SelectItem>
-              <SelectItem value="Tulcea">Tulcea</SelectItem>
-              <SelectItem value="Vaslui">Vaslui</SelectItem>
-              <SelectItem value="Vâlcea">Vâlcea</SelectItem>
-              <SelectItem value="Vrancea">Vrancea</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        {/* Intrebarea 3 */}
-        <div>
-          <Label htmlFor="inceput" className="leading-5">
-            Când v-ați dori să începeți construcția?
-          </Label>
-          <Select onValueChange={setInceput} id="inceput" name="inceput">
-            <SelectTrigger id="inceput">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              <SelectItem name="inceput" value="Cât mai repede">
-                Cât mai repede
-              </SelectItem>
-              <SelectItem value="În următoarele 6 luni">
-                În următoarele 6 luni
-              </SelectItem>
-              <SelectItem value="Nu m-am hotărât încă">
-                Nu m-am hotărât încă
-              </SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div>
-          <Label htmlFor="mesaj">Mesaj</Label>
-          <Textarea id="mesaj" placeholder="Introduceți mesajul aici." />
-        </div>
-        <div className="text-right flex gap-x-4">
-          <DrawerClose asChild>
-            <Button
-              type="submit"
-              variant="orange"
-              size="full"
-              onClick={onClose}
-            >
-              Trimite
-            </Button>
-          </DrawerClose>
+                Trimite
+              </Button>
 
-          <DrawerClose asChild>
-            <Button variant="orange" size="full" onClick={onClose}>
-              Închide
-            </Button>
-          </DrawerClose>
-        </div>
-      </form>
+            <DrawerClose asChild>
+              <Button variant="orange" size="full" onClick={onClose}>
+                Închide
+              </Button>
+            </DrawerClose>
+          </div>
+        </form>
+      </Form>
     </div>
   );
 }

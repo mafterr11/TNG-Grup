@@ -11,6 +11,7 @@ import SolicitatiOfertaForm from "./SolicitatiOfertaForm";
 export function SolicitatiOferta({ customStyle }) {
   const [open, setOpen] = useState(false);
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
+  const handleClose = () => setOpen(false);
 
   if (isDesktop) {
     return (
@@ -24,7 +25,8 @@ export function SolicitatiOferta({ customStyle }) {
           </Button>
         </DialogTrigger>
         <DialogContent className='sm:max-w-[425px]'>
-          <SolicitatiOfertaForm />
+          {/* Pass the handleClose function as onClose to the form */}
+          <SolicitatiOfertaForm onClose={handleClose} />
         </DialogContent>
       </Dialog>
     );
@@ -38,7 +40,8 @@ export function SolicitatiOferta({ customStyle }) {
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <SolicitatiOfertaForm onClose={() => setOpen(false)} />
+        {/* Pass the handleClose function as onClose to the form */}
+        <SolicitatiOfertaForm onClose={handleClose} />
       </DrawerContent>
     </Drawer>
   );
