@@ -45,7 +45,7 @@ const formSchema = z.object({
   constructie: z.optional(z.string()),
   judet: z.optional(z.string()),
   inceput: z.optional(z.string()),
-});
+}); 
 
 export default function SolicitatiOfertaForm({ onClose }) {
   const form = useForm({
