@@ -2,6 +2,8 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useEffect } from 'react';
+
 import {
   Form,
   FormControl,
@@ -66,6 +68,12 @@ export default function SolicitatiOfertaForm({ onClose }) {
   const [judet, setJudet] = useState("");
   const [inceput, setInceput] = useState("");
 
+  useEffect(() => {
+    form.setValue('constructie', constructie);
+    form.setValue('judet', judet);
+    form.setValue('inceput', inceput);
+  }, [constructie, judet, inceput, form.setValue]);
+
   const onSubmit = async (formData) => {
     try {
       const response = await fetch("/api/send", {
@@ -86,7 +94,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
           title: "Informațiile au fost trimise cu succes!",
           description: "Vă vom contacta cât mai curând!",
         });
-        setTimeout(onClose, 500);
+        setTimeout(onClose(), 200);
       } else {
         toast({
           title: "Ceva nu a mers bine!",
