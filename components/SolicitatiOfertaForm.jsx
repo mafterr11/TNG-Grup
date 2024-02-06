@@ -61,7 +61,6 @@ export default function SolicitatiOfertaForm({ onClose }) {
       inceput: "",
     },
   });
-
   const { toast } = useToast();
   const [constructie, setConstructie] = useState("");
   const [judet, setJudet] = useState("");
