@@ -13,7 +13,7 @@ export function SolicitatiOferta({ customStyle }) {
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
   const handleClose = () => setOpen(false);
 
-  if (isDesktop) {
+  if (isDesktop) { 
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
