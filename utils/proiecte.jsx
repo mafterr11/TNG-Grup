@@ -11,7 +11,7 @@ import { FaPeopleRoof } from "react-icons/fa6";
 export const proiecte = [
   // Snagov
   {
-    nume: "Locuinta Unifamiliala Parter - Snagov",
+    nume: "Locuința Unifamilială Parter - Snagov",
     imagine: {
       prezentare: "/portofoliu/snagov/main.webp",
       extra1: "/portofoliu/snagov/1.webp",
@@ -33,12 +33,12 @@ export const proiecte = [
       numarMpUtili: 152,
       iconMpUtili: <LiaRulerCombinedSolid />,
       descriere:
-        "In cadrul contractului, Beneficiarul a dorit construirea unei locuinte de vacanta cu regim de inaltime Parter. Datorita limitarilor de buget ale Clientului contractul a avut ca obiect doar realizarea structurii de rezistenta, a instalatiilor sanitare, termice si realizarea tencuielilor interioare.",
+        "În cadrul contractului, Beneficiarul a dorit construirea unei locuințe de vacanță cu regim de înălțime Parter. Datorită limitărilor de buget ale Clientului, contractul a avut ca obiect doar realizarea structurii de rezistență, a instalațiilor sanitare, termice și realizarea tencuielilor interioare.",
     },
   },
   // Aftercare
   {
-    nume: "Amenajare Interioara After School",
+    nume: "Amenajare Interioară After School",
     imagine: {
       prezentare: "/portofoliu/aftercare/main.webp",
       extra1: "/portofoliu/aftercare/1.webp",
@@ -60,12 +60,12 @@ export const proiecte = [
       numarMpUtili: 220,
       iconMpUtili: <LiaRulerCombinedSolid />,
       descriere:
-        "In cadrul contractului, Beneficiarul a dorit reamenajarea unui spatiu comercial pentru deschiderea unei noi locatii After School. Obiectul contractului a avut ca scop desfacerea instalatiilor industriale existente, reconfigurarea spatiilor interioare, refacerea finisajelor si amenajarea interioara a spatiului(mobilier, colantari, curatenie, etc.), pana la darea in folosinta.",
+        "În cadrul contractului, Beneficiarul a dorit reamenajarea unui spațiu comercial pentru deschiderea unei noi locații After School. Obiectul contractului a avut ca scop desfacerea instalațiilor industriale existente, reconfigurarea spațiilor interioare, refacerea finisajelor și amenajarea interioară a spațiului (mobilier, colantări, curățenie, etc.), până la darea în folosință.",
     },
   },
   // Clinica
   {
-    nume: "Amenajare Interioara Clinica Privata Medicala",
+    nume: "Amenajare Interioară Clinică Privată Medicală",
     imagine: {
       prezentare: "/portofoliu/clinica/main.webp",
       extra1: "/portofoliu/clinica/1.webp",
@@ -87,12 +87,12 @@ export const proiecte = [
       numarMpUtili: 190,
       iconMpUtili: <LiaRulerCombinedSolid />,
       descriere:
-        "In cadrul contractului, s-au realizat lucrari de amenajari interioare pentru reconfigurarea spatiului comercial intr-o clinica medicala. Obiectul contractului a avut ca scop refacerea instalatiilor sanitare, termice si electrice, recompartimentari interioare cu pereti de gips carton/sticla, finisaje interioare si exterioare.",
+        "În cadrul contractului, s-au realizat lucrări de amenajări interioare pentru reconfigurarea spațiului comercial într-o clinică medicală. Obiectul contractului a avut ca scop refacerea instalațiilor sanitare, termice și electrice, recompartimentări interioare cu pereți de gips carton/sticlă, finisaje interioare și exterioare.",
     },
   },
   // Hala
   {
-    nume: "Realizare Hala Industriala Cu Functiunea De Hangar",
+    nume: "Realizare Hală Industrială cu Funcțiunea de Hangar",
     imagine: {
       prezentare: "/portofoliu/hala/main.webp",
       extra1: "/portofoliu/hala/1.webp",
@@ -114,7 +114,7 @@ export const proiecte = [
       numarMpUtili: "10.500",
       iconMpUtili: <LiaRulerCombinedSolid />,
       descriere:
-        "Obiectul contractului a avut ca scop realizarea Managementului de Proiect, a organizarii executiei si verificarea progresului investitiei in parteneriat cu Antreprenorul General, pentru lucrarile de Structura si Inchideri/Compartimentari.",
+        "Obiectul contractului a avut ca scop realizarea Managementului de Proiect, a organizării execuției și verificarea progresului investiției în parteneriat cu Antreprenorul General, pentru lucrările de Structură și Închideri/Compartimentări.",
     },
   },
 ];
