@@ -48,10 +48,10 @@ export const Proiecte = () => {
                 </h3>
                 <Image
                   src={proiect.imagine.prezentare}
-                  width={500}
-                  height={500}
+                  width={800}
+                  height={800}
                   alt='Imagine principala proiect de executie'
-                  className='rounded-xl md:mb-16 lg:mb-0 object-cover w-auto'
+                  className='rounded-xl md:mb-16 lg:mb-0 object-cover w-full md:w-[90%] h-96'
                 />
               </div>
               <div className='w-full md:w-1/2'>
@@ -61,10 +61,7 @@ export const Proiecte = () => {
                     {proiect.nume}
                   </h3>
                   <p className='leading-6'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, itaque facilis. Id earum dignissimos deleniti eaque
-                    culpa ut quam corporis tempora possimus, ipsa ab impedit
-                    voluptas enim quo deserunt? Vero.
+                    {proiect.detalii.descriere}
                   </p>
                 </div>
                 {/* Container 1 */}
@@ -79,7 +76,7 @@ export const Proiecte = () => {
                         {proiect.detalii.iconDormitoare}
                       </div>
                     </div>
-                    <div className='text-sm'>Dormitoare</div>
+                    <div className='text-sm'>{proiect.detalii.tipDormitoare}</div>
                   </div>
                   {/* Bai */}
                   <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-3 lg:pr-6'>
@@ -89,7 +86,7 @@ export const Proiecte = () => {
                         {proiect.detalii.iconBai}
                       </div>
                     </div>
-                    <div className='text-sm'>Băi</div>
+                    <div className='text-sm'>{proiect.detalii.tipBai}</div>
                   </div>
                   {/* Container 2 */}
                   {/* Amp la Sol */}
@@ -138,42 +135,42 @@ export const Proiecte = () => {
                   <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 md:p-6'>
                     <Image
                       alt='Imagine proiect portofoliu 1'
-                      className='object-cover w-full h-60 rounded-lg'
+                      className='object-cover w-full h-96 rounded-lg'
                       height={600}
                       src={proiect.imagine.extra1}
                       width={600}
                     />
                     <Image
                       alt='Imagine proiect portofoliu 2'
-                      className='object-cover w-full h-60 rounded-lg'
+                      className='object-cover w-full h-96 rounded-lg'
                       height={600}
                       src={proiect.imagine.extra2}
                       width={600}
                     />
                     <Image
                       alt='Imagine proiect portofoliu 3'
-                      className='object-cover w-full h-60 rounded-lg'
+                      className='object-cover w-full h-96 rounded-lg'
                       height={600}
                       src={proiect.imagine.extra3}
                       width={600}
                     />
                     <Image
                       alt='Imagine proiect portofoliu 4'
-                      className='object-cover w-full h-60 rounded-lg'
+                      className='object-cover w-full h-96 rounded-lg'
                       height={600}
                       src={proiect.imagine.extra4}
                       width={600}
                     />
                     <Image
                       alt='Imagine proiect portofoliu 5'
-                      className='object-cover w-full h-60 rounded-lg'
+                      className='object-cover w-full h-96 rounded-lg'
                       height={600}
                       src={proiect.imagine.extra5}
                       width={600}
                     />
                     <Image
                       alt='Imagine proiect portofoliu 6'
-                      className='object-cover w-full h-60 rounded-lg'
+                      className='object-cover w-full h-96 rounded-lg'
                       height={600}
                       src={proiect.imagine.extra6}
                       width={600}
