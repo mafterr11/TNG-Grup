@@ -65,11 +65,11 @@ export const Proiecte = () => {
                   </p>
                 </div>
                 {/* Container 1 */}
-                <div className='flex gap-4 justify-center md:justify-start'>
+                <div className='flex gap-x-4 justify-center md:justify-start'>
                   {/* Dormitoare */}
-                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-3 lg:pr-6'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>
+                  <div className='flex flex-col items-center justify-center gap-y-1 pr-1 lg:pr-4'>
+                    <div className='flex items-end justify-center gap-x-[0.5rem]'>
+                      <div className='text-[0.9rem]'>
                         {proiect.detalii.numarDormitoare}
                       </div>
                       <div className='text-3xl text-accent'>
@@ -79,9 +79,9 @@ export const Proiecte = () => {
                     <div className='text-sm'>{proiect.detalii.tipDormitoare}</div>
                   </div>
                   {/* Bai */}
-                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-3 lg:pr-6'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>{proiect.detalii.numarBai}</div>
+                  <div className='flex flex-col items-center justify-center gap-y-1 pr-1 lg:pr-4'>
+                    <div className='flex items-end justify-center gap-x-[0.5rem]'>
+                      <div className='text-[0.9rem]'>{proiect.detalii.numarBai}</div>
                       <div className='text-3xl text-accent'>
                         {proiect.detalii.iconBai}
                       </div>
@@ -90,9 +90,9 @@ export const Proiecte = () => {
                   </div>
                   {/* Container 2 */}
                   {/* Amp la Sol */}
-                  <div className='flex flex-col items-center justify-center gap-y-1 md:border-r md:border-accent pr-2 md:pr-3 lg:pr-6'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>
+                  <div className='flex flex-col items-center justify-center gap-y-1 pr-1 lg:pr-4'>
+                    <div className='flex items-end justify-center gap-x-[0.2rem]'>
+                      <div className='text-[0.9rem]'>
                         {proiect.detalii.numarAmprentaLaSol}
                       </div>
                       <div className='text-3xl text-accent'>
@@ -103,8 +103,8 @@ export const Proiecte = () => {
                   </div>
                   {/* MP utili */}
                   <div className='flex flex-col items-center justify-center gap-y-1'>
-                    <div className='flex items-center justify-center gap-x-2'>
-                      <div className='text-lg'>
+                    <div className='flex items-end justify-center gap-x-[0.2rem]'>
+                      <div className='text-[0.9rem]'>
                         {proiect.detalii.numarMpUtili}
                       </div>
                       <div className='text-3xl text-accent'>

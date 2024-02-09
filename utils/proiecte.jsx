@@ -3,7 +3,11 @@ import {
   LiaBathSolid,
   LiaRulerCombinedSolid,
   LiaDraftingCompassSolid,
+  LiaBriefcaseMedicalSolid,
 } from "react-icons/lia";
+import { FaPeopleRoof } from "react-icons/fa6";
+
+
 export const proiecte = [
   // Snagov
   {
@@ -46,11 +50,11 @@ export const proiecte = [
     },
     detalii: {
       numarDormitoare: 3,
-      iconDormitoare: <LiaBedSolid />,
+      iconDormitoare: <FaPeopleRoof />,
       tipDormitoare: "Grupe",
       numarBai: 2,
       iconBai: <LiaBathSolid />,
-      tipBai: "Grp Sanitar",
+      tipBai: "Grp. Sanitare",
       numarAmprentaLaSol: 220,
       iconAmprentaLaSol: <LiaDraftingCompassSolid />,
       numarMpUtili: 220,
@@ -73,7 +77,7 @@ export const proiecte = [
     },
     detalii: {
       numarDormitoare: 3,
-      iconDormitoare: <LiaBedSolid />,
+      iconDormitoare: <LiaBriefcaseMedicalSolid />,
       tipDormitoare: "Cabinete",
       numarBai: 2,
       iconBai: <LiaBathSolid />,
@@ -101,10 +105,10 @@ export const proiecte = [
     detalii: {
       numarDormitoare: "-",
       iconDormitoare: <LiaBedSolid />,
-      tipDormitoare: "Cabinete",
+      tipDormitoare: "Fara",
       numarBai: "-",
       iconBai: <LiaBathSolid />,
-      tipBai: "Grp. Sanitare",
+      tipBai: "Fara",
       numarAmprentaLaSol: "10.500",
       iconAmprentaLaSol: <LiaDraftingCompassSolid />,
       numarMpUtili: "10.500",
