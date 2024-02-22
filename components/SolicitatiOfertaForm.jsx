@@ -25,6 +25,7 @@ import {
   Select,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
+import GoogleCaptchaWrapper from "@/app/GoogleCaptchaWrapper";
 
 const formSchema = z.object({
   nume: z.string().min(3, {
@@ -109,6 +110,8 @@ export default function SolicitatiOfertaForm({ onClose }) {
   
 
   return (
+    <>
+    <GoogleCaptchaWrapper>
     <div className="xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey shadow-md rounded-lg overflow-auto relative">
       <div className="fixed top-2 right-0 left-0 mx-auto bg-white/10 rounded-full h-[0.6rem] w-[4.5rem]" />
       <Form {...form}>
@@ -400,5 +403,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
         </form>
       </Form>
     </div>
+    </GoogleCaptchaWrapper>
+    </>
   );
 }
