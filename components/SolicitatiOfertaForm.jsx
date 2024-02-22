@@ -26,6 +26,8 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
 import GoogleCaptchaWrapper from "@/app/GoogleCaptchaWrapper";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import axios from "axios";
 
 const formSchema = z.object({
   nume: z.string().min(3, {
@@ -49,6 +51,8 @@ const formSchema = z.object({
 }); 
 
 export default function SolicitatiOfertaForm({ onClose }) {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -73,7 +77,29 @@ export default function SolicitatiOfertaForm({ onClose }) {
     form.setValue('inceput', inceput);
   }, [constructie, judet, inceput, form.setValue]);
 
+  // RECAPTCHA
+  const captchaSubmit = async () => {
+
+    if (!executeRecaptcha) {
+      return;
+    }
+    const gRecaptchaToken = await executeRecaptcha("InquirySubmit");
+
+    const response = await axios({
+      method: "post",
+      url: "/api/recaptchaSubmit",
+      data: {
+        gRecaptchaToken,
+      },
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
   const onSubmit = async (formData) => {
+    captchaSubmit();
     try {
       const response = await fetch("/api/send", {
         method: "POST",
