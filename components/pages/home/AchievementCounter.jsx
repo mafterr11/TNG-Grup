@@ -6,8 +6,8 @@ import { useInView } from "react-intersection-observer";
 
 const AchievementCounter = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger only once
-    threshold: 0.3, // Percentage of the element that must be visible
+    triggerOnce: true, 
+    threshold: 0.3, 
   });
   return (
     <motion.div

@@ -25,7 +25,6 @@ export function SolicitatiOferta({ customStyle }) {
           </Button>
         </DialogTrigger>
         <DialogContent className='sm:max-w-[425px]'>
-          {/* Pass the handleClose function as onClose to the form */}
           <SolicitatiOfertaForm onClose={handleClose} />
         </DialogContent>
       </Dialog>
@@ -40,7 +39,6 @@ export function SolicitatiOferta({ customStyle }) {
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        {/* Pass the handleClose function as onClose to the form */}
         <SolicitatiOfertaForm onClose={handleClose} />
       </DrawerContent>
     </Drawer>

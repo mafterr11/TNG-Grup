@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col-reverse lg:flex-row items-center justify-evenly mx-auto w-full gap-y-8 xl:gap-x-20 px-5 py-8 border-t-2 border-accent relative z-[2] bg-black">
 
-      {/* Credits */}
+      {/* credits */}
       <div className="flex flex-col items-center xl:items-start gap-y-4">
         <h3><span className="text-accent">TNG</span> GRUP</h3>
         <div className="flex flex-col xl:flex-row items-center xl:gap-x-2">
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      {/* Content */}
+      {/* content */}
       <div className="flex flex-col xl:flex-row gap-x-12 gap-y-8">
         <div className="flex flex-col items-center xl:items-start justify-center gap-y-4">
           <h4 className="text-lg text-accent underline decoration-2 decoration-accent underline-offset-4">Vizitează-ne</h4>

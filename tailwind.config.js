@@ -42,9 +42,6 @@ module.exports = {
       },
     },
     extend: { 
-      boxShadow: {
-        primary: "40px 4px 40px 0px rgba(68, 68, 68, 0.25)",
-      },
       backgroundImage: {
         site: "url('/1.webp')",
       },
