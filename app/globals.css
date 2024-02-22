@@ -71,9 +71,7 @@
   text-underline-offset: 0.5rem;
 }
 
-/* Custom CSS for the image container */
-.shape-wrap {
-  float: right; /* Adjust based on your layout needs */
-  shape-outside: circle(50%); /* Example shape, adjust as needed */
-  shape-margin: 80px;
-}
+
+.grecaptcha-badge {
+  z-index: 50;
+ }
