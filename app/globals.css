@@ -73,5 +73,5 @@
 
 
 .grecaptcha-badge {
-  z-index: 50;
+  visibility: hidden;
  }
