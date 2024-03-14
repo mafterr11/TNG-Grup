@@ -11,7 +11,7 @@ export const metadata = {
 
 const Portofoliu = () => {
   return (
-    <div className='py-[6rem]'>
+    <div className='py-[4.9rem]'>
       <Intro />
       <Proiecte />
     </div>
