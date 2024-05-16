@@ -17,7 +17,7 @@ export const links = [
   },
   {
     path: "/despre",
-    name: "despree",
+    name: "despre",
   },
   {
     path: "/servicii",
