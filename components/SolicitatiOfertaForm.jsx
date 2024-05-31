@@ -148,10 +148,10 @@ export default function SolicitatiOfertaForm({ onClose }) {
   return (
     <>
       <GoogleCaptchaWrapper>
-        <div className="xl:max-w-lg lg:max-w-md md:max-w-sm mx-auto p-6 bg-grey rounded-lg overflow-auto relative">
-          <div className="fixed top-2 right-0 left-0 mx-auto bg-white/10 rounded-full h-[0.6rem] w-[4.5rem]" />
+        <div className="relative mx-auto overflow-auto rounded-lg bg-grey p-6 md:max-w-sm lg:max-w-md xl:max-w-lg">
+          <div className="fixed left-0 right-0 top-2 mx-auto h-[0.6rem] w-[4.5rem] rounded-full bg-white/10" />
           <Form {...form}>
-            <h2 className="text-xl font-semibold text-accent text-center">
+            <h2 className="text-center text-xl font-semibold text-accent">
               Solicitați o ofertă
             </h2>
             <form
@@ -425,7 +425,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
                   )}
                 />
               </div>
-              <div className="text-right flex gap-x-4">
+              <div className="flex gap-x-4 text-right">
                 <Button type="submit" variant="orange" size="full">
                   Trimite
                 </Button>
@@ -438,7 +438,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
               </div>
             </form>
           </Form>
-          <p className="leading-normal text-xs text-center mt-2">
+          <p className="mt-2 text-center text-xs leading-normal">
             This site is protected by reCAPTCHA and the Google{" "}
             <a
               href="https://policies.google.com/privacy"

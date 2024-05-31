@@ -6,44 +6,44 @@ import { useInView } from "react-intersection-observer";
 
 const AchievementCounter = () => {
   const { ref, inView } = useInView({
-    triggerOnce: true, 
-    threshold: 0.3, 
+    triggerOnce: true,
+    threshold: 0.3,
   });
   return (
     <motion.div
       variants={fadeIn("down", 0.2)}
-      initial='hidden'
+      initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, ammount: 0.4 }}
       ref={ref}
-      className='w-full bg-black/60 flex items-center justify-center p-16'
+      className="flex w-full items-center justify-center bg-black/60 p-16"
     >
       {/* container */}
-      <div className='flex flex-col lg:flex-row gap-y-12 xl:gap-y-20 justify-center lg:gap-x-40 '>
-        <div className='flex-1'>
-          <div className='text-3xl lg:text-[2.8rem] flex items-end xl:pt-4'>
+      <div className="flex flex-col justify-center gap-y-12 lg:flex-row lg:gap-x-40 xl:gap-y-20">
+        <div className="flex-1">
+          <div className="flex items-end text-3xl lg:text-[2.8rem] xl:pt-4">
             <CountUp start={0} end={inView ? 30 : 0} duration={5} />+
-            <div className='text-lg lg:text-base xl:text-3xl font-bold uppercase ml-[3px] tracking-[1px] leading-[1.4] xl:leading-[1] max-w-[150px] xl:max-w-[200px] text-accent'>
+            <div className="ml-[3px] max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-3xl xl:leading-[1]">
               Ani
             </div>
           </div>
-          <div className='text-lg lg:text-base xl:text-xl font-bold uppercase tracking-[1px] max-w-[150px] xl:max-w-[200px] text-accent'>
+          <div className="max-w-[150px] text-lg font-bold uppercase tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl">
             Experiența
           </div>
         </div>
-        <div className='flex-1'>
-          <div className='text-3xl lg:text-[2.8rem]'>
+        <div className="flex-1">
+          <div className="text-3xl lg:text-[2.8rem]">
             <CountUp start={0} end={inView ? 50 : 0} duration={5} />+
           </div>
-          <div className='text-lg lg:text-base xl:text-xl font-bold uppercase tracking-[1px] leading-[1.4] max-w-[150px] xl:max-w-[200px] text-accent'>
+          <div className="max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl">
             Construcții Civile
           </div>
         </div>
-        <div className='flex-1'>
-          <div className='text-3xl lg:text-[2.8rem]'>
+        <div className="flex-1">
+          <div className="text-3xl lg:text-[2.8rem]">
             <CountUp start={0} end={inView ? 20 : 0} duration={5} />+
           </div>
-          <div className='text-lg lg:text-base xl:text-xl font-bold uppercase tracking-[1px] leading-[1.4] max-w-[150px] xl:max-w-[200px] text-accent'>
+          <div className="max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl">
             Construcții Industriale
           </div>
         </div>

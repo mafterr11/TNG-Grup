@@ -11,7 +11,7 @@ export const metadata = {
 
 const Despre = () => {
   return (
-    <div className='py-[4.9rem]'>
+    <div className="py-[3.7rem]">
       <Intro />
       <CompanyIntro />
       {/* <Team /> */}

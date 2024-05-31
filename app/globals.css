@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-poppins bg-grey text-white tracking-[0.5px];
+    @apply bg-grey font-poppins tracking-[0.5px] text-white;
   }
 
   h1,
@@ -18,25 +18,25 @@
   }
 
   h1 {
-    @apply xl:text-[40px] text-[30px] leading-[40px];
+    @apply text-[30px] leading-[40px] xl:text-[40px];
   }
   h2 {
-    @apply xl:text-[35px] text-[25px] leading-[40px];
+    @apply text-[25px] leading-[40px] xl:text-[35px];
   }
   h3 {
-    @apply xl:text-[30px] text-[25px] leading-[39px];
+    @apply text-[25px] leading-[39px] xl:text-[30px];
   }
   h4 {
-    @apply text-[16px] xl:text-[14px] 
+    @apply text-[16px] xl:text-[14px];
   }
   p {
-    @apply text-white/80 leading-8 ;
+    @apply leading-8 text-white/80;
   }
   a {
-    @apply transition-all duration-300 cursor-pointer;
+    @apply cursor-pointer transition-all duration-300;
   }
   label {
-    @apply text-white font-normal block mb-2;
+    @apply mb-2 block font-normal text-white;
   }
 }
 
@@ -51,13 +51,12 @@
 }
 
 .hover span:after {
-  content: '';
+  content: "";
   width: 0px;
   height: 2px;
   display: block;
-  background: #FF8300;
+  background: #ff8300;
   transition: 300ms;
-
 }
 
 .hover span:hover:after {
@@ -66,12 +65,11 @@
 
 .active-link {
   text-decoration: underline;
-  text-decoration-color: #FF8300;
+  text-decoration-color: #ff8300;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.5rem;
 }
 
-
 .grecaptcha-badge {
   visibility: hidden;
- }
+}

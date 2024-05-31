@@ -17,18 +17,18 @@ export const ServiciiContent = () => {
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.4 }}
-        className="text-center xl:mb-[13rem] mb-[4rem]"
+        className="mb-[4rem] text-center xl:mb-[13rem]"
       >
-        <h3 className="text-accent leading-relaxed">
+        <h3 className="leading-relaxed text-accent">
           Construiește Visul Tău Alături De Noi
         </h3>
-        <h3 className="text-white/90 text-2xl font-normal">
+        <h3 className="text-2xl font-normal text-white/90">
           Transformăm Viziunea Ta în Realitate cu Inovație, Siguranță și
           Personalizare
         </h3>
       </motion.div>
       {/* Content container */}
-      <div className="xl:w-[90%] px-3 md:px-6 mx-auto">
+      <div className="mx-auto px-3 md:px-6 xl:w-[90%]">
         {/* Execuție construcții civile 1 */}
         <motion.div
           variants={fadeIn("down", 0.2)}
@@ -38,7 +38,7 @@ export const ServiciiContent = () => {
           className="mb-44 scroll-mt-40 xl:scroll-mt-32"
           id="execuție-construcții-civile"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Execuție Construcții Civile - Precizie și Siguranță
           </h3>
           <p>
@@ -58,7 +58,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Suntem mereu la curent
             </span>{" "}
             cu cele mai noi tendințe din domeniul construcțiilor civile,
@@ -76,13 +76,13 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               Ce garanții oferim?
             </h3>
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Materiale premium, certificate
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
@@ -101,10 +101,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Grade sporite de siguranță
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Cu ani de
                     experiență în construcții, garantăm execuția proiectelor cu
@@ -121,10 +121,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Asistență tehnică pe parcursul etapelor de execuție
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Suntem precauți
                     și dornici să eliminăm din start orice inconvenient tehnic
@@ -144,12 +144,12 @@ export const ServiciiContent = () => {
           className="mb-32 scroll-mt-28 xl:scroll-mt-32"
           id="execuție-construcții-industriale"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Execuție Construcții Industriale
           </h3>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Datorită experienței noastre în domeniul construcțiilor
               industriale
             </span>
@@ -167,7 +167,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Derularea activităților în conformitate cu cele mai înalte
               standarde de siguranță și funcționalitate
             </span>{" "}
@@ -179,7 +179,7 @@ export const ServiciiContent = () => {
           <p>
             <span className="text-accent">&#9679;</span> În ceea ce privește
             gama propriu-zisă de servicii mizăm de fiecare dată pe importanță{" "}
-            <span className="text-accent font-bold">multifuncționalității</span>
+            <span className="font-bold text-accent">multifuncționalității</span>
             . Astfel, oferim:
           </p>
           <p>- Hale metalice</p>
@@ -191,13 +191,13 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               Ce avantaje îți oferim?
             </h3>
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Discuții constante și implementarea rapidă a feedback-ului
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
@@ -219,10 +219,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   O durată de viață îndelungată a proiectului
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Indiferent de
                     caracteristicile locului în care se află construcția, noi ne
@@ -242,10 +242,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   O colaborare presărată marcată de eficiență
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Ne dorim să
                     încheiem colaborări profitabile, care să se ridice la
@@ -269,13 +269,13 @@ export const ServiciiContent = () => {
           className="mb-32 scroll-mt-[5.5rem] xl:scroll-mt-32"
           id="supervizare-lucrări-de-execuție"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Supervizare Lucrări de Execuție
           </h3>
           <p>
             Ne dorim să punem la dispoziție clienților clădiri perfect
             funcționale, dar și elemente de design inedite. În plus,{" "}
-            <span className="text-accent font-bold">experiența acumulată</span>{" "}
+            <span className="font-bold text-accent">experiența acumulată</span>{" "}
             de-a lungul timpului este cea care ne ajută să oferim rezultate
             profesionale, indiferent de gradul de complexitate implicat.
           </p>
@@ -285,7 +285,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Siguranță</span> - Fără
+            <span className="font-bold text-accent">Siguranță</span> - Fără
             serviciile de supervizare a unei lucrări de execuție, gradul de
             apariție a problemelor tehnice este destul de ridicat. Știm că orice
             greșeală, indiferent de cât de mică și nesemnificativă ar părea la
@@ -293,23 +293,23 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Confort</span> - nu trebuie
+            <span className="font-bold text-accent">Confort</span> - nu trebuie
             să-ți mai faci griji în ceea ce privește asigurarea materialelor și
             monitorizarea specialiștilor care se ocupă de execuție.{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Vei putea vizualiza stadiul evoluției clădirii ori de câte ori îți
               dorești
             </span>
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Durabilitate </span> -
+            <span className="font-bold text-accent">Durabilitate </span> -
             Scopul activităților de supervizare au în prim plan respectarea
             întocmai a cerințelor specificate în proiectul tehnic. Echipa care
             se ocupă de monitorizarea lucrării va analiza îndeaproape fiecare
             aspect si va lua în considerare, de asemenea, reglementările aflate
             în vigoare.{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Ne asigurăm că respectiva construcție poate garanta grade sporite
               de rezistență.
             </span>
@@ -321,7 +321,7 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               Cum se derulează totul?
             </h3>
             <p>
@@ -331,7 +331,7 @@ export const ServiciiContent = () => {
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   În primă fază
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
@@ -353,10 +353,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Mai apoi
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Vom integra
                     toate detaliile în programe de specialitate pentru a avea o
@@ -375,10 +375,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Trecem la munca propriu-zisă
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Verificăm
                     calitatea materialelor și a tehnicilor de lucru executate
@@ -414,14 +414,14 @@ export const ServiciiContent = () => {
           className="mb-32 scroll-mt-28 xl:scroll-mt-32"
           id="verificare-calitate-lucrări-în-execuție"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Verificarea Calitații Lucrărilor în Execuție
           </h3>
           <p>
             Persoana care se ocupă de verificare este fie responsabilul
             execuției, fie un diriginte de șantier autorizat. Indiferent de
             funcția tehnică pe care o deține,{" "}
-            <span className="text-accent font-bold">specialistul nostru</span>{" "}
+            <span className="font-bold text-accent">specialistul nostru</span>{" "}
             va analiza îndeaproape etapele de execuție și se va asigura de
             calitatea lucrării. Toate activitățile aferente unei asemenea
             sarcini respectă întocmai cerințele prevăzute în legea nr. 10/1995.
@@ -432,7 +432,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span> Se{" "}
-            <span className="text-accent font-bold">asigură</span> că știe toate
+            <span className="font-bold text-accent">asigură</span> că știe toate
             detaliile care alcătuiesc proiectul tehnic. Fără asemenea informații
             nu ar putea să ajungă la grade sporite de siguranță, precizie și
             funcționalitate.
@@ -442,7 +442,7 @@ export const ServiciiContent = () => {
             existența procedurilor de efectuare a lucrărilor corespunzătoare
             caietelor de sarcini din proiectul tehnic. Este la curent cu
             graficele de realizare ale investiţiei. În plus,{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               pune la dispoziția clientului
             </span>{" "}
             toate documentele care atestă calitatea lucrărilor de execuție.
@@ -450,7 +450,7 @@ export const ServiciiContent = () => {
           <p>
             <span className="text-accent">&#9679;</span> Participă activ la
             toate fazele de verificare a procesului de execuție.{" "}
-            <span className="text-accent font-bold">Face vizite</span> în mod
+            <span className="font-bold text-accent">Face vizite</span> în mod
             regulat pe șantier pentru a se asigura că toate activitățile
             derulate respectă întocmai prevederile de natură legislativă.
           </p>
@@ -461,28 +461,27 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               De ce să alegi serviciul de verificare calitate lucrări în
               execuție?
             </h3>
             <p>
               Ne ocupăm de efectuarea chiar și celor mai complexe proiecte, fie
               că e vorba de construcții civile, agricole sau industriale. Gama
-              noastră de proiecte impresionează atât prin designul inedit,
-              cât și prin gradele sporite de siguranță și confort pe care le
-              oferă.
+              noastră de proiecte impresionează atât prin designul inedit, cât
+              și prin gradele sporite de siguranță și confort pe care le oferă.
             </p>
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Comunicare transparentă
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Pe tot
-                    parcursul proceselor de proiectare și execuție planificăm
-                    în mod constant discuții telefonice sau, după caz, întâlniri
+                    parcursul proceselor de proiectare și execuție planificăm în
+                    mod constant discuții telefonice sau, după caz, întâlniri
                     fizice pentru a clarifica eventuale nelămuriri sau a
                     planifica următorul stadiu de evoluție al construcției.
                   </p>
@@ -495,10 +494,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Un spațiu perfect funcțional
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Verificăm
                     îndeaproape calitatea proiectelor pentru a-ți oferi șansa de
@@ -508,10 +507,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Siguranță garantată, indiferent de stadiul lucrării
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Cunoaștem
                     îndeaproape tot cadrul legislativ care reglementează
@@ -523,13 +522,12 @@ export const ServiciiContent = () => {
                   </p>
                   <p>
                     <span className="text-accent">&#9679;</span> Vrei să te
-                    bucuri de avantajele unei construcții ideale? La TNG
-                    găsești toate răspunsurile de care ai nevoie. Mizăm pe
-                    colaborări eficiente și respectăm întocmai cerințele venite
-                    din partea autorităților. Serviciul de verificare calitate
-                    lucrări în execuție este cel care ne ajută să eliminăm din
-                    start posibilele erori și să ne bucuri de rezultatele
-                    dorite.
+                    bucuri de avantajele unei construcții ideale? La TNG găsești
+                    toate răspunsurile de care ai nevoie. Mizăm pe colaborări
+                    eficiente și respectăm întocmai cerințele venite din partea
+                    autorităților. Serviciul de verificare calitate lucrări în
+                    execuție este cel care ne ajută să eliminăm din start
+                    posibilele erori și să ne bucuri de rezultatele dorite.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -545,12 +543,12 @@ export const ServiciiContent = () => {
           className="mb-32 scroll-mt-28 xl:scroll-mt-32"
           id="planificarea-execuției"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Planificarea Execuției - Precizie și Organizare
           </h3>
           <p>
             Este o activitate care presupune multă răbdare și atenție la{" "}
-            <span className="text-accent font-bold">detalii</span>. Necesită, de
+            <span className="font-bold text-accent">detalii</span>. Necesită, de
             asemenea, expertiza unor specialiști în domeniu pentru a îndeplini
             întocmai cerințele beneficiarului, dar și ale autorităților
             competente.{" "}
@@ -559,14 +557,14 @@ export const ServiciiContent = () => {
             Pentru a ne bucura de performanțe extraordinare, dar și de feedback
             pozitiv din partea clientului, organizăm cu profesionalism fiecare
             etapă.{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Planificarea execuției
             </span>{" "}
             lucrărilor are în vedere așadar:
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Stabilirea clară a obiectivelor proiectului
             </span>{" "}
             - Pe care le dezbatem împreună cu beneficiarul. Trasăm inclusiv
@@ -577,7 +575,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Elaborarea proiectului tehnic
             </span>{" "}
             - Arhitecții și proiectanții noștri se ocupă de efectuarea unei
@@ -588,7 +586,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Definitivarea resurselor necesare pentru execuție
             </span>{" "}
             - Analizăm cu atenție variantele disponibile și alegem materialele
@@ -598,7 +596,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Derularea activităților de verificare conform prevederilor în
               vigoare
             </span>{" "}
@@ -613,7 +611,7 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               De ce să ne alegi pe noi?
             </h3>
             <p>
@@ -627,7 +625,7 @@ export const ServiciiContent = () => {
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Îndeplinirea obiectivelor setate la începutul colaborării
                 </AccordionTrigger>
                 <AccordionContent className="text-base">
@@ -642,10 +640,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   O echipă de execuție formată exclusiv din profesioniști
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Nu ne permitem
                     să facem nicio greșeală. Toți oamenii care fac parte din
@@ -658,10 +656,10 @@ export const ServiciiContent = () => {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Șansa de a avea proiectul dorit la data stabilită
                 </AccordionTrigger>
-                <AccordionContent className="text-base mt-4">
+                <AccordionContent className="mt-4 text-base">
                   <p>
                     <span className="text-accent">&#9679;</span> Efectuăm cu
                     atenție serviciul de planificare, ceea ce asigură premisele
@@ -697,23 +695,23 @@ export const ServiciiContent = () => {
           className="mb-32 scroll-mt-28 xl:scroll-mt-32"
           id="servicii-RTE"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Servicii RTE - Garanția Succesului Fiecărui Proiect
           </h3>
           <p>
             Este practic{" "}
-            <span className="text-accent font-bold">specialistul</span> care se
+            <span className="font-bold text-accent">specialistul</span> care se
             ocupă de implementarea detaliilor specificate în planul tehnic. Are
             grijă ca toate etapele să se deruleze conform prevederilor legale și
             respectă întocmai caietul de sarcini. Noi ne{" "}
-            <span className="text-accent font-bold">mândrim</span> cu o echipă
+            <span className="font-bold text-accent">mândrim</span> cu o echipă
             bine sudată, care dispune de cunoștințe vaste în domeniu și
             numeroase experiențe practice.{" "}
           </p>
           <p className="mb-4">Responsabilii noștri garantează astfel:</p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Soluții personalizate</span>{" "}
+            <span className="font-bold text-accent">Soluții personalizate</span>{" "}
             - Toate activitățile sunt derulate în funcție de ceea ce își dorește
             beneficiarul. Persoana care se ocupă de verificarea calității
             lucrărilor efectuate nu scapă din vedere cerințele speciale pe care
@@ -723,7 +721,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Siguranță</span> - Pe lângă
+            <span className="font-bold text-accent">Siguranță</span> - Pe lângă
             execuția propriu-zisă a construcției, una dintre cele mai dificile
             etape este verificarea în mod constant a documentelor oficiale
             pentru demararea lucrărilor. Este o activitate de care noi te vom
@@ -735,7 +733,7 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Profesionalism </span> - Ne
+            <span className="font-bold text-accent">Profesionalism </span> - Ne
             place să credem că nimic nu se compară cu eficiența activităților
             duse la bun sfârșit de profesioniști. Personalul nostru stabilește
             discuții cu beneficiarul, ia în calcul toate riscurile care pot
@@ -749,7 +747,7 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               Care sunt atribuțiile unui responsabil de proiect?
             </h3>
             <p>
@@ -765,7 +763,7 @@ export const ServiciiContent = () => {
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   Te întrebi care sunt activitățile propriu-zise pe care le va
                   derula un responsabil de proiect casă?
                 </AccordionTrigger>
@@ -839,7 +837,7 @@ export const ServiciiContent = () => {
           className="mb-32 scroll-mt-12 xl:scroll-mt-32"
           id="dirigenție-de-șantier"
         >
-          <h3 className="mb-12 text-accent text-2xl text-center xl:text-start">
+          <h3 className="mb-12 text-center text-2xl text-accent xl:text-start">
             Servicii de Dirigenție de Șantier
           </h3>
           <p>
@@ -853,7 +851,7 @@ export const ServiciiContent = () => {
           <p className="mb-4">Dirigintele noștri de șantier dau dovadă de:</p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Atitudine obiectivă</span> -
+            <span className="font-bold text-accent">Atitudine obiectivă</span> -
             Specialistul pune accent întotdeauna pe obiectivitate atunci când ia
             decizii cu privire la proiectul desfășurat. Se asigură că există o
             armonie în ceea ce privește relațiile cu antreprenorii, furnizorii
@@ -862,14 +860,14 @@ export const ServiciiContent = () => {
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">Experiența necesară</span> -
+            <span className="font-bold text-accent">Experiența necesară</span> -
             Nimic nu se compară cu eficiența activităților pe care le pot derula
             profesioniștii. Colaborăm doar cu persoane care dețin certificări
             care le atestă abilitățile.
           </p>
           <p>
             <span className="text-accent">&#9679;</span>{" "}
-            <span className="text-accent font-bold">
+            <span className="font-bold text-accent">
               Respectarea prevederilor legale{" "}
             </span>{" "}
             - Un aspect foarte important pentru orice persoană care participă
@@ -885,7 +883,7 @@ export const ServiciiContent = () => {
             whileInView={"show"}
             viewport={{ once: true, ammount: 0.4 }}
           >
-            <h3 className="mt-8 text-accent text-2xl text-center xl:text-start">
+            <h3 className="mt-8 text-center text-2xl text-accent xl:text-start">
               Ce responsabilități are dirigintele de șantier?
             </h3>
             <p>
@@ -897,7 +895,7 @@ export const ServiciiContent = () => {
             {/* Accordion */}
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg text-start">
+                <AccordionTrigger className="text-start text-lg">
                   În perioada execuției, fie că e vorba deproiect casă simplăsau
                   o hală industrială, dirigintele vizează următoarele etape:
                 </AccordionTrigger>
@@ -945,7 +943,7 @@ export const ServiciiContent = () => {
                     <span className="text-accent">&#9679;</span> Completează
                     cartea tehnică și adaugă toate documentele necesare.
                   </p>
-                  <h3 className="text-lg text-accent mt-4">
+                  <h3 className="mt-4 text-lg text-accent">
                     Garantăm efectuarea lucrărilor conform reglementărilor în
                     vigoare. Diriginții noștri de șantier garantează respectarea
                     cadrului legal și anume:

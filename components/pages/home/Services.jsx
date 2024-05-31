@@ -7,20 +7,20 @@ import { fadeIn } from "../../../variants";
 
 const Services = () => {
   return (
-    <div className='py-12 xl:py-20 w-full max-w-[1440px] mx-auto overflow-hidden'>
+    <div className="mx-auto w-full max-w-[1440px] overflow-hidden py-12 xl:py-20">
       <motion.div
         variants={fadeIn("down", 0.4)}
-        initial='hidden'
+        initial="hidden"
         whileInView={"show"}
         viewport={{ once: true, ammount: 0.2 }}
-        className='flex flex-col items-center justify-center mb-10'
+        className="mb-10 flex flex-col items-center justify-center"
       >
         <Image
           src={ServicesCarouselImg}
-          alt='TNG Grup servicii'
-          className='object-contain rounded-b-[30%]'
+          alt="TNG Grup servicii"
+          className="rounded-b-[30%] object-contain"
         />
-        <span className='w-2/3 border-b-2 border-accent mt-10'></span>
+        <span className="mt-10 w-2/3 border-b-2 border-accent"></span>
         <ServicesCarousel />
       </motion.div>
     </div>

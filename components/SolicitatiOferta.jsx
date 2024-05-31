@@ -13,18 +13,15 @@ export function SolicitatiOferta({ customStyle }) {
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
   const handleClose = () => setOpen(false);
 
-  if (isDesktop) { 
+  if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button
-            variant='orange'
-            className={`${customStyle}`}
-          >
+          <Button variant="orange" className={`${customStyle}`}>
             Solicitați o ofertă
           </Button>
         </DialogTrigger>
-        <DialogContent className='sm:max-w-[425px]'>
+        <DialogContent className="sm:max-w-[425px]">
           <SolicitatiOfertaForm onClose={handleClose} />
         </DialogContent>
       </Dialog>
@@ -34,7 +31,7 @@ export function SolicitatiOferta({ customStyle }) {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant='orange' className={` ${customStyle}`}>
+        <Button variant="orange" className={` ${customStyle}`}>
           Solicitați o ofertă
         </Button>
       </DrawerTrigger>

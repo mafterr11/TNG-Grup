@@ -10,17 +10,17 @@ const CompanyIntro = () => {
   return (
     <motion.div
       variants={fadeIn("down", 0.2)}
-      initial='hidden'
+      initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, ammount: 0.4 }}
-      className='container mx-auto'
+      className="container mx-auto"
     >
-      <div className='flex flex-col xl:flex-row items-center justify-center gap-x-12 gap-y-12 xl:gap-y-0'>
-        <div className='w-full xl:w-1/2'>
-          <h3 className='text-accent font-normal text-center md:text-start'>
+      <div className="flex flex-col items-center justify-center gap-x-12 gap-y-12 xl:flex-row xl:gap-y-0">
+        <div className="w-full xl:w-1/2">
+          <h3 className="text-center font-normal text-accent md:text-start">
             Cine suntem noi
           </h3>
-          <span className='border-b-2 border-accent flex w-[85%] md:w-[60%] max-md:mx-auto mb-8 mt-4'></span>
+          <span className="mb-8 mt-4 flex w-[85%] border-b-2 border-accent max-md:mx-auto md:w-[60%]"></span>
           <div>
             <p>
               TNG GRUP AG este o societate de Antreprenoriat General, cu capital
@@ -36,11 +36,11 @@ const CompanyIntro = () => {
             </p>
           </div>
         </div>
-        <div className='w-full md:w-[70%] xl:w-[30%] h-42'>
+        <div className="h-42 w-full md:w-[70%] xl:w-[30%]">
           <Image
             src={p1}
-            alt='TNG Grup logo'
-            className='rounded-3xl object-cover'
+            alt="TNG Grup logo"
+            className="rounded-3xl object-cover"
           />
         </div>
       </div>

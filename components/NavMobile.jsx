@@ -85,56 +85,56 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
       {/* nav trigger btn */}
       <div
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className='cursor-pointer outline-none'
+        className="cursor-pointer outline-none"
       >
-        <RiMenu2Line className='text-4xl transition-all duration-200' />
+        <RiMenu2Line className="text-4xl transition-all duration-200" />
       </div>
       <aside
         className={`${
           isMenuOpen ? "top-0" : "-top-full"
-        } bg-grey fixed z-20 h-full p-10 inset-0 transition-all duration-500`}
+        } fixed inset-0 z-20 h-full bg-grey p-10 transition-all duration-500`}
       >
-        <div className='flex flex-col items-center justify-between h-full text-white'>
+        <div className="flex h-full flex-col items-center justify-between text-white">
           {/* close btn */}
           <div
             onClick={() => setIsMenuOpen(false)}
-            className='cursor-pointer text-4xl  absolute w-10 h-10 right-8 top-8 flex items-center justify-center'
+            className="absolute right-8 top-8 flex h-10 w-10 cursor-pointer items-center justify-center text-4xl"
           >
             <IoCloseOutline />
           </div>
           {/* logo */}
           <Link href={"/"} onClick={() => setIsMenuOpen(false)}>
             <h2>
-              <span className='text-accent'>TNG</span> Grup
+              <span className="text-accent">TNG</span> Grup
             </h2>
           </Link>
           {/* links */}
-          <div className='flex flex-col gap-y-8'>
+          <div className="flex flex-col gap-y-8">
             {links.map((link, index) => {
               if (link.path === "/servicii") {
                 return (
                   <div key={index}>
                     <div
                       onClick={toggleServicii}
-                      className='cursor-pointer flex items-center gap-x-3 justify-base hover:text-orange relative'
+                      className="justify-base relative flex cursor-pointer items-center gap-x-3 hover:text-orange"
                     >
                       <div className={`${iconStyles}`}>{link.icon}</div>
                       <div className={`${linkStyles}`}>{link.name}</div>
                     </div>
                     {isServiciiOpen && (
                       <Drawer>
-                        <DrawerTrigger className='absolute left-0 right-0'>
+                        <DrawerTrigger className="absolute left-0 right-0">
                           Descoperiți Serviciile Noastre
                         </DrawerTrigger>
-                        <DrawerContent as='div' className="rounded-t-2xl">
+                        <DrawerContent as="div" className="rounded-t-2xl">
                           <DrawerHeader>
-                            <DrawerTitle className='text-accent'>
-                              <div className="absolute top-2 right-[40%] px-10 h-[0.55rem] rounded-full bg-white/20"></div>
+                            <DrawerTitle className="text-accent">
+                              <div className="absolute right-[40%] top-2 h-[0.55rem] rounded-full bg-white/20 px-10"></div>
                               Servicii de Construcții Premium
                             </DrawerTitle>
-                            <DrawerDescription className='text-base font-semibold'>
+                            <DrawerDescription className="text-base font-semibold">
                               Construiește cu Încredere
-                              <span className='block border-t border-accent my-4'></span>
+                              <span className="my-4 block border-t border-accent"></span>
                             </DrawerDescription>
                           </DrawerHeader>
                           {dropdownLinks.map((dropdownLink, dropdownIndex) => (
@@ -143,18 +143,18 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                               onClick={() =>
                                 closeMenuAndNavigate(dropdownLink.path)
                               }
-                              className='px-4 pb-6 flex gap-x-[4px] cursor-pointer'
+                              className="flex cursor-pointer gap-x-[4px] px-4 pb-6"
                             >
-                              <span className='text-accent'>&#9679;</span>
-                              <div className='hover hover:scale-[0.96]'>
+                              <span className="text-accent">&#9679;</span>
+                              <div className="hover hover:scale-[0.96]">
                                 <span>{dropdownLink.name}</span>
                               </div>
                             </div>
                           ))}
                           <DrawerFooter>
                             <DrawerClose
-                              as='div'
-                              className='text-white bg-orange hover:bg-orange-hover hover:scale-[0.98] w-[50%] py-3 px-3 mx-auto'
+                              as="div"
+                              className="mx-auto w-[50%] bg-orange px-3 py-3 text-white hover:scale-[0.98] hover:bg-orange-hover"
                             >
                               Închide
                             </DrawerClose>
@@ -170,7 +170,7 @@ const NavMobile = ({ containerStyles, iconStyles, linkStyles }) => {
                   <Link
                     key={index}
                     href={link.path}
-                    className='flex items-center gap-x-3 justify-base hover:text-orange'
+                    className="justify-base flex items-center gap-x-3 hover:text-orange"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <div className={`${iconStyles}`}>{link.icon}</div>

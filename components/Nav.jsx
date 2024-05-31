@@ -1,5 +1,5 @@
-"use client"
-import { usePathname } from 'next/navigation';
+"use client";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -38,7 +38,7 @@ const dropdownLinks = [
     path: "/servicii#execuție-construcții-civile",
     name: "Execuție Construcții Civile",
   },
-  { 
+  {
     path: "/servicii#execuție-construcții-industriale",
     name: "Execuție Construcții Industriale",
   },
@@ -64,13 +64,16 @@ const Nav = ({ containerStyles, linkStyles }) => {
           return (
             <NavigationMenu key={index}>
               <NavigationMenuList>
-                <NavigationMenuItem as='div' className={`${linkStyles}`}>
-                  <NavigationMenuTrigger as='span'>
-                    <Link href='/servicii' className={`${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-base hover:scale-[0.97]' : 'capitalize text-base hover hover:scale-[0.97]'}`}>
+                <NavigationMenuItem as="div" className={`${linkStyles}`}>
+                  <NavigationMenuTrigger as="span">
+                    <Link
+                      href="/servicii"
+                      className={`${currentRoute === link.path ? "text-base capitalize underline decoration-accent decoration-2 underline-offset-[0.5rem] hover:scale-[0.97]" : "hover text-base capitalize hover:scale-[0.97]"}`}
+                    >
                       <span>{link.name}</span>
                     </Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent as='div' className='py-2'>
+                  <NavigationMenuContent as="div" className="py-2">
                     {dropdownLinks.map((dropdownLink, dropdownIndex) => (
                       <Link
                         key={dropdownIndex}
@@ -79,9 +82,9 @@ const Nav = ({ containerStyles, linkStyles }) => {
                         legacyBehavior
                       >
                         <NavigationMenuLink>
-                          <div className='my-6 w-[21rem] text-center flex gap-x-[4px]'>
-                            <span className='text-accent'>&#9679;</span>
-                            <div className='hover'>
+                          <div className="my-6 flex w-[21rem] gap-x-[4px] text-center">
+                            <span className="text-accent">&#9679;</span>
+                            <div className="hover">
                               <span>{dropdownLink.name}</span>
                             </div>
                           </div>
@@ -95,7 +98,11 @@ const Nav = ({ containerStyles, linkStyles }) => {
           );
         } else {
           return (
-            <Link key={index} href={link.path} className={`${linkStyles} ${(currentRoute === link.path) ? 'underline decoration-accent decoration-2 underline-offset-[0.5rem] capitalize text-base hover:scale-[0.97]' : 'capitalize text-base hover hover:scale-[0.97]'}`}>
+            <Link
+              key={index}
+              href={link.path}
+              className={`${linkStyles} ${currentRoute === link.path ? "text-base capitalize underline decoration-accent decoration-2 underline-offset-[0.5rem] hover:scale-[0.97]" : "hover text-base capitalize hover:scale-[0.97]"}`}
+            >
               <span>{link.name}</span>
             </Link>
           );
