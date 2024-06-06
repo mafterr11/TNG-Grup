@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "pm2 start npm --name 'next-app' -- start",
+    "start": "next start",
     "stop": "pm2 stop 'next-app'",
     "lint": "next lint",
     "sitemap": "next-sitemap --config next-sitemap.config.js"
