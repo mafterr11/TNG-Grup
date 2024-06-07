@@ -1,5 +1,6 @@
 import Intro from "@/components/pages/portofoliu/Intro";
 import { Proiecte } from "@/components/pages/portofoliu/Proiecte";
+import { constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
   title: "Portofoliu TNG GRUP - Proiecte Impresionante de Construcții",

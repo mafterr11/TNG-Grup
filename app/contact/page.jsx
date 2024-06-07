@@ -1,4 +1,5 @@
 import ContactMap from "@/components/pages/contact/ContactMap";
+import { constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
   title: "Contactați TNG GRUP - Partenerul Dumneavoastră în Construcții",

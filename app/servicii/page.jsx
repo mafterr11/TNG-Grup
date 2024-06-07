@@ -1,4 +1,5 @@
 import { ServiciiContent } from "@/components/pages/servicii/ServiciiContent";
+import { constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata( {
   title: "Servicii de Construcții Oferite de TNG GRUP",
