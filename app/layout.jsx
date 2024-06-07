@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import { constructMetadata } from "@/lib/utils";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -10,13 +11,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export const metadata = {
-  title: "TNG GRUP - Lider în Construcții și Dezvoltare Durabilă",
-  description:
-    "Descoperiți inovația și calitatea în construcții cu TNG GRUP. Oferim soluții de top pentru proiecte civile, industriale și agricole.",
-  keywords:
-    "TNG GRUP, construcții România, dezvoltare durabilă, proiecte civile, industriale, agricole, servicii de construcții, proiecte de construcții",
-};
+export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
   return (
