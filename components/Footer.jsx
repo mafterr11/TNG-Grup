@@ -16,7 +16,7 @@ const Footer = () => {
               target="blank"
               className="hover"
             >
-              <span className="text-accent">Maftei Alexandru</span>
+              <span className="text-accent">Myriad Tech</span>
             </Link>
           </div>
           <div>
