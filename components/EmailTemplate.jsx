@@ -5,7 +5,6 @@ import {
   Heading,
   Hr,
   Html,
-  Img,
   Preview,
   Section,
   Text,
@@ -22,10 +21,6 @@ const EmailTemplate = ({
   inceput,
   mesaj,
 }) => {
-  const baseUrl =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://tngag.ro";
 
   return (
     <Html>
@@ -34,15 +29,8 @@ const EmailTemplate = ({
       <Body style={main}>
         <Container style={container}>
           <Section style={global.defaultPadding}>
-            <Img
-              src={`${baseUrl}/logo.png`}
-              width="100"
-              height="100"
-              alt="TNG GRUP logo"
-              style={{ margin: "auto" }}
-            />
             <Heading style={global.heading}>
-              Solicitare noua de oferta - TNG GRUP
+              Solicitare noua de oferta - TNG 
             </Heading>
             <Text style={global.text}>
               Nume complet: {nume} {prenume}
