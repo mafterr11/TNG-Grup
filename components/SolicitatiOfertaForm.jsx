@@ -147,7 +147,6 @@ export default function SolicitatiOfertaForm({ onClose }) {
 
   return (
     <>
-      <GoogleCaptchaWrapper>
         <div className="relative mx-auto overflow-auto rounded-lg bg-grey p-6 md:max-w-sm lg:max-w-md xl:max-w-lg">
           <div className="fixed left-0 right-0 top-2 mx-auto h-[0.6rem] w-[4.5rem] rounded-full bg-white/10" />
           <Form {...form}>
@@ -456,7 +455,6 @@ export default function SolicitatiOfertaForm({ onClose }) {
             apply.
           </p>
         </div>
-      </GoogleCaptchaWrapper>
     </>
   );
 }

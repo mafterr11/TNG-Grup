@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import { constructMetadata } from "@/lib/utils";
+import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,9 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ro">
       <body className={poppins.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <GoogleCaptchaWrapper>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </GoogleCaptchaWrapper>
         <Toaster />
       </body>
     </html>

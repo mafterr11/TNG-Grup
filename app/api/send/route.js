@@ -8,7 +8,7 @@ export async function POST(request) {
     const formData = await request.json();
 
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "TNGAG <solicitari@tngag.ro>",
       to: ["mafterr11@gmail.com"],
       subject: "TNG Solicitare Nouă",
       react: EmailTemplate(formData), // pass the entire formData object to the template
