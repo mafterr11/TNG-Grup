@@ -50,22 +50,14 @@ export function HeroCarousel() {
         </CarouselContent>
       </Carousel>
       <div className="absolute left-0 top-0 z-20 flex h-full w-full max-w-4xl flex-col items-center justify-center gap-y-2 text-white lg:max-w-6xl xl:max-w-4xl xl:items-start xl:pb-40 xl:pl-60">
-        <motion.h2
-          variants={fadeIn("down", 0.2)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: true, ammount: 0.4 }}
-          className="hidden md:block"
-        >
-          <span className="text-accent">TNG</span> Grup
-        </motion.h2>
         <motion.h1
           variants={fadeIn("down", 0.2)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: true, ammount: 0.4 }}
-          className="flex flex-col items-center capitalize md:flex-row md:items-start md:gap-x-2"
+          className="hidden md:block xl:text-6xl"
         >
+          <span className="text-accent">TNG</span> Grup <br />
           Construcții<span className="text-accent"> România</span>
         </motion.h1>
         <motion.p
