@@ -25,9 +25,8 @@ import {
   Select,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
-import GoogleCaptchaWrapper from "@/app/GoogleCaptchaWrapper";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import axios from "axios";
+import { useReCaptcha } from "next-recaptcha-v3";
 
 const formSchema = z.object({
   nume: z.string().min(3, {
@@ -49,7 +48,7 @@ const formSchema = z.object({
 });
 
 export default function SolicitatiOfertaForm({ onClose }) {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const { executeRecaptcha } = useReCaptcha();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
