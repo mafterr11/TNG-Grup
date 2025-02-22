@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative z-[2] mx-auto flex w-full flex-col-reverse items-center justify-between gap-y-8 border-t-2 border-accent bg-black py-8 lg:flex-row xl:px-12">
+    <footer className="relative z-2 mx-auto flex w-full flex-col-reverse items-center justify-between gap-y-8 border-t-2 border-accent bg-black py-8 lg:flex-row xl:px-12">
       {/* credits */}
       <div className="flex flex-col items-center gap-y-2 xl:items-start">
         <div className="flex max-md:flex-col items-center justify-center gap-x-2">

@@ -116,34 +116,34 @@ export function ServicesCarousel() {
       plugins={[
         Autoplay({
           delay: 10000,
-          stopOnInteraction: true,
+          stopOnMouseEnter: true,
         }),
       ]}
       className="mt-16 w-full max-w-7xl"
     >
       <CarouselContent className="-ml-1 flex">
         {groupedServicii.map((group, index) => (
-          <CarouselItem key={index} className="w-full flex-shrink-0 px-3">
+          <CarouselItem key={index} className="w-full shrink-0 px-3">
             <div className="flex flex-col items-center justify-center gap-y-4 xl:flex-row xl:gap-x-6">
               {group.map((serviciu, serviciuIndex) => (
                 <div key={serviciuIndex} className="w-[90%]">
                   <Link href={serviciu.path}>
-                    <Card className="group relative mx-auto rounded-xl border-2 border-accent transition-all duration-300 ease-in-out hover:scale-[0.99] hover:bg-grey/85 md:w-[60%] xl:w-full">
-                      <CardContent className="flex min-h-[310px] flex-col items-center justify-start gap-y-6 rounded-[3%] bg-grey bg-opacity-[0.93] p-6 transition-all duration-300 ease-in-out md:min-h-[350px] md:max-lg:justify-center xl:min-h-[310px]">
+                    <Card className="group border-accent hover:bg-grey/85 relative mx-auto rounded-xl border-2 transition-all duration-300 ease-in-out hover:scale-[0.99] md:w-[60%] xl:w-full">
+                      <CardContent className="bg-grey/95 bg-opacity-[0.93] flex min-h-[310px] flex-col items-center justify-start gap-y-6 rounded-[3%] p-6 transition-all duration-300 ease-in-out md:min-h-[350px] md:max-lg:justify-center xl:min-h-[310px]">
                         <div className="flex flex-col items-center justify-center gap-y-4">
-                          <div className="text-3xl transition-all duration-300 ease-in-out group-hover:text-accent">
+                          <div className="group-hover:text-accent text-3xl transition-all duration-300 ease-in-out">
                             {serviciu.icon}
                           </div>
-                          <div className="flex flex-col text-center font-semibold text-accent">
+                          <div className="text-accent flex flex-col text-center font-semibold">
                             <h4>{serviciu.title}</h4>
                             <h4>{serviciu.title2}</h4>
                           </div>
                         </div>
-                        <p className="overflow-hidden text-ellipsis text-center text-sm xl:text-start">
+                        <p className="overflow-hidden text-center text-sm text-ellipsis xl:text-start leading-5">
                           {serviciu.description}
                         </p>
-                        <div className="absolute bottom-2 right-4 text-5xl font-thin">
-                          <IoIosArrowRoundForward className="transition-all duration-300 group-hover:rotate-45 group-hover:text-accent" />
+                        <div className="absolute right-4 bottom-2 text-5xl font-thin">
+                          <IoIosArrowRoundForward className="group-hover:text-accent transition-all duration-300 group-hover:rotate-45" />
                         </div>
                       </CardContent>
                     </Card>

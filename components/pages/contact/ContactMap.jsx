@@ -46,7 +46,7 @@ const ContactMap = () => {
             {/* Detalii */}
             <div className="absolute hidden flex-col md:right-8 md:top-8 md:flex xl:right-12 xl:top-16">
               {/* Adresa */}
-              <div className="flex-wrap items-start justify-center rounded bg-grey px-[1.8rem] py-5">
+              <div className="flex-wrap items-start justify-center rounded-sm bg-grey px-[1.8rem] py-5">
                 <h2 className="text-gray-900 text-sm font-semibold uppercase tracking-widest">
                   Adresă:
                 </h2>
@@ -61,7 +61,7 @@ const ContactMap = () => {
                 </a>
               </div>
               {/* Email */}
-              <div className="mt-2 flex items-center justify-start gap-x-2 rounded bg-grey px-[1.8rem] py-5">
+              <div className="mt-2 flex items-center justify-start gap-x-2 rounded-sm bg-grey px-[1.8rem] py-5">
                 <h2 className="text-sm font-semibold tracking-widest">
                   EMAIL:
                 </h2>
@@ -77,7 +77,7 @@ const ContactMap = () => {
                 </a>
               </div>
               {/* Telefon */}
-              <div className="mt-2 flex items-center justify-start gap-x-2 rounded bg-grey px-[1.8rem] py-5">
+              <div className="mt-2 flex items-center justify-start gap-x-2 rounded-sm bg-grey px-[1.8rem] py-5">
                 <h2 className="text-sm font-semibold tracking-widest">
                   TELEFON:
                 </h2>
@@ -95,7 +95,7 @@ const ContactMap = () => {
               </div>
             </div>
             {/* Program */}
-            <div className="absolute z-[7] hidden w-full flex-col rounded bg-grey p-4 md:bottom-44 md:left-4 md:flex md:w-[43%] lg:w-[35%] xl:bottom-52 xl:left-16 xl:w-[22%]">
+            <div className="absolute z-7 hidden w-full flex-col rounded-sm bg-grey p-4 md:bottom-44 md:left-4 md:flex md:w-[43%] lg:w-[35%] xl:bottom-52 xl:left-16 xl:w-[22%]">
               <h3 className="mb-4 text-lg font-semibold tracking-widest">
                 Program:
               </h3>
@@ -116,7 +116,7 @@ const ContactMap = () => {
           {/* Mobile Panel */}
           <div className="flex flex-col gap-y-6 md:hidden">
             {/* Detalii */}
-            <div className="flex flex-col items-center justify-center gap-y-8 rounded text-center">
+            <div className="flex flex-col items-center justify-center gap-y-8 rounded-sm text-center">
               {/* email mobil */}
               <div>
                 <h2 className="text-gray-900 text-sm font-semibold tracking-widest">
@@ -165,7 +165,7 @@ const ContactMap = () => {
               </div>
             </div>
             {/* Program */}
-            <div className="z-[7] mr-4 flex w-full flex-col rounded p-4 text-center md:ml-auto md:mt-0 md:w-1/2 lg:mb-[24rem] lg:w-1/3">
+            <div className="z-7 mr-4 flex w-full flex-col rounded-sm p-4 text-center md:ml-auto md:mt-0 md:w-1/2 lg:mb-[24rem] lg:w-1/3">
               <h3 className="text-gray-900 mb-4 text-lg font-semibold tracking-widest">
                 Program:
               </h3>

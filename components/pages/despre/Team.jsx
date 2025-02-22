@@ -71,11 +71,11 @@ const Team = () => {
                   alt="Membrii echipei TNG Grup"
                   height={800}
                   width={800}
-                  className="mb-4 h-48 w-48 flex-shrink-0 rounded-lg object-cover object-center sm:mb-0"
+                  className="mb-4 h-48 w-48 shrink-0 rounded-lg object-cover object-center sm:mb-0"
                   src={angajat.image}
                 />
                 {/* Text */}
-                <div className="flex-grow sm:pl-8">
+                <div className="grow sm:pl-8">
                   <h2 className="text-lg font-medium">{angajat.nume}</h2>
                   <h3 className="mb-6 font-normal text-accent">
                     {angajat.rol}

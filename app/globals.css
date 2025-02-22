@@ -1,6 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 400px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+
+  --color-*: initial;
+  --color-accent: #ff8300;
+  --color-body: #e5e5e5;
+  --color-white: #fff;
+
+  --color-black: #0d0c0b;
+  --color-black-heavy: #000000;
+
+  --color-grey: #232323;
+  --color-grey-light: #2a3439;
+
+  --color-orange: #e68530;
+  --color-orange-hover: #da863c;
+
+  --color-red: #fe3939;
+
+  --background-image-site: url('/1.webp');
+
+  --font-poppins: var(--font-poppins), sans-serif;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   * {
@@ -14,23 +89,23 @@
   h1,
   h2,
   h3 {
-    @apply font-bold leading-3;
+    @apply font-bold ;
   }
 
   h1 {
-    @apply text-[30px] leading-[40px] xl:text-[40px];
+    @apply text-[30px]  xl:text-[40px];
   }
   h2 {
-    @apply text-[25px] leading-[40px] xl:text-[35px];
+    @apply text-[25px]  xl:text-[35px];
   }
   h3 {
-    @apply text-[25px] leading-[39px] xl:text-[30px];
+    @apply text-[25px] xl:text-[30px];
   }
   h4 {
     @apply text-[16px] xl:text-[14px];
   }
   p {
-    @apply leading-8 text-white/80;
+    @apply  text-white/80 leading-8;
   }
   a {
     @apply cursor-pointer transition-all duration-300;

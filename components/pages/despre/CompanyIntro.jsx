@@ -13,14 +13,12 @@ const CompanyIntro = () => {
       initial="hidden"
       whileInView={"show"}
       viewport={{ once: true, ammount: 0.4 }}
-      className="container mx-auto"
+      className="container mx-auto mb-44 xl:mb-24"
     >
-      <div className="flex flex-col items-center justify-center gap-x-12 gap-y-12 xl:flex-row xl:gap-y-0">
-        <div className="w-full xl:w-1/2">
-          <h3 className="text-center font-normal text-accent md:text-start">
-            Cine suntem noi
-          </h3>
-          <span className="mb-8 mt-4 flex w-[85%] border-b-2 border-accent max-md:mx-auto md:w-[60%]"></span>
+      <div className="flex flex-col items-start justify-center gap-x-12 gap-y-12 xl:flex-row xl:gap-y-0">
+        <div className="w-full xl:mt-10 xl:w-1/2">
+          <h3 className="text-accent font-normal">Cine suntem noi</h3>
+          <span className="border-accent mt-4 mb-8 flex w-[85%] border-b-2 md:w-[60%]"></span>
           <div>
             <p>
               TNG GRUP AG este o societate de Antreprenoriat General, cu capital

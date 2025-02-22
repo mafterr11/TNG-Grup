@@ -23,11 +23,11 @@ const AchievementCounter = () => {
         <div className="flex-1">
           <div className="flex items-end text-3xl lg:text-[2.8rem] xl:pt-4">
             <CountUp start={0} end={inView ? 30 : 0} duration={5} />+
-            <div className="ml-[3px] max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-3xl xl:leading-[1]">
+            <div className="ml-[3px] max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-3xl ">
               Ani
             </div>
           </div>
-          <div className="max-w-[150px] text-lg font-bold uppercase tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl">
+          <div className="max-w-[150px] text-lg font-bold uppercase tracking-[1px] leading-none text-accent lg:text-base xl:max-w-[200px] xl:text-xl xl:-mt-1">
             Experiența
           </div>
         </div>
@@ -35,7 +35,7 @@ const AchievementCounter = () => {
           <div className="text-3xl lg:text-[2.8rem]">
             <CountUp start={0} end={inView ? 50 : 0} duration={5} />+
           </div>
-          <div className="max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl">
+          <div className="max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl xl:-mt-2">
             Construcții Civile
           </div>
         </div>
@@ -43,7 +43,7 @@ const AchievementCounter = () => {
           <div className="text-3xl lg:text-[2.8rem]">
             <CountUp start={0} end={inView ? 20 : 0} duration={5} />+
           </div>
-          <div className="max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl">
+          <div className="max-w-[150px] text-lg font-bold uppercase leading-[1.4] tracking-[1px] text-accent lg:text-base xl:max-w-[200px] xl:text-xl xl:-mt-2">
             Construcții Industriale
           </div>
         </div>
