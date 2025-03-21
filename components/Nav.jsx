@@ -68,7 +68,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
                   <NavigationMenuTrigger as="span">
                     <Link
                       href="/servicii"
-                      className={`${currentRoute === link.path ? "text-base capitalize underline decoration-accent decoration-2 underline-offset-[0.5rem] hover:scale-[0.97]" : "hover text-base capitalize hover:scale-[0.97]"}`}
+                      className={`${currentRoute === link.path ? "decoration-accent text-base capitalize underline decoration-2 underline-offset-[0.5rem] hover:scale-[0.97]" : "hover text-base capitalize hover:scale-[0.97]"}`}
                     >
                       <span>{link.name}</span>
                     </Link>
@@ -101,7 +101,7 @@ const Nav = ({ containerStyles, linkStyles }) => {
             <Link
               key={index}
               href={link.path}
-              className={`${linkStyles} ${currentRoute === link.path ? "text-base capitalize underline decoration-accent decoration-2 underline-offset-[0.5rem] hover:scale-[0.97]" : "hover text-base capitalize hover:scale-[0.97]"}`}
+              className={`${linkStyles} ${currentRoute === link.path ? "decoration-accent text-base capitalize underline decoration-2 underline-offset-[0.5rem] hover:scale-[0.97]" : "hover text-base capitalize hover:scale-[0.97]"}`}
             >
               <span>{link.name}</span>
             </Link>

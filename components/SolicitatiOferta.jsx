@@ -4,8 +4,18 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
-import { Drawer, DrawerContent, DrawerTrigger, DrawerTitle } from "@/components/ui/drawer";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+  DrawerTitle,
+} from "@/components/ui/drawer";
 import SolicitatiOfertaForm from "./SolicitatiOfertaForm";
 
 export function SolicitatiOferta({ customStyle }) {

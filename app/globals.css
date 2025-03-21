@@ -148,3 +148,45 @@
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: var(--color-grey-light);
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 131, 0, 0.95),
+    rgba(230, 133, 48, 0.85)
+  );
+  border: 3px solid var(--color-grey-light); /* adds space around the thumb */
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(255, 131, 0, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-orange-hover),
+    var(--color-orange)
+  );
+  box-shadow: 0 0 10px rgba(255, 131, 0, 0.7);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: auto; /* makes it a bit thicker */
+  scrollbar-color: var(--color-orange) var(--color-grey-light);
+}

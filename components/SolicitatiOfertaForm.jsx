@@ -121,6 +121,7 @@ export default function SolicitatiOfertaForm({ onClose }) {
           description: "Vă vom contacta cât mai curând!",
         });
         form.reset(); // This will reset the form to defaultValues specified in useForm
+        onClose();
       } else {
         toast({
           title: "Ceva nu a mers bine!",
