@@ -9,7 +9,7 @@ export async function POST(request) {
 
     const data = await resend.emails.send({
       from: "TNGAG <solicitari@tngag.ro>",
-      to: ["office@tngag.ro"],
+      to: ["mafterr11@gmail.com"],
       subject: "TNG Solicitare Nouă",
       react: EmailTemplate(formData), // pass the entire formData object to the template
     });

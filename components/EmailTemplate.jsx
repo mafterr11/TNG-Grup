@@ -21,7 +21,6 @@ const EmailTemplate = ({
   inceput,
   mesaj,
 }) => {
-
   return (
     <Html>
       <Head />
@@ -30,7 +29,7 @@ const EmailTemplate = ({
         <Container style={container}>
           <Section style={global.defaultPadding}>
             <Heading style={global.heading}>
-              Solicitare noua de oferta - TNG 
+              Solicitare noua de oferta - TNG
             </Heading>
             <Text style={global.text}>
               Nume complet: {nume} {prenume}
