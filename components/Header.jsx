@@ -38,7 +38,7 @@ const Header = () => {
               height={60}
               priority
               alt="Tng Grup logo"
-              className="hidden rounded-[50%] border-2 border-accent xl:flex"
+              className="hidden rounded-md border-2 border-accent xl:flex"
             />
             <h3>
               <span className="text-accent">TNG</span> GRUP

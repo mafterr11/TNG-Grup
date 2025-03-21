@@ -65,7 +65,7 @@ export const Proiecte = () => {
                   <p className="leading-6 text-balance">{proiect.detalii.descriere}</p>
                 </div>
                 {/* Container 1 */}
-                <div className="flex justify-center gap-x-4 md:justify-start">
+                <div className="flex justify-between gap-x-4 md:justify-start">
                   {/* Dormitoare */}
                   <div className="flex flex-col items-center justify-center pr-1 lg:pr-4 xl:gap-y-1">
                     <div className="flex flex-col-reverse items-center justify-center gap-x-[0.5rem] gap-y-2 md:flex-row">

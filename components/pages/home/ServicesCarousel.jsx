@@ -128,8 +128,8 @@ export function ServicesCarousel() {
               {group.map((serviciu, serviciuIndex) => (
                 <div key={serviciuIndex} className="w-[90%]">
                   <Link href={serviciu.path}>
-                    <Card className="group border-accent hover:bg-grey/85 relative mx-auto rounded-xl border-2 transition-all duration-300 ease-in-out hover:scale-[0.99] md:w-[60%] xl:w-full">
-                      <CardContent className="bg-grey/95 bg-opacity-[0.93] flex min-h-[310px] flex-col items-center justify-start gap-y-6 rounded-[3%] p-6 transition-all duration-300 ease-in-out md:min-h-[350px] md:max-lg:justify-center xl:min-h-[310px]">
+                    <Card className="group border-accent hover:bg-grey/85 relative mx-auto rounded-xl border-2 bg-white/10 transition-all duration-300 ease-in-out hover:scale-[0.99] md:w-[60%] xl:w-full">
+                      <CardContent className="flex min-h-[310px] flex-col items-center justify-start gap-y-6 rounded-[3%] p-6 transition-all duration-300 ease-in-out md:min-h-[350px] md:max-lg:justify-center xl:min-h-[310px]">
                         <div className="flex flex-col items-center justify-center gap-y-4">
                           <div className="group-hover:text-accent text-3xl transition-all duration-300 ease-in-out">
                             {serviciu.icon}
@@ -139,7 +139,7 @@ export function ServicesCarousel() {
                             <h4>{serviciu.title2}</h4>
                           </div>
                         </div>
-                        <p className="overflow-hidden text-center text-sm text-ellipsis xl:text-start leading-5">
+                        <p className="overflow-hidden text-center text-sm leading-5 text-ellipsis xl:text-start">
                           {serviciu.description}
                         </p>
                         <div className="absolute right-4 bottom-2 text-5xl font-thin">
