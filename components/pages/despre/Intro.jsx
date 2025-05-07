@@ -27,14 +27,14 @@ const Intro = () => {
         >
           <div className="flex flex-col items-start justify-center space-x-0 text-4xl font-bold text-white xl:flex-row xl:justify-start xl:space-x-2">
             <span className="inline-block tracking-wide">
-              <span className="text-accent">T</span>he
+              <span className="text-accent text-[44px] xl:text-[52px]">T</span>he
             </span>
             <span className="inline-block tracking-wide">
-              <span className="text-accent">N</span>ew
+              <span className="text-accent text-[44px] xl:text-[52px]">N</span>ew
             </span>
             <span className="inline-block tracking-wide">
               {" "}
-              <span className="text-accent">G</span>eneration
+              <span className="text-accent text-[44px] xl:text-[52px]">G</span>eneration
             </span>
           </div>
 
