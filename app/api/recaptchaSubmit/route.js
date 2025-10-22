@@ -28,11 +28,13 @@ export async function POST(request, response) {
     }
 
     if (res && res.data?.success && res.data?.score > 0.5) {
+        console.log(res.data.score)
         return NextResponse.json({
             success: true,
             score: res.data.score,
         });
     } else {
+        console.log(res.data.score)
         return NextResponse.json({ success: false });
     }
 }
