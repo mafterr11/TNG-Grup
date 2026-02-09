@@ -16,11 +16,11 @@ const CompanyIntro = () => {
       className="container mx-auto mb-44 xl:mb-24"
     >
       <div className="flex flex-col items-start justify-center gap-x-12 gap-y-12 xl:flex-row xl:gap-y-0">
-        <div className="w-full xl:mt-10 xl:w-1/2">
+        <div className="w-full xl:mt-10 xl:w-1/2 max-md:text-center">
           <h3 className="text-accent font-normal">Cine suntem noi</h3>
-          <span className="border-accent mt-4 mb-8 flex w-[85%] border-b-2 md:w-[60%]"></span>
+          <span className="border-accent mt-4 mb-8 flex w-[85%] border-b-2 md:w-[60%] max-md:mx-auto"></span>
           <div>
-            <p>
+            <p className="">
               TNG GRUP AG este o societate de Antreprenoriat General, cu capital
               privat integral romanesc, infiintata in anul 2019 din dorinta de a
               satisfice cerintele clientilor, prin respectarea termenelor

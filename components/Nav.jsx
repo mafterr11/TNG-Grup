@@ -75,21 +75,16 @@ const Nav = ({ containerStyles, linkStyles }) => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent as="div" className="py-2">
                     {dropdownLinks.map((dropdownLink, dropdownIndex) => (
-                      <Link
-                        key={dropdownIndex}
-                        href={dropdownLink.path}
-                        passHref
-                        legacyBehavior
-                      >
-                        <NavigationMenuLink>
+                      <NavigationMenuLink asChild key={dropdownIndex}>
+                        <Link href={dropdownLink.path} className="block">
                           <div className="my-6 flex w-[21rem] gap-x-[4px] text-center">
                             <span className="text-accent">&#9679;</span>
                             <div className="hover">
                               <span>{dropdownLink.name}</span>
                             </div>
                           </div>
-                        </NavigationMenuLink>
-                      </Link>
+                        </Link>
+                      </NavigationMenuLink>
                     ))}
                   </NavigationMenuContent>
                 </NavigationMenuItem>
