@@ -14,16 +14,7 @@ const Footer = () => {
             © Toate drepturile rezervate
           </p>
         </div>
-        <div className="md:text-xl lg:text-2xl xl:text-[15px]">
-          Creat de{" "}
-          <Link
-            href="https://www.myriad-tech.ro"
-            target="blank"
-            className="hover"
-          >
-            <span className="text-accent">Myriad Tech</span>
-          </Link>
-        </div>
+        
       </div>
       {/* ANPC */}
       <div className="flex items-center justify-center max-md:flex-col">
