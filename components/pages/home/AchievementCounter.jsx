@@ -14,7 +14,7 @@ const AchievementCounter = () => {
       variants={fadeIn("down", 0.2)}
       initial="hidden"
       whileInView={"show"}
-      viewport={{ once: true, ammount: 0.4 }}
+      viewport={{ once: true, amount: 0.4 }}
       ref={ref}
       className="flex w-full items-center justify-center bg-black/60 p-16"
     >
