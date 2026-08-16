@@ -13,19 +13,19 @@ export default function Footer() {
               <div className="relative h-11 w-11 overflow-hidden rounded-md bg-white"><Image src="/logo.png" alt="TNG Grup" fill sizes="44px" className="object-cover" /></div>
               <span className="text-base font-bold tracking-[.03em]">TNG GRUP</span>
             </Link>
-            <p className="mt-5 max-w-md text-sm leading-7 text-white/62">Execuție, management și servicii tehnice pentru proiecte civile și industriale, cu accent pe control, comunicare și calitatea lucrărilor.</p>
+            <p className="mt-5 max-w-md text-lg leading-8 text-white/64">Execuție, management și servicii tehnice pentru proiecte civile și industriale, cu accent pe control, comunicare și calitatea lucrărilor.</p>
           </div>
 
           <div>
-            <h2 className="mb-4 text-sm font-semibold text-white">Navigație</h2>
-            <div className="grid gap-2.5 text-sm text-white/62">
+            <h2 className="mb-4 text-base font-semibold text-white">Navigație</h2>
+            <div className="grid gap-2.5 text-base text-white/68">
               {navigation.map((item) => <Link key={item.href} href={item.href} className="hover:text-white">{item.label}</Link>)}
             </div>
           </div>
 
           <div>
-            <h2 className="mb-4 text-sm font-semibold text-white">Contact</h2>
-            <div className="space-y-3.5 text-sm text-white/62">
+            <h2 className="mb-4 text-base font-semibold text-white">Contact</h2>
+            <div className="space-y-3.5 text-base text-white/68">
               <a href="tel:+40728873254" className="flex items-center gap-3 hover:text-white"><Phone size={15} className="text-white/45" />0728 873 254</a>
               <a href="mailto:office@tngag.ro" className="flex items-center gap-3 hover:text-white"><Mail size={15} className="text-white/45" />office@tngag.ro</a>
               <a href="https://maps.app.goo.gl/1st6m75wnDy4ryyJ8" target="_blank" rel="noreferrer" className="flex items-start gap-3 hover:text-white"><MapPin size={15} className="mt-0.5 shrink-0 text-white/45" />Str. Costache Sibiceanu nr. 8, Sector 1, București</a>

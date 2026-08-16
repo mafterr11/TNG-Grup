@@ -35,7 +35,7 @@ export default function Contact() {
       />
 
       <section className="bg-paper py-16 md:py-20">
-        <div className="site-container grid gap-10 lg:grid-cols-[.74fr_1.26fr]">
+        <div className="site-container grid gap-10 lg:grid-cols-[.68fr_1.32fr] lg:items-start">
           <div>
             <SectionHeading
               label="Date de contact"
@@ -46,13 +46,13 @@ export default function Contact() {
             <div className="mt-7 grid gap-3" data-stagger>
               {contacts.map(({ id, icon: Icon, label, value, href }) => {
                 const inner = (
-                  <div className="flex items-start gap-3 rounded-2xl border border-black/8 bg-white p-4 md:p-5">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <div className="flex items-start gap-3 rounded-2xl border border-black/40 bg-white p-4 md:p-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#dbe3ea] text-accent">
                       <Icon size={18} />
                     </div>
                     <div>
                       <div className="text-[.74rem] font-medium text-ink-muted">{label}</div>
-                      <div className="mt-1.5 text-[.94rem] font-medium leading-6 text-ink">{value}</div>
+                      <div className="mt-1.5 text-lg font-medium leading-7 text-ink">{value}</div>
                     </div>
                   </div>
                 );
@@ -68,14 +68,14 @@ export default function Contact() {
             </div>
 
             <div className="mt-6 surface-card p-5 md:p-6" data-reveal>
-              <div className="flex items-center gap-2 text-sm font-semibold text-ink">
+              <div className="flex items-center gap-2 text-base font-semibold text-ink">
                 <ShieldCheck size={16} className="text-accent" />
                 Ce ne ajută la primul răspuns
               </div>
-              <p className="mt-2 text-[.88rem] leading-6 text-ink-muted">Nu este nevoie de un brief complicat. Dacă le aveți la îndemână, aceste informații ne ajută să înțelegem contextul din prima:</p>
+              <p className="mt-2 text-lg leading-8 text-ink-muted">Nu este nevoie de un brief complicat. Dacă le aveți la îndemână, aceste informații ne ajută să înțelegem contextul din prima:</p>
               <ul className="mt-4 grid gap-2">
                 {helpfulInfo.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[.84rem] leading-6 text-ink-soft">
+                  <li key={item} className="flex items-start gap-2 text-lg leading-8 text-ink-soft">
                     <ArrowRight size={14} className="mt-1 shrink-0 text-accent" />
                     <span>{item}</span>
                   </li>
@@ -84,10 +84,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-[#151819] p-1 shadow-xl shadow-black/5" data-reveal>
-            <div className="rounded-[1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.025))] p-1">
-              <SolicitatiOfertaForm embedded />
-            </div>
+          <div className="w-full self-start overflow-hidden rounded-2xl bg-[#151819] shadow-[0_22px_55px_rgba(17,19,20,.14)] lg:max-w-[780px] lg:justify-self-end" data-reveal>
+            <SolicitatiOfertaForm embedded />
           </div>
         </div>
       </section>

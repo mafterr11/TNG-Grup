@@ -42,7 +42,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-2 text-[.82rem] font-medium ${active ? "text-white" : "text-white/67 hover:text-white"}`}
+                className={`relative py-2 text-[1.05rem] font-medium ${active ? "text-white" : "text-white/67 hover:text-white"}`}
               >
                 {item.label}
                 {active && <span className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2px] w-4 rounded-full bg-accent" />}
@@ -52,7 +52,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <a href="tel:+40728873254" className="inline-flex items-center gap-2 text-[.78rem] font-medium text-white/65 hover:text-white" aria-label="Sună TNG GRUP la 0728 873 254">
+          <a href="tel:+40728873254" className="inline-flex items-center gap-2 text-base font-medium text-white/65 hover:text-white" aria-label="Sună TNG GRUP la 0728 873 254">
             <Phone size={14} /> 0728 873 254
           </a>
           <SolicitatiOferta customStyle="!min-h-10 !px-4" />
@@ -78,7 +78,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center justify-between rounded-xl border px-4 py-3.5 text-sm font-medium ${active ? "border-white/16 bg-white/8 text-white" : "border-white/10 bg-white/[.03] text-white/74"}`}
+                  className={`flex items-center justify-between rounded-xl border px-4 py-3.5 text-base font-medium ${active ? "border-white/16 bg-white/8 text-white" : "border-white/10 bg-white/[.03] text-white/74"}`}
                 >
                   <span>{item.label}</span>
                   <span className={`h-2 w-2 rounded-full ${active ? "bg-accent" : "bg-white/20"}`} />
@@ -87,7 +87,7 @@ export default function Header() {
             })}
           </nav>
           <div className="mt-4 grid gap-3">
-            <a href="tel:+40728873254" className="flex min-h-11 items-center justify-center gap-2 rounded-[.8rem] border border-white/15 bg-white/[.03] text-sm font-medium text-white/75"><Phone size={15} /> 0728 873 254</a>
+            <a href="tel:+40728873254" className="flex min-h-11 items-center justify-center gap-2 rounded-[.8rem] border border-white/15 bg-white/[.03] text-base font-medium text-white/75"><Phone size={15} /> 0728 873 254</a>
             <SolicitatiOferta customStyle="!w-full" />
           </div>
         </div>

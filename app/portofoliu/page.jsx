@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight, Images, Phone } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { SolicitatiOferta } from "@/components/SolicitatiOferta";
-import { proiecte } from "@/utils/proiecte";
+import { proiecte } from "@/utils/proiecte.js";
 import { constructMetadata } from "@/lib/utils";
 
 export const metadata = constructMetadata({
@@ -30,11 +30,11 @@ export default function Portofoliu() {
             <div>
               <p className="page-label">În portofoliu</p>
               <h2 className="max-w-xl text-2xl font-semibold tracking-[-.035em] text-ink md:text-[2rem]">Proiecte cu cerințe, scări și contexte diferite.</h2>
-              <p className="mt-3 max-w-xl text-[.92rem] leading-7 text-ink-muted">Fotografiile și datele de mai jos sunt prezentate simplu, astfel încât să puteți evalua rapid tipul de lucrări pe care le-am executat sau coordonat.</p>
+              <p className="mt-3 max-w-xl text-lg leading-8 text-ink-muted">Fotografiile și datele de mai jos sunt prezentate simplu, astfel încât să puteți evalua rapid tipul de lucrări pe care le-am executat sau coordonat.</p>
             </div>
             <nav className="grid gap-2 sm:grid-cols-2" aria-label="Navigare proiecte">
               {proiecte.map((project, index) => (
-                <Link key={project.id} href={`#${project.id}`} className="group flex items-center justify-between rounded-xl border border-black/9 bg-paper/55 px-4 py-3.5 text-sm font-medium text-ink transition hover:border-black/18 hover:bg-white">
+                <Link key={project.id} href={`#${project.id}`} className="group flex items-center justify-between rounded-xl border border-black/9 bg-paper/55 px-4 py-3.5 text-base font-medium text-ink transition hover:border-black/18 hover:bg-white">
                   <span className="flex min-w-0 items-center gap-3">
                     <span className="text-[.7rem] font-semibold text-accent">0{index + 1}</span>
                     <span className="truncate">{project.nume}</span>
@@ -93,18 +93,18 @@ export default function Portofoliu() {
                       </div>
 
                       <div className="mt-6 border-t border-white/10 pt-5 lg:mt-auto">
-                        <p className="text-sm font-semibold text-white">Ce a presupus lucrarea</p>
-                        <p className="mt-3 text-[.88rem] leading-7 text-white/66">{project.descriere}</p>
-                        <Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-accent">
+                        <p className="text-base font-semibold text-white">Ce a presupus lucrarea</p>
+                        <p className="mt-3 text-lg leading-8 text-white/70">{project.descriere}</p>
+                        <Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-base font-semibold text-white transition hover:text-accent">
                           Discutați un proiect similar <ArrowRight size={15} />
                         </Link>
                       </div>
                     </div>
                   </div>
 
-                  <div className="border-t border-black/8 bg-paper/55 p-4 md:p-5">
+                  <div className="border-t border-black/40 bg-paper/55 p-4 md:p-5">
                     <div className="mb-4 flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-2 text-sm font-semibold text-ink">
+                      <div className="flex items-center gap-2 text-base font-semibold text-ink">
                         <Images size={16} className="text-accent" />
                         Galerie proiect
                       </div>
@@ -135,7 +135,7 @@ export default function Portofoliu() {
             <div>
               <p className="text-sm font-medium text-white/62">Aveți un proiect în pregătire?</p>
               <h2 className="mt-2 max-w-3xl text-xl font-semibold tracking-[-.025em] md:text-2xl">Trimiteți-ne pe scurt ce doriți să construiți și în ce etapă vă aflați.</h2>
-              <p className="mt-3 max-w-2xl text-[.88rem] leading-7 text-white/64">Nu aveți nevoie de toate detaliile tehnice pentru primul contact. Putem începe cu localitatea, tipul lucrării și datele de contact.</p>
+              <p className="mt-3 max-w-2xl text-lg leading-8 text-white/68">Nu aveți nevoie de toate detaliile tehnice pentru primul contact. Putem începe cu localitatea, tipul lucrării și datele de contact.</p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
               <a href="tel:+40728873254" className="button-light"><Phone size={15} /> 0728 873 254</a>

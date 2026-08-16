@@ -12,7 +12,7 @@ export default function PageHero({ eyebrow, label, title, description, image, ac
         <div className="max-w-4xl" data-hero-copy>
           <p className="mb-3 text-[.76rem] font-medium text-white/62">{label || eyebrow}</p>
           <h1 className="display-title">{title}</h1>
-          {description && <p className="mt-5 max-w-2xl text-[.92rem] leading-7 text-white/72 md:mt-6 md:text-base md:leading-8">{description}</p>}
+          {description && <p className="mt-5 max-w-2xl text-lg leading-8 text-white/74 md:mt-6">{description}</p>}
           {action && <Link href={action.href} className="button-primary mt-6 md:mt-7">{action.label}<ArrowDown size={16} /></Link>}
         </div>
       </div>
