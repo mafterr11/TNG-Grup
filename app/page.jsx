@@ -124,11 +124,11 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-6 grid gap-3">
-              <Link href="/servicii" className="button-light w-full !justify-between">Toate serviciile <ArrowRight size={15} /></Link>
-              <div className="hidden lg:grid grid-cols-[1fr_auto] items-center gap-3 rounded-[.95rem] border border-white/10 bg-white/[.04] p-3">
-                <a href="tel:+40728873254" className="inline-flex min-h-[2.8rem] items-center gap-2 whitespace-nowrap rounded-xl border border-white/10 bg-white/[.035] px-4 text-[.95rem] font-medium text-white/85"><Phone size={16} /> 0728 873 254</a>
-                <SolicitatiOferta customStyle="!min-h-[2.8rem] !px-4 whitespace-nowrap" />
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/servicii" className="button-light">Toate serviciile <ArrowRight size={15} /></Link>
+              <div className="hidden lg:flex items-center gap-3 rounded-[.95rem] border border-white/10 bg-white/[.04] px-4 py-3">
+                <a href="tel:+40728873254" className="inline-flex items-center gap-2 text-[.95rem] font-medium text-white/80"><Phone size={16} /> 0728 873 254</a>
+                <SolicitatiOferta customStyle="!min-h-[2.8rem] !px-4" />
               </div>
             </div>
           </div>

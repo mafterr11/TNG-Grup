@@ -57,8 +57,8 @@ export default function Despre() {
       </section>
 
       <section className="bg-[#171a1b] py-16 text-white md:py-20">
-        <div className="site-container grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-start">
-          <div className="relative min-h-[430px] overflow-hidden rounded-[1.4rem] bg-black md:min-h-[600px] lg:sticky lg:top-28 lg:self-start" data-reveal>
+        <div className="site-container grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
+          <div className="relative min-h-[430px] overflow-hidden rounded-[1.4rem] bg-black md:min-h-[600px]" data-reveal>
             <Image data-parallax src="/despre/3.jpg" alt="Lucrări de construcții coordonate de TNG GRUP" fill className="object-cover scale-[1.08]" sizes="(max-width:1024px) 100vw, 56vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
           </div>
