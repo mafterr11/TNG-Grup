@@ -1,6 +1,6 @@
 const PoliticaDeConfidentialitate = () => {
   return (
-    <div className="container mx-auto py-[12rem]">
+    <div className="legal-page">
       <h1 className="mb-32 text-center font-normal text-accent">
         Politica de Confidențialitate
       </h1>

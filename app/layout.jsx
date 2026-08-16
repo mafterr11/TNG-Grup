@@ -1,24 +1,27 @@
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MotionSystem from "@/components/MotionSystem";
 import { Toaster } from "@/components/ui/toaster";
 import { constructMetadata } from "@/lib/utils";
 import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
 
-const poppins = Poppins({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+  display: "swap",
 });
 
 export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ro">
-      <body className={poppins.className}>
+    <html lang="ro" className={manrope.variable} data-scroll-behavior="smooth">
+      <body>
         <GoogleCaptchaWrapper>
+          <MotionSystem />
           <Header />
           <main>{children}</main>
           <Footer />

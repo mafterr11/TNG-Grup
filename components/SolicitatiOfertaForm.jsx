@@ -1,448 +1,129 @@
 "use client";
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { useEffect } from "react";
 
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { DrawerClose } from "./ui/drawer";
-import { Button } from "@/components/ui/button";
-import {
-  SelectValue,
-  SelectTrigger,
-  SelectItem,
-  SelectContent,
-  Select,
-} from "@/components/ui/select";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { ArrowRight, CheckCircle2, LoaderCircle } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import axios from "axios";
-import { useReCaptcha } from "next-recaptcha-v3";
 
 const formSchema = z.object({
-  nume: z.string().min(3, {
-    message: "Min 3 caractere",
-  }),
-  prenume: z.string().min(3, {
-    message: "Min 3 caractere",
-  }),
-  email: z.string().email(),
-  telefon: z.string().min(10, {
-    message: "Introduceti numarul",
-  }),
-  mesaj: z.string().max(200, {
-    message: "Max 200 caractere.",
-  }),
-  constructie: z.optional(z.string()),
-  judet: z.optional(z.string()),
-  inceput: z.optional(z.string()),
+  nume: z.string().trim().min(2, "Introdu numele."),
+  prenume: z.string().trim().min(2, "Introdu prenumele."),
+  email: z.string().trim().email("Adresa de email nu este validă."),
+  telefon: z.string().trim().min(10, "Introdu un număr de telefon valid."),
+  constructie: z.string().optional(),
+  judet: z.string().optional(),
+  inceput: z.string().optional(),
+  mesaj: z.string().trim().max(1000, "Mesajul poate avea maximum 1000 de caractere.").optional(),
+  acord: z.boolean().refine(Boolean, { message: "Este necesar acordul pentru prelucrarea datelor." }),
+  website: z.string().max(0).optional(),
 });
 
-export default function SolicitatiOfertaForm({ onClose }) {
-  const { executeRecaptcha } = useReCaptcha();
+const counties = ["București", "Ilfov", "Alba", "Arad", "Argeș", "Bacău", "Bihor", "Bistrița-Năsăud", "Botoșani", "Brăila", "Brașov", "Buzău", "Călărași", "Caraș-Severin", "Cluj", "Constanța", "Covasna", "Dâmbovița", "Dolj", "Galați", "Giurgiu", "Gorj", "Harghita", "Hunedoara", "Ialomița", "Iași", "Maramureș", "Mehedinți", "Mureș", "Neamț", "Olt", "Prahova", "Sălaj", "Satu Mare", "Sibiu", "Suceava", "Teleorman", "Timiș", "Tulcea", "Vaslui", "Vâlcea", "Vrancea"];
 
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      nume: "",
-      prenume: "",
-      email: "",
-      telefon: "",
-      mesaj: "",
-      constructie: "",
-      judet: "",
-      inceput: "",
-    },
-  });
-  const { toast } = useToast();
+function FieldError({ message }) {
+  return message ? <span className="mt-1.5 block text-[.72rem] text-[#ff9f9f]">{message}</span> : null;
+}
 
-  // RECAPTCHA
-  const captchaSubmit = async () => {
-    if (!executeRecaptcha) {
-      console.error("ReCAPTCHA not ready");
-      throw new Error("ReCAPTCHA not ready");
-    }
-    const gRecaptchaToken = await executeRecaptcha("InquirySubmit");
-    // Verify the token on the backend in this endpoint
-    const response = await axios.post("/api/recaptchaSubmit", {
-      gRecaptchaToken,
-    });
+async function getRecaptchaToken() {
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY;
+  if (!siteKey) throw new Error("reCAPTCHA nu este configurat. Completează NEXT_PUBLIC_RECAPTCHA_KEY în .env.local.");
+  if (!window.grecaptcha) throw new Error("reCAPTCHA nu s-a încărcat încă. Încearcă din nou în câteva secunde.");
 
-    if (response.data.success) {
-      // Return the token if verification is successful
-      return gRecaptchaToken;
-    } else {
-      // Throw an error if verification fails
-      throw new Error("Failed to verify reCAPTCHA");
-    }
-  };
-
-  const onSubmit = async (formData) => {
-    try {
-      // Await the captchaSubmit function to complete and get the token
-      const gRecaptchaToken = await captchaSubmit();
-
-      // Check if the gRecaptchaToken is not undefined or null before proceeding
-      if (!gRecaptchaToken) {
-        // Handle the case where gRecaptchaToken is not received properly
-        toast({
-          title: "Captcha verification failed",
-          description: "Please complete the captcha to submit the form.",
-        });
-        return; // Exit the function as we don't have a valid token
+  return new Promise((resolve, reject) => {
+    window.grecaptcha.ready(async () => {
+      try {
+        resolve(await window.grecaptcha.execute(siteKey, { action: "InquirySubmit" }));
+      } catch (error) {
+        reject(error);
       }
+    });
+  });
+}
 
-      // Include the reCAPTCHA token in your submission data
+export default function SolicitatiOfertaForm({ onClose, embedded = false }) {
+  const [success, setSuccess] = useState(false);
+  const { toast } = useToast();
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: { nume: "", prenume: "", email: "", telefon: "", constructie: "", judet: "", inceput: "", mesaj: "", acord: false, website: "" },
+  });
+
+  const onSubmit = async (values) => {
+    try {
+      const gRecaptchaToken = await getRecaptchaToken();
       const response = await fetch("/api/send", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...formData, gRecaptchaToken }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...values, gRecaptchaToken }),
       });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || !payload.success) throw new Error(payload.message || "Solicitarea nu a putut fi trimisă.");
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-      if (data.success) {
-        toast({
-          title: "Mulțumim pentru interesul acordat!",
-          description: "Vă vom contacta cât mai curând!",
-        });
-        form.reset(); // This will reset the form to defaultValues specified in useForm
-        onClose();
-      } else {
-        toast({
-          title: "Ceva nu a mers bine!",
-          description: data.message || "Vă rugăm să încercați mai târziu!",
-        });
-      }
+      reset();
+      setSuccess(true);
+      toast({ title: "Solicitarea a fost trimisă", description: "Vă vom contacta cât mai curând." });
+      if (!embedded && onClose) setTimeout(onClose, 900);
     } catch (error) {
-      toast({
-        title: "Ceva nu a mers bine!",
-        description: error.message || "Vă rugăm să încercați mai târziu!",
-      });
+      toast({ title: "Trimiterea nu a reușit", description: error?.message || "Vă rugăm să încercați din nou." });
     }
   };
 
-  return (
-    <>
-      <div className="bg-grey relative mx-auto overflow-auto rounded-lg p-6 md:max-w-sm lg:max-w-md xl:max-w-lg">
-        <div className="fixed top-2 right-0 left-0 mx-auto h-[0.6rem] w-[4.5rem] rounded-full bg-white/10" />
-        <Form {...form}>
-          <h2 className="text-accent text-center text-xl font-semibold">
-            Solicitați o ofertă
-          </h2>
-          <form
-            className="xs:space-y-4 mt-4 space-y-2"
-            onSubmit={form.handleSubmit(onSubmit)}
-          >
-            <div className="grid grid-cols-2 gap-4">
-              {/* Nume si Prenume */}
-              <div>
-                <FormField
-                  control={form.control}
-                  name="nume"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="nume">Nume</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Numele dvs. aici"
-                          type="name"
-                          id="nume"
-                          autoComplete="name"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <div>
-                <FormField
-                  control={form.control}
-                  name="prenume"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="prenume">Prenume</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Numele dvs. aici"
-                          type="name"
-                          id="prenume"
-                          autoComplete="name"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {/* Email */}
-              <div>
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="email">Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="exemplu@gmail.com"
-                          type="email"
-                          id="email"
-                          autoComplete="email"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              {/* Tel */}
-              <div>
-                <FormField
-                  control={form.control}
-                  name="telefon"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel htmlFor="telefon">Telefon</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="Telefonul dvs. aici"
-                          type="tel"
-                          id="telefon"
-                          autoComplete="tel"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red" />
-                    </FormItem>
-                  )}
-                />
-              </div>
-            </div>
-            {/* Intrebarea 1 */}
-            <div>
-              <FormField
-                control={form.control}
-                name="constructie"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="constructie">
-                      Ce doriți să construiți?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selectati" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent position="popper">
-                        <SelectItem value="Construcții Civile - Parter">
-                          Construcții Civile
-                        </SelectItem>
-                        <SelectItem value="Construcții Industriale/Agricole">
-                          Construcții Industriale/Agricole
-                        </SelectItem>
-                        <SelectItem value="Consultantă/Diriginte De Șantier">
-                          Consultantă/Diriginte De Șantier
-                        </SelectItem>
-                        <SelectItem value="Management de proiect">
-                          Management de proiect
-                        </SelectItem>
-                        <SelectItem value="Altceva">Altceva</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage className="text-red" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            {/* Intrebarea 2 */}
-            <div>
-              <FormField
-                control={form.control}
-                name="judet"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="judet">
-                      În ce județ va fi construcția?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selectati" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent position="popper">
-                        <SelectItem name="judet" value="București">
-                          București
-                        </SelectItem>
-                        <SelectItem value="Ilfov">Ilfov</SelectItem>
-                        <SelectItem value="Alba">Alba</SelectItem>
-                        <SelectItem value="Arad">Arad</SelectItem>
-                        <SelectItem value="Argeș">Argeș</SelectItem>
-                        <SelectItem value="Bacău">Bacău</SelectItem>
-                        <SelectItem value="Bihor">Bihor</SelectItem>
-                        <SelectItem value="Bistrița-Năsăud">
-                          Bistrița-Năsăud
-                        </SelectItem>
-                        <SelectItem value="Botoșani">Botoșani</SelectItem>
-                        <SelectItem value="Brăila">Brăila</SelectItem>
-                        <SelectItem value="Brașov">Brașov</SelectItem>
-                        <SelectItem value="Buzău">Buzău</SelectItem>
-                        <SelectItem value="Călărași">Călărași</SelectItem>
-                        <SelectItem value="Caraș-Severin">
-                          Caraș-Severin
-                        </SelectItem>
-                        <SelectItem value="Cluj">Cluj</SelectItem>
-                        <SelectItem value="Constanța">Constanța</SelectItem>
-                        <SelectItem value="Covasna">Covasna</SelectItem>
-                        <SelectItem value="Dâmbovița">Dâmbovița</SelectItem>
-                        <SelectItem value="Dolj">Dolj</SelectItem>
-                        <SelectItem value="Galați">Galați</SelectItem>
-                        <SelectItem value="Giurgiu">Giurgiu</SelectItem>
-                        <SelectItem value="Gorj">Gorj</SelectItem>
-                        <SelectItem value="Harghita">Harghita</SelectItem>
-                        <SelectItem value="Hunedoara">Hunedoara</SelectItem>
-                        <SelectItem value="Ialomița">Ialomița</SelectItem>
-                        <SelectItem value="Iași">Iași</SelectItem>
-                        <SelectItem value="Maramureș">Maramureș</SelectItem>
-                        <SelectItem value="Mehedinți">Mehedinți</SelectItem>
-                        <SelectItem value="Mureș">Mureș</SelectItem>
-                        <SelectItem value="Neamț">Neamț</SelectItem>
-                        <SelectItem value="Olt">Olt</SelectItem>
-                        <SelectItem value="Prahova">Prahova</SelectItem>
-                        <SelectItem value="Sălaj">Sălaj</SelectItem>
-                        <SelectItem value="Satu Mare">Satu Mare</SelectItem>
-                        <SelectItem value="Sibiu">Sibiu</SelectItem>
-                        <SelectItem value="Suceava">Suceava</SelectItem>
-                        <SelectItem value="Teleorman">Teleorman</SelectItem>
-                        <SelectItem value="Timiș">Timiș</SelectItem>
-                        <SelectItem value="Tulcea">Tulcea</SelectItem>
-                        <SelectItem value="Vaslui">Vaslui</SelectItem>
-                        <SelectItem value="Vâlcea">Vâlcea</SelectItem>
-                        <SelectItem value="Vrancea">Vrancea</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage className="text-red" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            {/* Intrebarea 3 */}
-            <div>
-              <FormField
-                control={form.control}
-                name="inceput"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="inceput">
-                      Când v-ați dori să începeți construcția?
-                    </FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      value={field.value}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selectati" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent position="popper">
-                        <SelectItem name="inceput" value="Cât mai repede">
-                          Cât mai repede
-                        </SelectItem>
-                        <SelectItem value="În următoarele 6 luni">
-                          În următoarele 6 luni
-                        </SelectItem>
-                        <SelectItem value="Nu m-am hotărât încă">
-                          Nu m-am hotărât încă
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage className="text-red" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div>
-              <FormField
-                control={form.control}
-                name="mesaj"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="mesaj">Mesaj</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Introduceți mesajul aici."
-                        id="mesaj"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage className="text-red" />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="flex gap-x-4 text-right">
-              <Button type="submit" variant="orange" size="full">
-                Trimite
-              </Button>
-
-              <DrawerClose asChild>
-                <Button variant="orange" size="full" onClick={onClose}>
-                  Închide
-                </Button>
-              </DrawerClose>
-            </div>
-          </form>
-        </Form>
-        <p className="mt-2 text-center text-xs leading-normal">
-          This site is protected by reCAPTCHA and the Google{" "}
-          <a
-            href="https://policies.google.com/privacy"
-            className="text-accent underline"
-          >
-            Privacy Policy
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://policies.google.com/terms"
-            className="text-accent underline"
-          >
-            Terms of Service
-          </a>{" "}
-          apply.
-        </p>
+  if (success && embedded) {
+    return (
+      <div className="flex min-h-[520px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[.035] p-8 text-center text-white">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-accent/15 text-accent"><CheckCircle2 size={27} /></div>
+        <h3 className="mt-5 text-xl font-semibold">Solicitarea a fost trimisă.</h3>
+        <p className="mt-3 max-w-md text-sm leading-7 text-white/65">Echipa TNG GRUP va reveni către dumneavoastră folosind datele de contact furnizate.</p>
+        <button type="button" className="button-light mt-6" onClick={() => setSuccess(false)}>Trimite o altă solicitare</button>
       </div>
-    </>
+    );
+  }
+
+  const inputClass = "h-11 w-full rounded-lg border border-white/12 bg-white/[.055] px-3.5 text-[.84rem] text-white outline-none transition placeholder:text-white/34 focus:border-white/35 focus:bg-white/[.075]";
+  const labelClass = "mb-1.5 block text-[.75rem] font-medium text-white/68";
+
+  return (
+    <div className={embedded ? "rounded-xl border border-white/10 bg-white/[.035] p-5 md:p-7" : "p-5 pt-8 md:p-7"}>
+      <div className="mb-6">
+        <p className="text-[.78rem] font-medium text-white/64">Solicitare de ofertă</p>
+        <h2 className="mt-2 text-lg font-semibold tracking-[-.015em] text-white md:text-xl">Începeți cu ce știți acum despre proiect.</h2>
+        <p className="mt-2.5 max-w-2xl text-[.82rem] leading-6 text-white/64">Numele și datele de contact ne permit să începem discuția. Câmpurile despre proiect sunt opționale, dar ne ajută să revenim cu întrebări mai relevante.</p>
+      </div>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+        <div className="grid gap-3.5 md:grid-cols-2">
+          <label><span className={labelClass}>Nume *</span><input className={inputClass} autoComplete="family-name" placeholder="Popescu" {...register("nume")} /><FieldError message={errors.nume?.message} /></label>
+          <label><span className={labelClass}>Prenume *</span><input className={inputClass} autoComplete="given-name" placeholder="Andrei" {...register("prenume")} /><FieldError message={errors.prenume?.message} /></label>
+          <label><span className={labelClass}>Email *</span><input className={inputClass} type="email" autoComplete="email" placeholder="andrei@exemplu.ro" {...register("email")} /><FieldError message={errors.email?.message} /></label>
+          <label><span className={labelClass}>Telefon *</span><input className={inputClass} type="tel" autoComplete="tel" placeholder="07xx xxx xxx" {...register("telefon")} /><FieldError message={errors.telefon?.message} /></label>
+        </div>
+
+        <div className="grid gap-3.5 md:grid-cols-3">
+          <label><span className={labelClass}>Tip proiect <span className="text-white/38">(opțional)</span></span><select className={inputClass} {...register("constructie")}><option value="" className="text-black">Selectează</option><option className="text-black">Construcții Civile</option><option className="text-black">Construcții Industriale/Agricole</option><option className="text-black">Consultanță / Dirigenție de Șantier</option><option className="text-black">Management de proiect</option><option className="text-black">Altceva</option></select></label>
+          <label><span className={labelClass}>Județ <span className="text-white/38">(opțional)</span></span><select className={inputClass} {...register("judet")}><option value="" className="text-black">Selectează</option>{counties.map((county) => <option key={county} value={county} className="text-black">{county}</option>)}</select></label>
+          <label><span className={labelClass}>Începere <span className="text-white/38">(opțional)</span></span><select className={inputClass} {...register("inceput")}><option value="" className="text-black">Selectează</option><option className="text-black">Cât mai repede</option><option className="text-black">În următoarele 6 luni</option><option className="text-black">Nu m-am hotărât încă</option></select></label>
+        </div>
+
+        <label><span className={labelClass}>Mesaj <span className="text-white/38">(opțional)</span></span><textarea className="min-h-28 w-full resize-y rounded-lg border border-white/12 bg-white/[.055] px-3.5 py-3 text-[.84rem] leading-6 text-white outline-none transition placeholder:text-white/34 focus:border-white/35 focus:bg-white/[.075]" placeholder="Localitate, tipul lucrării, stadiul proiectului sau orice detaliu relevant." {...register("mesaj")} /><FieldError message={errors.mesaj?.message} /></label>
+
+        <div className="absolute -left-[9999px]" aria-hidden="true"><label>Website<input tabIndex={-1} autoComplete="off" {...register("website")} /></label></div>
+
+        <label className="flex items-start gap-2.5 text-[.72rem] leading-5 text-white/64">
+          <input type="checkbox" className="mt-1 h-3.5 w-3.5 shrink-0 accent-[#ad5628]" {...register("acord")} />
+          <span>Sunt de acord cu prelucrarea datelor pentru soluționarea solicitării, conform <Link href="/politica-de-confidentialitate" className="text-white underline decoration-white/30 underline-offset-2">Politicii de confidențialitate</Link>.</span>
+        </label>
+        <FieldError message={errors.acord?.message} />
+
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-md text-[.64rem] leading-[1.15rem] text-white/35">Protejat de reCAPTCHA. Se aplică politicile Google de confidențialitate și termenii de utilizare.</p>
+          <button type="submit" disabled={isSubmitting} className="button-primary min-w-36 disabled:cursor-not-allowed disabled:opacity-55">
+            {isSubmitting ? <><LoaderCircle size={15} className="animate-spin" /> Se trimite</> : <>Trimite solicitarea <ArrowRight size={15} /></>}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://tng-grup.vercel.app
-
-# Sitemaps
-Sitemap: https://tng-grup.vercel.app/sitemap.xml
+Host: https://tngag.ro
+Sitemap: https://tngag.ro/sitemap.xml

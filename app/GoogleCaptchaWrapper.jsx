@@ -1,11 +1,19 @@
-import React from "react";
-import { ReCaptchaProvider } from "next-recaptcha-v3";
+"use client";
+
+import Script from "next/script";
 
 export default function GoogleCaptchaWrapper({ children }) {
-  const recaptchaKey = process?.env?.NEXT_PUBLIC_RECAPTCHA_KEY;
+  const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_KEY;
   return (
-    <ReCaptchaProvider  reCaptchaKey={recaptchaKey ?? "NOT DEFINED"}>
+    <>
+      {recaptchaKey ? (
+        <Script
+          id="google-recaptcha-v3"
+          src={`https://www.google.com/recaptcha/api.js?render=${recaptchaKey}`}
+          strategy="afterInteractive"
+        />
+      ) : null}
       {children}
-    </ReCaptchaProvider>
+    </>
   );
 }

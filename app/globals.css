@@ -1,191 +1,121 @@
 @import 'tailwindcss';
 
-@plugin 'tailwindcss-animate';
-
-
 @theme {
   --breakpoint-*: initial;
-  --breakpoint-xs: 400px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 960px;
-  --breakpoint-xl: 1200px;
-  --breakpoint-xxl: 1400px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 
   --color-*: initial;
-  --color-accent: #ff8300;
-  --color-body: #e5e5e5;
-  --color-white: #fff;
+  --color-white: #ffffff;
+  --color-black: #111314;
+  --color-ink: #191c1d;
+  --color-ink-soft: #34393b;
+  --color-ink-muted: #666d70;
+  --color-paper: #f5f4f1;
+  --color-paper-soft: #ebe8e2;
+  --color-accent: #ad5628;
+  --color-accent-dark: #93451f;
+  --color-red: #d94747;
 
-  --color-black: #0d0c0b;
-  --color-black-heavy: #000000;
-
-  --color-grey: #232323;
-  --color-grey-light: #2a3439;
-
-  --color-orange: #e68530;
-  --color-orange-hover: #da863c;
-
-  --color-red: #fe3939;
-
-  --background-image-site: url('/1.webp');
-
-  --font-poppins: var(--font-poppins), sans-serif;
-
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
-
-  @keyframes accordion-down {
-    from {
-      height: 0;
-    }
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
-    }
-    to {
-      height: 0;
-    }
-  }
-}
-
-@utility container {
-  margin-inline: auto;
-  padding-inline: 15px;
-}
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
 }
 
 @layer base {
-  * {
-    @apply box-border;
-  }
-
+  *, ::after, ::before, ::backdrop, ::file-selector-button { border-color: rgba(27, 30, 31, .12); }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: #111314; }
   body {
-    @apply bg-grey font-poppins tracking-[0.5px] text-white;
+    margin: 0;
+    background: #f5f4f1;
+    color: #191c1d;
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-
-  h1,
-  h2,
-  h3 {
-    @apply font-bold ;
-  }
-
-  h1 {
-    @apply text-[30px]  xl:text-[40px];
-  }
-  h2 {
-    @apply text-[25px]  xl:text-[35px];
-  }
-  h3 {
-    @apply text-[25px] xl:text-[30px];
-  }
-  h4 {
-    @apply text-[16px] xl:text-[14px];
-  }
-  p {
-    @apply  text-white/80 leading-8;
-  }
-  a {
-    @apply cursor-pointer transition-all duration-300;
-  }
-  label {
-    @apply mb-2 block font-normal text-white;
-  }
+  ::selection { background: #ad5628; color: #fff; }
+  a { transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease, opacity .2s ease, box-shadow .2s ease; }
+  button, input, textarea, select { font: inherit; }
+  button { cursor: pointer; }
 }
 
-.hover:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 0.5rem;
+.site-container { width: min(100% - 1.5rem, 1220px); margin-inline: auto; }
+@media (min-width: 768px) { .site-container { width: min(100% - 4rem, 1220px); } }
+
+.display-title {
+  max-width: 980px;
+  font-size: clamp(2rem, 8vw, 4.65rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.section-title {
+  max-width: 820px;
+  font-size: clamp(1.65rem, 6vw, 2.9rem);
+  line-height: 1.05;
+  letter-spacing: -.038em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.page-label {
+  margin-bottom: .75rem;
+  font-size: .74rem;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: .015em;
+  color: #70777a;
+}
+.section-copy { max-width: 680px; font-size: .95rem; line-height: 1.75; color: #666d70; }
+
+.button-primary,
+.button-secondary,
+.button-light {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  border-radius: .8rem;
+  padding: .74rem 1.15rem;
+  font-size: .8rem;
+  font-weight: 650;
+  line-height: 1;
+}
+.button-primary { background: #ad5628; color: #fff; box-shadow: 0 8px 24px rgba(173, 86, 40, .16); }
+.button-primary:hover { background: #a95025; transform: translateY(-1px); }
+.button-secondary { border: 1px solid rgba(27,30,31,.14); background: #fff; color: #191c1d; }
+.button-secondary:hover { border-color: rgba(27,30,31,.28); transform: translateY(-1px); box-shadow: 0 16px 34px rgba(22, 24, 25, .05); }
+.button-light { border: 1px solid rgba(255,255,255,.24); background: rgba(255,255,255,.08); color: #fff; backdrop-filter: blur(8px); }
+.button-light:hover { border-color: rgba(255,255,255,.4); background: rgba(255,255,255,.12); }
+
+.surface-card { border: 1px solid rgba(27,30,31,.09); border-radius: 1rem; background: #fff; box-shadow: 0 12px 35px rgba(28, 29, 26, .045); }
+.dark-card { border: 1px solid rgba(255,255,255,.12); border-radius: 1rem; background: rgba(255,255,255,.045); }
+
+[data-reveal], [data-stagger] > * { will-change: transform, opacity; }
+
+.grecaptcha-badge { visibility: hidden; }
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: #111314; }
+::-webkit-scrollbar-thumb { background: #7f8588; border: 2px solid #111314; border-radius: 999px; }
+* { scrollbar-width: thin; scrollbar-color: #7f8588 #111314; }
+
+.legal-page { width: min(100% - 1.5rem, 860px); margin-inline: auto; padding: 8.5rem 0 5rem; }
+.legal-page > h1 { margin: 0 0 2.25rem !important; font-size: clamp(2rem, 5vw, 3.8rem); line-height: 1.05; letter-spacing: -.045em; font-weight: 600 !important; text-align: left !important; color: #1b1e1f !important; }
+.legal-page h3 { margin-top: 2rem !important; margin-bottom: .65rem !important; font-size: 1rem !important; line-height: 1.5; font-weight: 650 !important; color: #1b1e1f !important; }
+.legal-page p { margin-block: .65rem !important; font-size: .9rem !important; line-height: 1.8 !important; color: #62686b !important; }
+.legal-page p.text-accent, .legal-page p .text-accent { color: #93451f !important; }
+@media (min-width: 768px) { .legal-page { width: min(100% - 4rem, 860px); padding-top: 11rem; } }
+
+@media (max-width: 767px) {
+  .surface-card,
+  .dark-card { border-radius: .95rem; }
 }
 
-.hover span {
-  display: inline-block;
-}
-
-.hover span:after {
-  content: "";
-  width: 0px;
-  height: 2px;
-  display: block;
-  background: #ff8300;
-  transition: 300ms;
-}
-
-.hover span:hover:after {
-  width: 100%;
-}
-
-.active-link {
-  text-decoration: underline;
-  text-decoration-color: #ff8300;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.5rem;
-}
-
-.grecaptcha-badge {
-  visibility: hidden;
-}
-
-
-/* Scrollbar width */
-::-webkit-scrollbar {
-  width: 14px;
-}
-
-/* Scrollbar track (background) */
-::-webkit-scrollbar-track {
-  background: var(--color-grey-light);
-  border-radius: 10px;
-}
-
-/* Scrollbar thumb (the draggable part) */
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 131, 0, 0.95),
-    rgba(230, 133, 48, 0.85)
-  );
-  border: 3px solid var(--color-grey-light); /* adds space around the thumb */
-  border-radius: 10px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 8px rgba(255, 131, 0, 0.4);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    var(--color-orange-hover),
-    var(--color-orange)
-  );
-  box-shadow: 0 0 10px rgba(255, 131, 0, 0.7);
-}
-
-/* Firefox */
-* {
-  scrollbar-width: auto; /* makes it a bit thicker */
-  scrollbar-color: var(--color-orange) var(--color-grey-light);
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }

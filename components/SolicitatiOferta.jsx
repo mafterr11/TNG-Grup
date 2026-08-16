@@ -1,55 +1,21 @@
 "use client";
-import React, { useState } from "react";
 
-import { cn } from "@/lib/utils";
-import { useMediaQuery } from "react-responsive";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-  DrawerTitle,
-} from "@/components/ui/drawer";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import SolicitatiOfertaForm from "./SolicitatiOfertaForm";
 
-export function SolicitatiOferta({ customStyle }) {
+export function SolicitatiOferta({ customStyle = "" }) {
   const [open, setOpen] = useState(false);
-  const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
-  const handleClose = () => setOpen(false);
-
-  if (isDesktop) {
-    return (
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <Button variant="orange" className={`${customStyle}`}>
-            Solicitați o ofertă
-          </Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogTitle className="hidden">Solicitati o oferta</DialogTitle>
-          <SolicitatiOfertaForm onClose={handleClose} />
-        </DialogContent>
-      </Dialog>
-    );
-  }
-
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <Button variant="orange" className={` ${customStyle}`}>
-          Solicitați o ofertă
-        </Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerTitle className="hidden">Solicitati o oferta</DrawerTitle>
-        <SolicitatiOfertaForm onClose={handleClose} />
-      </DrawerContent>
-    </Drawer>
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <button type="button" className={`button-primary ${customStyle}`}>Solicită o ofertă <ArrowRight size={15} /></button>
+      </DialogTrigger>
+      <DialogContent className="max-h-[92vh] !w-[calc(100%_-_1.5rem)] !max-w-3xl overflow-y-auto !rounded-2xl !border-white/10 !bg-[#151819] !p-0 text-white shadow-2xl">
+        <DialogHeader className="sr-only"><DialogTitle>Solicită o ofertă</DialogTitle><DialogDescription>Completează formularul pentru a solicita o ofertă.</DialogDescription></DialogHeader>
+        <SolicitatiOfertaForm onClose={() => setOpen(false)} />
+      </DialogContent>
+    </Dialog>
   );
 }
