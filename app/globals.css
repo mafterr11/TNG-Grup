@@ -206,17 +206,20 @@
 .custom-cursor textarea,
 .custom-cursor select,
 .custom-cursor [role="button"] { cursor: none; }
-.cursor-dot {
-  position: fixed; left: 0; top: 0; z-index: 9999;
-  width: 8px; height: 8px; border-radius: 999px;
-  background: #fff; mix-blend-mode: difference;
-  pointer-events: none; will-change: transform;
+.excavator-cursor {
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 9999;
+  width: 0; height: 0;
+  pointer-events: none;
+  will-change: transform;
+  filter: drop-shadow(0 1px 1.5px rgba(10, 12, 13, .6)) drop-shadow(0 3px 8px rgba(10, 12, 13, .28));
 }
-.cursor-ring {
-  position: fixed; left: 0; top: 0; z-index: 9998;
-  width: 40px; height: 40px; border-radius: 999px;
-  border: 1.5px solid rgba(255, 255, 255, .95);
-  mix-blend-mode: difference; pointer-events: none; will-change: transform;
+.excavator-cursor svg {
+  position: absolute;
+  left: -66.1px;
+  top: -41px;
+  overflow: visible;
 }
 
 /* ---------- Marquee ---------- */
