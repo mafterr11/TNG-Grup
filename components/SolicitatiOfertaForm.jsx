@@ -24,7 +24,7 @@ const formSchema = z.object({
 const counties = ["București", "Ilfov", "Alba", "Arad", "Argeș", "Bacău", "Bihor", "Bistrița-Năsăud", "Botoșani", "Brăila", "Brașov", "Buzău", "Călărași", "Caraș-Severin", "Cluj", "Constanța", "Covasna", "Dâmbovița", "Dolj", "Galați", "Giurgiu", "Gorj", "Harghita", "Hunedoara", "Ialomița", "Iași", "Maramureș", "Mehedinți", "Mureș", "Neamț", "Olt", "Prahova", "Sălaj", "Satu Mare", "Sibiu", "Suceava", "Teleorman", "Timiș", "Tulcea", "Vaslui", "Vâlcea", "Vrancea"];
 
 function FieldError({ message }) {
-  return message ? <span className="mt-1.5 block text-[.72rem] text-[#ff9f9f]">{message}</span> : null;
+  return message ? <span className="mt-1.5 block text-[.75rem] font-medium text-[#ffabab]">{message}</span> : null;
 }
 
 async function getRecaptchaToken() {
@@ -73,27 +73,28 @@ export default function SolicitatiOfertaForm({ onClose, embedded = false }) {
 
   if (success && embedded) {
     return (
-      <div className="flex min-h-[520px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[.035] p-8 text-center text-white">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#dbe3ea] text-accent"><CheckCircle2 size={27} /></div>
-        <h3 className="mt-5 text-xl font-semibold">Solicitarea a fost trimisă.</h3>
-        <p className="mt-3 max-w-md text-lg leading-8 text-white/68">Echipa TNG GRUP va reveni către dumneavoastră folosind datele de contact furnizate.</p>
-        <button type="button" className="button-light mt-6" onClick={() => setSuccess(false)}>Trimite o altă solicitare</button>
+      <div className="flex min-h-[520px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[.03] p-8 text-center text-white">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15 text-accent-bright ring-1 ring-accent/30"><CheckCircle2 size={30} /></div>
+        <h3 className="mt-6 font-display text-2xl font-medium">Solicitarea a fost trimisă.</h3>
+        <p className="mt-3 max-w-md text-lg leading-8 text-white/66">Echipa TNG GRUP va reveni către dumneavoastră folosind datele de contact furnizate.</p>
+        <button type="button" className="button-light mt-7" onClick={() => setSuccess(false)}>Trimite o altă solicitare</button>
       </div>
     );
   }
 
-  const inputClass = "h-12 w-full rounded-xl border border-white/12 bg-white/[.055] px-4 text-base text-white outline-none transition placeholder:text-white/34 focus:border-white/35 focus:bg-white/[.075]";
-  const labelClass = "mb-2 block text-[.9rem] font-medium text-white/68";
+  const inputClass = "h-12 w-full rounded-xl border border-white/12 bg-white/[.05] px-4 text-base text-white outline-none transition placeholder:text-white/32 focus:border-accent-bright/50 focus:bg-white/[.07] focus:ring-2 focus:ring-accent/25";
+  const labelClass = "mb-2 block text-[.86rem] font-semibold text-white/72";
 
   return (
-    <div className={embedded ? "rounded-2xl border border-white/10 bg-[#202425] p-6 md:p-8" : "p-5 pt-8 md:p-7"}>
-      <div className="mb-6">
-        <p className="text-sm font-medium text-white/62">Solicitare de ofertă</p>
-        <h2 className="mt-2 text-lg font-semibold tracking-[-.015em] text-white md:text-xl">Începeți cu ce știți acum despre proiect.</h2>
-        <p className="mt-2.5 max-w-2xl text-lg leading-8 text-white/68">Numele și datele de contact ne permit să începem discuția. Câmpurile despre proiect sunt opționale, dar ne ajută să revenim cu întrebări mai relevante.</p>
+    <div className={embedded ? "relative rounded-3xl border border-white/10 bg-gradient-to-b from-[#1b1e21] to-[#15181a] p-6 md:p-9" : "p-5 pt-8 md:p-7"}>
+      {embedded && <div className="grain" aria-hidden="true" />}
+      <div className="relative mb-7">
+        <p className="eyebrow eyebrow--light">Solicitare de ofertă</p>
+        <h2 className="mt-1 font-display text-2xl font-medium tracking-[-.015em] text-white md:text-3xl">Începeți cu ce știți acum despre proiect.</h2>
+        <p className="mt-3 max-w-2xl text-lg leading-8 text-white/64">Numele și datele de contact ne permit să începem discuția. Câmpurile despre proiect sunt opționale, dar ne ajută să revenim cu întrebări mai relevante.</p>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+      <form onSubmit={handleSubmit(onSubmit)} className="relative space-y-4" noValidate>
         <div className="grid gap-3.5 md:grid-cols-2">
           <label><span className={labelClass}>Nume *</span><input className={inputClass} autoComplete="family-name" placeholder="Popescu" {...register("nume")} /><FieldError message={errors.nume?.message} /></label>
           <label><span className={labelClass}>Prenume *</span><input className={inputClass} autoComplete="given-name" placeholder="Andrei" {...register("prenume")} /><FieldError message={errors.prenume?.message} /></label>
@@ -102,24 +103,24 @@ export default function SolicitatiOfertaForm({ onClose, embedded = false }) {
         </div>
 
         <div className="grid gap-3.5 md:grid-cols-3">
-          <label><span className={labelClass}>Tip proiect <span className="text-white/38">(opțional)</span></span><select className={inputClass} {...register("constructie")}><option value="" className="text-black">Selectează</option><option className="text-black">Construcții Civile</option><option className="text-black">Construcții Industriale/Agricole</option><option className="text-black">Consultanță / Dirigenție de Șantier</option><option className="text-black">Management de proiect</option><option className="text-black">Altceva</option></select></label>
-          <label><span className={labelClass}>Județ <span className="text-white/38">(opțional)</span></span><select className={inputClass} {...register("judet")}><option value="" className="text-black">Selectează</option>{counties.map((county) => <option key={county} value={county} className="text-black">{county}</option>)}</select></label>
-          <label><span className={labelClass}>Începere <span className="text-white/38">(opțional)</span></span><select className={inputClass} {...register("inceput")}><option value="" className="text-black">Selectează</option><option className="text-black">Cât mai repede</option><option className="text-black">În următoarele 6 luni</option><option className="text-black">Nu m-am hotărât încă</option></select></label>
+          <label><span className={labelClass}>Tip proiect <span className="font-normal text-white/36">(opțional)</span></span><select className={inputClass} {...register("constructie")}><option value="" className="text-black">Selectează</option><option className="text-black">Construcții Civile</option><option className="text-black">Construcții Industriale/Agricole</option><option className="text-black">Consultanță / Dirigenție de Șantier</option><option className="text-black">Management de proiect</option><option className="text-black">Altceva</option></select></label>
+          <label><span className={labelClass}>Județ <span className="font-normal text-white/36">(opțional)</span></span><select className={inputClass} {...register("judet")}><option value="" className="text-black">Selectează</option>{counties.map((county) => <option key={county} value={county} className="text-black">{county}</option>)}</select></label>
+          <label><span className={labelClass}>Începere <span className="font-normal text-white/36">(opțional)</span></span><select className={inputClass} {...register("inceput")}><option value="" className="text-black">Selectează</option><option className="text-black">Cât mai repede</option><option className="text-black">În următoarele 6 luni</option><option className="text-black">Nu m-am hotărât încă</option></select></label>
         </div>
 
-        <label><span className={labelClass}>Mesaj <span className="text-white/38">(opțional)</span></span><textarea className="min-h-32 w-full resize-y rounded-xl border border-white/12 bg-white/[.055] px-4 py-3.5 text-base leading-7 text-white outline-none transition placeholder:text-white/34 focus:border-white/35 focus:bg-white/[.075]" placeholder="Localitate, tipul lucrării, stadiul proiectului sau orice detaliu relevant." {...register("mesaj")} /><FieldError message={errors.mesaj?.message} /></label>
+        <label><span className={labelClass}>Mesaj <span className="font-normal text-white/36">(opțional)</span></span><textarea className="min-h-32 w-full resize-y rounded-xl border border-white/12 bg-white/[.05] px-4 py-3.5 text-base leading-7 text-white outline-none transition placeholder:text-white/32 focus:border-accent-bright/50 focus:bg-white/[.07] focus:ring-2 focus:ring-accent/25" placeholder="Localitate, tipul lucrării, stadiul proiectului sau orice detaliu relevant." {...register("mesaj")} /><FieldError message={errors.mesaj?.message} /></label>
 
         <div className="absolute -left-[9999px]" aria-hidden="true"><label>Website<input tabIndex={-1} autoComplete="off" {...register("website")} /></label></div>
 
-        <label className="flex items-start gap-2.5 text-[.88rem] leading-6 text-white/68">
-          <input type="checkbox" className="mt-1 h-3.5 w-3.5 shrink-0 accent-[#ad5628]" {...register("acord")} />
-          <span>Sunt de acord cu prelucrarea datelor pentru soluționarea solicitării, conform <Link href="/politica-de-confidentialitate" className="text-white underline decoration-white/30 underline-offset-2">Politicii de confidențialitate</Link>.</span>
+        <label className="flex cursor-pointer items-start gap-3 text-[.88rem] leading-6 text-white/66">
+          <input type="checkbox" className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded accent-[#b4561c]" {...register("acord")} />
+          <span>Sunt de acord cu prelucrarea datelor pentru soluționarea solicitării, conform <Link href="/politica-de-confidentialitate" className="text-white underline decoration-white/30 underline-offset-2 hover:decoration-accent-bright">Politicii de confidențialitate</Link>.</span>
         </label>
         <FieldError message={errors.acord?.message} />
 
-        <div className="flex flex-col gap-3 border-t border-white/10 pt-4 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-md text-[.75rem] leading-5 text-white/42">Protejat de reCAPTCHA. Se aplică politicile Google de confidențialitate și termenii de utilizare.</p>
-          <button type="submit" disabled={isSubmitting} className="button-primary min-w-36 disabled:cursor-not-allowed disabled:opacity-55">
+        <div className="flex flex-col gap-3 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-md text-[.74rem] leading-5 text-white/40">Protejat de reCAPTCHA. Se aplică politicile Google de confidențialitate și termenii de utilizare.</p>
+          <button type="submit" disabled={isSubmitting} className="button-primary min-w-40 disabled:cursor-not-allowed disabled:opacity-55">
             {isSubmitting ? <><LoaderCircle size={15} className="animate-spin" /> Se trimite</> : <>Trimite solicitarea <ArrowRight size={15} /></>}
           </button>
         </div>

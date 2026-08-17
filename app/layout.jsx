@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Manrope } from "next/font/google";
+import { Fraunces, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MotionSystem from "@/components/MotionSystem";
@@ -8,9 +8,17 @@ import { constructMetadata } from "@/lib/utils";
 import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
 
 const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-manrope",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -18,7 +26,7 @@ export const metadata = constructMetadata();
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ro" className={manrope.variable} data-scroll-behavior="smooth">
+    <html lang="ro" className={`${manrope.variable} ${fraunces.variable}`} data-scroll-behavior="smooth">
       <body>
         <GoogleCaptchaWrapper>
           <MotionSystem />

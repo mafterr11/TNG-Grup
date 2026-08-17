@@ -13,10 +13,10 @@ export const metadata = constructMetadata({
 });
 
 const principles = [
-  ["Rigoare tehnică", "Respectăm proiectul, standardele și obligațiile asumate. Verificăm etapele importante înainte ca lucrările să fie închise."],
-  ["Comunicare directă", "Beneficiarul primește informația relevantă la timp: progres, riscuri, decizii și următorii pași."],
-  ["Planificare realistă", "Corelăm resursele, aprovizionarea și specialitățile într-un plan care poate fi urmărit și actualizat."],
-  ["Responsabilitate", "Ne asumăm rolul tehnic și urmărim problemele până la rezolvare, nu doar până la semnalare."],
+  { icon: ShieldCheck, title: "Rigoare tehnică", text: "Respectăm proiectul, standardele și obligațiile asumate. Verificăm etapele importante înainte ca lucrările să fie închise." },
+  { icon: Building2, title: "Comunicare directă", text: "Beneficiarul primește informația relevantă la timp: progres, riscuri, decizii și următorii pași." },
+  { icon: Target, title: "Planificare realistă", text: "Corelăm resursele, aprovizionarea și specialitățile într-un plan care poate fi urmărit și actualizat." },
+  { icon: CheckCircle2, title: "Responsabilitate", text: "Ne asumăm rolul tehnic și urmărim problemele până la rezolvare, nu doar până la semnalare." },
 ];
 
 const missionPillars = [
@@ -30,25 +30,32 @@ export default function Despre() {
     <div>
       <PageHero
         label="Despre TNG GRUP"
-        title="Companie românească de construcții, fondată în 2019."
+        title={<>Companie românească de construcții, <em>fondată în 2019.</em></>}
         description="Executăm și coordonăm proiecte civile și industriale, cu experiență în organizarea șantierului, controlul calității și servicii tehnice pentru beneficiar."
         image="/despre/2.jpg"
       />
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="site-container grid gap-10 lg:grid-cols-[.82fr_1.18fr]">
-          <SectionHeading label="Cine suntem" title="Experiență tehnică pusă într-un mod de lucru simplu și responsabil." />
+      {/* CINE SUNTEM */}
+      <section className="bg-white py-20 md:py-28">
+        <div className="site-container grid gap-12 lg:grid-cols-[.82fr_1.18fr] lg:gap-16">
+          <SectionHeading
+            label="Cine suntem"
+            title={<>Experiență tehnică pusă într-un mod de lucru <em>simplu și responsabil.</em></>}
+          />
           <div data-stagger>
-            <p className="max-w-3xl text-lg leading-8 text-ink">Am construit TNG GRUP în jurul unei idei simple: beneficiarul trebuie să poată urmări proiectul fără să sacrifice calitatea, ritmul de execuție sau claritatea deciziilor.</p>
+            <p className="max-w-3xl text-xl leading-9 text-ink md:text-2xl md:leading-10">
+              Am construit TNG GRUP în jurul unei idei simple: beneficiarul trebuie să poată urmări proiectul fără să sacrifice calitatea, ritmul de execuție sau claritatea deciziilor.
+            </p>
             <div className="mt-7 grid gap-5 md:grid-cols-2">
               <p className="text-lg leading-8 text-ink-muted">Asigurăm execuție, management și servicii tehnice specializate pentru proiecte civile și industriale, adaptând echipa și modul de lucru la complexitatea investiției.</p>
               <p className="text-lg leading-8 text-ink-muted">Punem accent pe documentație, coordonare și verificare pe parcurs, astfel încât deciziile importante să fie luate înainte ca ele să devină costuri sau întârzieri.</p>
             </div>
-            <div className="mt-9 grid grid-cols-3 gap-4 border-y border-black/10 py-6">
+
+            <div className="mt-10 grid grid-cols-3 gap-6 border-y border-black/10 py-8">
               {stats.map((item) => (
                 <div key={item.id}>
-                  <div className="text-lg font-semibold tracking-[-.02em] md:text-xl">{item.value}</div>
-                  <div className="mt-1.5 max-w-[10rem] text-[.7rem] leading-4 text-ink-muted md:text-[.75rem]">{item.label}</div>
+                  <div className="font-display text-3xl font-medium tracking-[-.02em] text-accent md:text-5xl">{item.value}</div>
+                  <div className="mt-2 max-w-[12rem] text-[.74rem] leading-5 text-ink-muted md:text-[.8rem]">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -56,22 +63,36 @@ export default function Despre() {
         </div>
       </section>
 
-      <section className="bg-[#171a1b] py-16 text-white md:py-20">
-        <div className="site-container grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
-          <div className="relative min-h-[430px] overflow-hidden rounded-[1.4rem] bg-black md:min-h-[600px]" data-reveal>
-            <Image data-parallax src="/despre/3.jpg" alt="Lucrări de construcții coordonate de TNG GRUP" fill className="object-cover scale-[1.08]" sizes="(max-width:1024px) 100vw, 56vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+      {/* PRINCIPII */}
+      <section className="relative overflow-hidden bg-[#0c0e0f] py-20 text-white md:py-28 on-dark">
+        <div className="grain" aria-hidden="true" />
+        <div className="site-container relative grid gap-12 lg:grid-cols-[1.04fr_.96fr] lg:items-center lg:gap-16">
+          <div className="relative min-h-[420px] overflow-hidden rounded-[1.5rem] bg-black md:min-h-[600px]" data-reveal>
+            <Image data-parallax src="/despre/3.jpg" alt="Lucrări de construcții coordonate de TNG GRUP" fill className="scale-[1.08] object-cover" sizes="(max-width:1024px) 100vw, 54vw" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/5 to-transparent" />
+            <div className="absolute bottom-6 left-6 rounded-2xl border border-white/15 bg-black/40 px-6 py-5 backdrop-blur-md">
+              <div className="font-display text-4xl font-medium text-accent-bright">2019</div>
+              <div className="mt-1 text-[.82rem] font-medium text-white/70">anul fondării TNG GRUP AG</div>
+            </div>
           </div>
-          <div className="lg:pl-8">
-            <SectionHeading inverse label="Principii de lucru" title="Principii care se văd în șantier, nu doar în prezentare." description="Modul nostru de lucru se vede în organizarea șantierului, în felul în care raportăm progresul și în cât de repede sunt transformate problemele tehnice în decizii clare." />
-            <div className="mt-7 grid gap-3" data-stagger>
-              {principles.map(([title, text]) => (
-                <div key={title} className="dark-card p-5">
-                  <div className="mb-3 flex items-center gap-2">
-                    <CheckCircle2 size={18} className="text-accent" />
-                    <h3 className="text-base font-semibold text-white">{title}</h3>
+
+          <div>
+            <SectionHeading
+              inverse
+              label="Principii de lucru"
+              title={<>Principii care se văd <em>în șantier</em>, nu doar în prezentare.</>}
+              description="Modul nostru de lucru se vede în organizarea șantierului, în felul în care raportăm progresul și în cât de repede sunt transformate problemele tehnice în decizii clare."
+            />
+            <div className="mt-8 grid gap-3" data-stagger>
+              {principles.map(({ icon: Icon, title, text }) => (
+                <div key={title} className="dark-card group flex gap-4 p-5 transition-colors hover:border-white/20">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/12 bg-white/[.04] text-accent-bright">
+                    <Icon size={19} strokeWidth={1.8} />
                   </div>
-                  <p className="text-lg leading-8 text-white/70">{text}</p>
+                  <div>
+                    <h3 className="text-base font-bold text-white">{title}</h3>
+                    <p className="mt-1.5 text-lg leading-8 text-white/64">{text}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -79,45 +100,39 @@ export default function Despre() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
+      {/* MISIUNE / VIZIUNE */}
+      <section className="bg-white py-20 md:py-28">
         <div className="site-container">
-          <div className="grid gap-6 lg:grid-cols-[1.08fr_.92fr] lg:items-stretch">
-            <div className="surface-card relative overflow-hidden p-7 md:p-9 border-black/40!" data-reveal>
-              <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-[#aab9c8]/18 blur-3xl" />
-              <div className="relative z-10 flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#dbe3ea] text-accent">
-                  <Target size={20} />
-                </div>
-                <div>
-                  <p className="text-[.95rem] font-semibold text-ink">Misiune</p>
-                  <h2 className="mt-3 max-w-xl text-2xl font-semibold tracking-[-.03em] text-ink md:text-[2rem]">Execuție corectă, control tehnic și claritate pentru beneficiar.</h2>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-muted">Să transformăm proiectele bine gândite în construcții executate corect, fără să pierdem controlul asupra detaliilor, calității și etapelor care influențează costul final.</p>
-                </div>
+          <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch">
+            <div className="surface-card relative overflow-hidden p-8 md:p-10" data-reveal>
+              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-accent/10 blur-3xl" />
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                <Target size={22} />
               </div>
+              <p className="mt-6 text-[.78rem] font-bold uppercase tracking-[.16em] text-ink-faint">Misiune</p>
+              <h2 className="mt-3 max-w-xl font-display text-3xl font-medium tracking-[-.02em] text-ink md:text-4xl">Execuție corectă, control tehnic și claritate pentru beneficiar.</h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-ink-muted">Să transformăm proiectele bine gândite în construcții executate corect, fără să pierdem controlul asupra detaliilor, calității și etapelor care influențează costul final.</p>
             </div>
 
-            <div className="surface-card relative overflow-hidden bg-[#1a1d1e] p-7 text-white md:p-9 border-black/40!" data-reveal>
-              <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-[#aab9c8]/22 blur-3xl" />
-              <div className="relative z-10 flex items-start gap-4 ">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/8 text-accent">
-                  <Eye size={20} />
-                </div>
-                <div>
-                  <p className="text-[.95rem] font-semibold text-black">Viziune</p>
-                  <h2 className="mt-3 max-w-xl text-2xl font-semibold tracking-[-.03em] text-black md:text-[2rem]">O industrie în care transparența și calitatea nu mai sunt excepții.</h2>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-black/72">Construim un mod de lucru în care planificarea, verificarea și comunicarea devin standard pentru fiecare proiect, nu doar promisiuni din ofertă.</p>
-                </div>
+            <div className="relative overflow-hidden rounded-[1.35rem] bg-[#141618] p-8 text-white md:p-10" data-reveal>
+              <div className="grain" aria-hidden="true" />
+              <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-accent/15 blur-3xl" />
+              <div className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-white/12 bg-white/[.05] text-accent-bright">
+                <Eye size={22} />
               </div>
+              <p className="mt-6 text-[.78rem] font-bold uppercase tracking-[.16em] text-white/45">Viziune</p>
+              <h2 className="mt-3 max-w-xl font-display text-3xl font-medium tracking-[-.02em] text-white md:text-4xl">O industrie în care transparența și calitatea nu mai sunt excepții.</h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-white/66">Construim un mod de lucru în care planificarea, verificarea și comunicarea devin standard pentru fiecare proiect, nu doar promisiuni din ofertă.</p>
             </div>
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3" data-stagger>
             {missionPillars.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="rounded-2xl border border-black/40 bg-white p-5 md:p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dbe3ea] text-accent">
-                  <Icon size={18} />
+              <div key={title} className="surface-card group p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                  <Icon size={19} strokeWidth={1.8} />
                 </div>
-                <h3 className="mt-4 text-base font-semibold tracking-[-.015em] text-ink">{title}</h3>
+                <h3 className="mt-5 text-lg font-bold tracking-[-.015em] text-ink">{title}</h3>
                 <p className="mt-2 text-lg leading-8 text-ink-muted">{text}</p>
               </div>
             ))}
@@ -125,17 +140,18 @@ export default function Despre() {
         </div>
       </section>
 
-      <section className="bg-[#171a1b] py-12 text-white md:py-14">
+      {/* CTA PORTOFOLIU */}
+      <section className="bg-paper py-16 md:py-20">
         <div className="site-container" data-reveal>
-          <div className="dark-card overflow-hidden">
-            <div className="grid gap-6 p-6 md:grid-cols-[1.2fr_.8fr] md:items-center md:p-8 lg:p-10">
+          <div className="surface-card overflow-hidden">
+            <div className="grid gap-6 p-7 md:grid-cols-[1.2fr_.8fr] md:items-center md:p-10">
               <div>
-                <p className="page-label mb-3 !text-white/58">Portofoliu</p>
-                <h2 className="max-w-2xl text-2xl font-semibold tracking-[-.03em] text-accent md:text-[2rem]">Vedeți cum aceste principii se transformă în proiecte reale.</h2>
-                <p className="mt-3 max-w-2xl text-lg leading-8 text-white/68">De la locuințe și clădiri comerciale până la spații industriale și amenajări, portofoliul arată felul în care organizăm execuția și controlul calității în practică.</p>
+                <p className="eyebrow">Portofoliu</p>
+                <h2 className="max-w-2xl font-display text-3xl font-medium tracking-[-.02em] text-ink md:text-4xl">Vedeți cum principiile devin <em>proiecte reale.</em></h2>
+                <p className="mt-4 max-w-2xl text-lg leading-8 text-ink-muted">De la locuințe și clădiri comerciale până la spații industriale și amenajări, portofoliul arată felul în care organizăm execuția și controlul calității în practică.</p>
               </div>
               <div className="md:justify-self-end">
-                <Link href="/portofoliu" className="button-light self-start">Vezi portofoliul <ArrowRight size={15} /></Link>
+                <Link href="/portofoliu" className="button-primary">Vezi portofoliul <ArrowRight size={16} /></Link>
               </div>
             </div>
           </div>

@@ -11,10 +11,15 @@ import { SolicitatiOferta } from "./SolicitatiOferta";
 export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 18);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(total > 0 ? Math.min(1, window.scrollY / total) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -22,73 +27,89 @@ export default function Header() {
 
   useEffect(() => setOpen(false), [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled || open ? "border-b border-white/10 bg-[#111314]/96 shadow-lg shadow-black/10 backdrop-blur-xl" : "bg-gradient-to-b from-black/65 via-black/20 to-transparent"}`}>
-      <div className="site-container flex h-20 items-center justify-between md:h-24">
-        <Link href="/" className="flex items-center gap-3" aria-label="TNG Grup — Acasă">
-          <div className="relative h-10 w-10 overflow-hidden rounded-md bg-white md:h-11 md:w-11">
-            <Image src="/logo.png" alt="TNG Grup" fill priority sizes="44px" className="object-cover" />
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled || open ? "border-b border-white/10 bg-[#0c0e0f]/92 shadow-[0_12px_40px_-12px_rgba(0,0,0,.6)] backdrop-blur-xl" : "border-b border-transparent bg-gradient-to-b from-black/70 via-black/25 to-transparent"}`}>
+      {/* Scroll progress */}
+      <span className="absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-accent via-accent-bright to-accent" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
+
+      <div className="site-container flex h-[4.5rem] items-center justify-between md:h-24">
+        <Link href="/" className="group flex items-center gap-3.5" aria-label="TNG Grup — Acasă">
+          <div className="relative h-11 w-11 overflow-hidden rounded-xl bg-white ring-1 ring-white/20 transition-transform duration-300 group-hover:scale-105 md:h-12 md:w-12">
+            <Image src="/logo.png" alt="TNG Grup" fill priority sizes="48px" className="object-cover" />
           </div>
           <div className="text-white">
-            <div className="text-[.95rem] font-bold tracking-[.03em]">TNG GRUP</div>
-            <div className="mt-0.5 text-[.63rem] font-medium text-white/62">Antreprenoriat general</div>
+            <div className="text-[1rem] font-extrabold tracking-[.06em]">TNG <span className="text-accent-bright">GRUP</span></div>
+            <div className="mt-0.5 text-[.66rem] font-medium uppercase tracking-[.18em] text-white/55">Antreprenoriat general</div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Navigație principală">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigație principală">
           {navigation.map((item) => {
             const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-2 text-[1.05rem] font-medium ${active ? "text-white" : "text-white/67 hover:text-white"}`}
+                className={`group relative py-2 text-[.98rem] font-semibold tracking-[-.01em] transition-colors ${active ? "text-white" : "text-white/64 hover:text-white"}`}
               >
                 {item.label}
-                {active && <span className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2px] w-4 rounded-full bg-accent" />}
+                <span className={`absolute inset-x-0 -bottom-0.5 h-[2px] origin-left rounded-full bg-gradient-to-r from-accent to-accent-bright transition-transform duration-300 ${active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a href="tel:+40728873254" className="inline-flex items-center gap-2 text-base font-medium text-white/65 hover:text-white" aria-label="Sună TNG GRUP la 0728 873 254">
-            <Phone size={14} /> 0728 873 254
+        <div className="hidden items-center gap-5 lg:flex">
+          <a href="tel:+40728873254" className="inline-flex items-center gap-2 text-base font-semibold text-white/60 transition-colors hover:text-white" aria-label="Sună TNG GRUP la 0728 873 254">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-accent-bright"><Phone size={14} /></span>
+            0728 873 254
           </a>
-          <SolicitatiOferta customStyle="!min-h-10 !px-4" />
+          <SolicitatiOferta className="min-h-11 px-6" />
         </div>
 
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/16 bg-white/6 text-white lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-white transition hover:bg-white/10 lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Închide meniul" : "Deschide meniul"}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      <div className={`overflow-hidden border-t border-white/10 bg-[#111314] transition-[max-height,opacity] duration-300 lg:hidden ${open ? "max-h-[34rem] opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="site-container py-5">
+      {/* Mobile menu */}
+      <div className={`fixed inset-x-0 top-[4.5rem] bottom-0 z-40 overflow-y-auto bg-[#0c0e0f] transition-[opacity,visibility] duration-300 md:top-24 lg:hidden ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+        <div className="site-container flex min-h-full flex-col py-8">
           <nav className="grid gap-2" aria-label="Navigație mobilă">
-            {navigation.map((item) => {
+            {navigation.map((item, index) => {
               const active = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center justify-between rounded-xl border px-4 py-3.5 text-base font-medium ${active ? "border-white/16 bg-white/8 text-white" : "border-white/10 bg-white/[.03] text-white/74"}`}
+                  className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-lg font-semibold transition-colors ${active ? "border-accent/40 bg-accent/10 text-white" : "border-white/10 bg-white/[.03] text-white/70 hover:bg-white/[.06]"}`}
                 >
-                  <span>{item.label}</span>
-                  <span className={`h-2 w-2 rounded-full ${active ? "bg-accent" : "bg-white/20"}`} />
+                  <span className="flex items-center gap-4">
+                    <span className="font-display text-sm text-accent-bright">0{index + 1}</span>
+                    {item.label}
+                  </span>
+                  <span className={`h-2 w-2 rounded-full ${active ? "bg-accent-bright" : "bg-white/20"}`} />
                 </Link>
               );
             })}
           </nav>
-          <div className="mt-4 grid gap-3">
-            <a href="tel:+40728873254" className="flex min-h-11 items-center justify-center gap-2 rounded-[.8rem] border border-white/15 bg-white/[.03] text-base font-medium text-white/75"><Phone size={15} /> 0728 873 254</a>
-            <SolicitatiOferta customStyle="!w-full" />
+
+          <div className="mt-auto grid gap-3 pt-8">
+            <a href="tel:+40728873254" className="flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[.03] text-base font-semibold text-white/80">
+              <Phone size={15} className="text-accent-bright" /> 0728 873 254
+            </a>
+            <SolicitatiOferta className="w-full" />
           </div>
         </div>
       </div>

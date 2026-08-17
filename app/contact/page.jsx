@@ -29,36 +29,36 @@ export default function Contact() {
     <div>
       <PageHero
         label="Contact"
-        title="Spuneți-ne pe scurt despre proiect. De aici continuăm noi."
+        title={<>Spuneți-ne pe scurt despre proiect. <em>De aici continuăm noi.</em></>}
         description="Nu aveți nevoie de o documentație perfect pregătită pentru primul contact. Datele de contact și câteva informații despre lucrare sunt suficiente ca să începem discuția."
         image="/HeroCarousel/3.webp"
       />
 
-      <section className="bg-paper py-16 md:py-20">
-        <div className="site-container grid gap-10 lg:grid-cols-[.68fr_1.32fr] lg:items-start">
+      <section className="bg-paper py-20 md:py-28">
+        <div className="site-container grid gap-12 lg:grid-cols-[.68fr_1.32fr] lg:items-start lg:gap-16">
           <div>
             <SectionHeading
               label="Date de contact"
-              title="Alegeți varianta cea mai simplă pentru dumneavoastră."
+              title={<>Alegeți varianta <em>cea mai simplă</em> pentru dumneavoastră.</>}
               description="Completați formularul, sunați-ne sau trimiteți un email. Dacă ne spuneți localitatea, tipul lucrării și stadiul proiectului, putem intra mai repede în detaliile relevante."
             />
 
-            <div className="mt-7 grid gap-3" data-stagger>
+            <div className="mt-8 grid gap-3" data-stagger>
               {contacts.map(({ id, icon: Icon, label, value, href }) => {
                 const inner = (
-                  <div className="flex items-start gap-3 rounded-2xl border border-black/40 bg-white p-4 md:p-5">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#dbe3ea] text-accent">
+                  <div className="group flex items-start gap-4 rounded-2xl border border-black/10 bg-white p-5 transition-colors hover:border-accent/30">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                       <Icon size={18} />
                     </div>
                     <div>
-                      <div className="text-[.74rem] font-medium text-ink-muted">{label}</div>
-                      <div className="mt-1.5 text-lg font-medium leading-7 text-ink">{value}</div>
+                      <div className="text-[.74rem] font-bold uppercase tracking-[.12em] text-ink-faint">{label}</div>
+                      <div className="mt-1.5 text-lg font-semibold leading-7 text-ink">{value}</div>
                     </div>
                   </div>
                 );
 
                 return href ? (
-                  <a key={id} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="block transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(22,24,25,.05)]">
+                  <a key={id} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="block transition-transform duration-300 hover:-translate-y-0.5">
                     {inner}
                   </a>
                 ) : (
@@ -67,16 +67,16 @@ export default function Contact() {
               })}
             </div>
 
-            <div className="mt-6 surface-card p-5 md:p-6" data-reveal>
-              <div className="flex items-center gap-2 text-base font-semibold text-ink">
-                <ShieldCheck size={16} className="text-accent" />
+            <div className="mt-6 surface-card p-6" data-reveal>
+              <div className="flex items-center gap-2.5 text-base font-bold text-ink">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent"><ShieldCheck size={16} /></span>
                 Ce ne ajută la primul răspuns
               </div>
-              <p className="mt-2 text-lg leading-8 text-ink-muted">Nu este nevoie de un brief complicat. Dacă le aveți la îndemână, aceste informații ne ajută să înțelegem contextul din prima:</p>
+              <p className="mt-3 text-lg leading-8 text-ink-muted">Nu este nevoie de un brief complicat. Dacă le aveți la îndemână, aceste informații ne ajută să înțelegem contextul din prima:</p>
               <ul className="mt-4 grid gap-2">
                 {helpfulInfo.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-lg leading-8 text-ink-soft">
-                    <ArrowRight size={14} className="mt-1 shrink-0 text-accent" />
+                  <li key={item} className="flex items-start gap-2.5 text-lg leading-8 text-ink-soft">
+                    <ArrowRight size={15} className="mt-1.5 shrink-0 text-accent" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -84,7 +84,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="w-full self-start overflow-hidden rounded-2xl bg-[#151819] shadow-[0_22px_55px_rgba(17,19,20,.14)] lg:max-w-[780px] lg:justify-self-end" data-reveal>
+          <div className="w-full self-start overflow-hidden rounded-[1.5rem] bg-[#15181a] shadow-[0_24px_60px_-24px_rgba(17,19,20,.45)] lg:max-w-[780px] lg:justify-self-end" data-reveal>
             <SolicitatiOfertaForm embedded />
           </div>
         </div>
