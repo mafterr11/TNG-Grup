@@ -2,24 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { navigation, services } from "@/lib/site-data";
+import SceneBackground from "@/components/three/SceneBackground";
+import Marquee from "@/components/motion/Marquee";
 import { SolicitatiOferta } from "./SolicitatiOferta";
 
 export default function Footer() {
+  const tickerItems = [...services.map((s) => s.short), "Antreprenoriat general", "Controlul calității"];
   return (
     <footer className="relative overflow-hidden bg-[#0c0e0f] text-white on-dark">
+      <SceneBackground variant="dust" density={220} className="pointer-events-none absolute inset-0 z-0" />
       <div className="grain" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-accent/10 blur-[120px]" aria-hidden="true" />
+
+      {/* Ticker */}
+      <Marquee items={tickerItems} duration={42} className="border-b border-white/10" />
 
       {/* CTA band */}
       <div className="site-container relative border-b border-white/10">
         <div className="flex flex-col gap-8 py-16 md:flex-row md:items-end md:justify-between md:py-20">
           <div>
-            <p className="eyebrow eyebrow--light">Să discutăm proiectul</p>
-            <h2 className="mt-2 max-w-2xl font-display text-3xl font-medium leading-[1.05] tracking-[-.02em] md:text-5xl">
+            <p className="eyebrow eyebrow--light" data-reveal>Să discutăm proiectul</p>
+            <h2 className="mt-2 max-w-2xl font-display text-3xl font-medium leading-[1.05] tracking-[-.02em] md:text-5xl" data-split>
               Construim împreună ce urmează <em>pentru afacerea dumneavoastră.</em>
             </h2>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col gap-3 sm:flex-row" data-reveal>
             <SolicitatiOferta />
             <a href="tel:+40728873254" className="button-light"><Phone size={15} /> 0728 873 254</a>
           </div>

@@ -6,7 +6,6 @@ import {
   BadgeCheck,
   Building2,
   CalendarClock,
-  Check,
   Factory,
   HardHat,
   Phone,
@@ -14,8 +13,27 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import Marquee from "@/components/motion/Marquee";
+import Counter from "@/components/motion/Counter";
+import SceneBackground from "@/components/three/SceneBackground";
 import { SolicitatiOferta } from "@/components/SolicitatiOferta";
 import { projects, services, stats } from "@/lib/site-data";
+
+const marqueeItems = [
+  "Execuție construcții civile",
+  "Construcții industriale",
+  "Supervizare lucrări",
+  "Controlul calității",
+  "Planificarea execuției",
+  "Responsabil tehnic — RTE",
+  "Dirigenție de șantier",
+  "Antreprenoriat general",
+];
+
+const splitStat = (value) => {
+  const m = /^(\d+)(.*)$/.exec(value);
+  return m ? { n: Number(m[1]), suffix: m[2] } : { n: 0, suffix: value };
+};
 
 const serviceIcons = {
   "execuție-construcții-civile": Building2,
@@ -45,14 +63,15 @@ export default function Home() {
       {/* ---------------- HERO ---------------- */}
       <section className="relative min-h-screen bg-black text-white on-dark">
         <Image data-hero-image src="/HeroCarousel/1.webp" alt="Șantier de construcții TNG GRUP" fill priority className="object-cover object-center" sizes="100vw" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,12,13,.94)_0%,rgba(10,12,13,.72)_46%,rgba(10,12,13,.24)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,.22)_0%,rgba(0,0,0,0)_42%,rgba(0,0,0,.78)_100%)]" />
-        <div className="grain" aria-hidden="true" />
+        <SceneBackground variant="hero" className="pointer-events-none absolute inset-0 z-0" />
+        <div className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(10,12,13,.94)_0%,rgba(10,12,13,.72)_46%,rgba(10,12,13,.24)_100%)]" />
+        <div className="absolute inset-0 z-[2] bg-[linear-gradient(180deg,rgba(0,0,0,.22)_0%,rgba(0,0,0,0)_42%,rgba(0,0,0,.78)_100%)]" />
+        <div className="grain z-[2]" aria-hidden="true" />
 
         <div className="site-container relative z-10 flex min-h-screen flex-col justify-end pb-12 pt-28 md:pb-16 lg:justify-center lg:pb-0">
           <div className="max-w-5xl" data-hero-copy>
             <p className="eyebrow eyebrow--light">Antreprenoriat general · București · România</p>
-            <h1 className="display-title">Construcții coordonate cu <em>rigoare</em>, de la prima etapă până la recepție.</h1>
+            <h1 className="display-title" data-split>Construcții coordonate cu <em>rigoare</em>, de la prima etapă până la recepție.</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/72 md:text-xl md:leading-9">
               TNG GRUP execută și coordonează proiecte civile și industriale, cu un singur flux pentru echipe, termene, calitate și deciziile tehnice care contează.
             </p>
@@ -63,14 +82,17 @@ export default function Home() {
           </div>
 
           <div className="mt-14 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/15 pt-7 md:gap-12">
-            {stats.map((item) => (
-              <div key={item.id}>
-                <div className="font-display text-3xl font-medium tracking-[-.02em] text-white md:text-4xl">
-                  {item.value}
+            {stats.map((item) => {
+              const { n, suffix } = splitStat(item.value);
+              return (
+                <div key={item.id}>
+                  <div className="font-display text-3xl font-medium tracking-[-.02em] text-white md:text-4xl">
+                    <Counter value={n} suffix={suffix} />
+                  </div>
+                  <div className="mt-2 max-w-[12rem] text-[.74rem] leading-5 text-white/58 md:text-[.8rem]">{item.label}</div>
                 </div>
-                <div className="mt-2 max-w-[12rem] text-[.74rem] leading-5 text-white/58 md:text-[.8rem]">{item.label}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
@@ -85,6 +107,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Marquee items={marqueeItems} duration={38} />
 
       {/* ---------------- DESPRE / INTRO ---------------- */}
       <section id="despre" className="bg-white py-20 md:py-28">
@@ -106,7 +130,7 @@ export default function Home() {
               { icon: BadgeCheck, title: "Comunicare directă", text: "Știți din timp ce se întâmplă în șantier și ce decizii trebuie luate." },
               { icon: HardHat, title: "Execuție coordonată", text: "Echipele, furnizorii și specialitățile lucrează ca părți ale aceluiași proiect." },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="group surface-card flex gap-5 p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7">
+              <div key={title} className="group surface-card flex gap-5 p-6 md:p-7" data-tilt>
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                   <Icon size={21} strokeWidth={1.8} />
                 </div>
@@ -145,7 +169,8 @@ export default function Home() {
                 <Link
                   key={service.id}
                   href={`/servicii#${service.id}`}
-                  className={`group relative overflow-hidden rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 md:p-7 ${index === 0 ? "border-accent/40 bg-gradient-to-b from-accent/15 to-transparent" : "border-white/10 bg-white/[.03] hover:border-white/20 hover:bg-white/[.05]"}`}
+                  className={`group relative overflow-hidden rounded-2xl border p-6 transition-colors duration-300 md:p-7 ${index === 0 ? "border-accent/40 bg-gradient-to-b from-accent/15 to-transparent" : "border-white/10 bg-white/[.03] hover:border-white/20 hover:bg-white/[.05]"}`}
+                  data-tilt
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/12 bg-white/[.04] text-accent-bright transition-colors group-hover:border-accent/40 group-hover:bg-accent/15">
@@ -258,6 +283,7 @@ export default function Home() {
                 href={project.href}
                 key={project.id}
                 className={`group relative min-h-[320px] overflow-hidden rounded-[1.35rem] border border-black/10 ${index === 0 ? "md:min-h-[520px]" : index === 3 ? "md:min-h-[520px]" : "md:min-h-[400px]"}`}
+                data-tilt
               >
                 <Image src={project.image} alt={project.title} fill className="object-cover transition duration-700 ease-out group-hover:scale-[1.05]" sizes="(max-width:768px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
@@ -279,6 +305,7 @@ export default function Home() {
 
       {/* ---------------- CTA ---------------- */}
       <section className="relative overflow-hidden bg-[#141618] py-20 text-white md:py-24 on-dark">
+        <SceneBackground variant="dust" density={240} className="pointer-events-none absolute inset-0 z-0" />
         <div className="grain" aria-hidden="true" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-accent/10 to-transparent" aria-hidden="true" />
         <div className="site-container relative flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between" data-reveal>

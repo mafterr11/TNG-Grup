@@ -177,7 +177,8 @@
 }
 
 /* ---------- Motion / reveal ---------- */
-[data-reveal], [data-stagger] > * { will-change: transform, opacity; }
+[data-reveal], [data-stagger] > *, [data-tilt] { will-change: transform, opacity; }
+.split-word { display: inline-block; will-change: transform, opacity; }
 
 .grecaptcha-badge { visibility: hidden; }
 
@@ -196,6 +197,33 @@
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+/* ---------- Custom cursor ---------- */
+.custom-cursor,
+.custom-cursor a,
+.custom-cursor button,
+.custom-cursor input,
+.custom-cursor textarea,
+.custom-cursor select,
+.custom-cursor [role="button"] { cursor: none; }
+.cursor-dot {
+  position: fixed; left: 0; top: 0; z-index: 9999;
+  width: 8px; height: 8px; border-radius: 999px;
+  background: #fff; mix-blend-mode: difference;
+  pointer-events: none; will-change: transform;
+}
+.cursor-ring {
+  position: fixed; left: 0; top: 0; z-index: 9998;
+  width: 40px; height: 40px; border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, .95);
+  mix-blend-mode: difference; pointer-events: none; will-change: transform;
+}
+
+/* ---------- Marquee ---------- */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { display: flex; width: max-content; animation: marquee var(--marquee-duration, 36s) linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
 /* ---------- Legal pages ---------- */
 .legal-page { width: min(100% - 1.5rem, 860px); margin-inline: auto; padding: 8.5rem 0 5rem; }

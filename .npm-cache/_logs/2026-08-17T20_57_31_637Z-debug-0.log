@@ -1,0 +1,36 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Users\mafte\AppData\Roaming\npm\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.13.0
+2 info using node@v24.18.0
+3 silly config load:file:C:\Users\mafte\AppData\Roaming\npm\node_modules\npm\npmrc
+4 silly config load:file:D:\IT\Github Repository\TNG-Grup\.npmrc
+5 silly config load:file:C:\Users\mafte\.npmrc
+6 silly config load:file:C:\Users\mafte\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install three
+8 verbose argv "install" "three" "--cache" ".\\.npm-cache" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:D:\IT\Github Repository\TNG-Grup\.npm-cache\_logs\2026-08-17T20_57_31_637Z-
+10 verbose logfile D:\IT\Github Repository\TNG-Grup\.npm-cache\_logs\2026-08-17T20_57_31_637Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest three@*
+15 silly packumentCache full:https://registry.npmjs.org/three cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/npm 174ms
+17 http fetch GET 200 https://registry.npmjs.org/three 110ms (cache miss)
+18 silly packumentCache full:https://registry.npmjs.org/three set size:undefined disposed:false
+19 silly placeDep ROOT three@0.185.1 OK for: tng-grup@1.0.0 want: *
+20 silly reify moves {}
+21 http cache three@https://registry.npmjs.org/three/-/three-0.185.1.tgz 1ms (cache hit)
+22 silly tarball no local data for three@https://registry.npmjs.org/three/-/three-0.185.1.tgz. Extracting by manifest.
+23 http fetch GET 200 https://registry.npmjs.org/three/-/three-0.185.1.tgz 1202ms (cache miss)
+24 silly ADD node_modules/three
+25 verbose cwd D:\IT\Github Repository\TNG-Grup
+26 verbose os Windows_NT 10.0.26200
+27 verbose node v24.18.0
+28 verbose npm  v11.13.0
+29 notice
+29 notice New major version of npm available! 11.13.0 -> 12.0.2
+29 notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+29 notice To update run: npm install -g npm@12.0.2
+29 notice  { force: true, Symbol(proc-log.meta): true }
+30 verbose exit 0
+31 info ok

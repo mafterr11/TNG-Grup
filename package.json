@@ -23,6 +23,7 @@
     "react-hook-form": "^7.83.0",
     "resend": "^6.18.1",
     "tailwind-merge": "^3.6.0",
+    "three": "^0.185.1",
     "zod": "^4.4.3"
   },
   "devDependencies": {

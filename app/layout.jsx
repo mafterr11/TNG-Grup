@@ -3,6 +3,7 @@ import { Fraunces, Manrope } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MotionSystem from "@/components/MotionSystem";
+import Cursor from "@/components/motion/Cursor";
 import { Toaster } from "@/components/ui/toaster";
 import { constructMetadata } from "@/lib/utils";
 import GoogleCaptchaWrapper from "./GoogleCaptchaWrapper";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </GoogleCaptchaWrapper>
         <Toaster />
+        <Cursor />
       </body>
     </html>
   );

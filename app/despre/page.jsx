@@ -3,8 +3,14 @@ import Link from "next/link";
 import { ArrowRight, Building2, CheckCircle2, Eye, ShieldCheck, Target } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import Counter from "@/components/motion/Counter";
 import { constructMetadata } from "@/lib/utils";
 import { stats } from "@/lib/site-data";
+
+const splitStat = (value) => {
+  const m = /^(\d+)(.*)$/.exec(value);
+  return m ? { n: Number(m[1]), suffix: m[2] } : { n: 0, suffix: value };
+};
 
 export const metadata = constructMetadata({
   title: "Despre TNG GRUP - Viziune și Valori",
@@ -52,12 +58,17 @@ export default function Despre() {
             </div>
 
             <div className="mt-10 grid grid-cols-3 gap-6 border-y border-black/10 py-8">
-              {stats.map((item) => (
-                <div key={item.id}>
-                  <div className="font-display text-3xl font-medium tracking-[-.02em] text-accent md:text-5xl">{item.value}</div>
-                  <div className="mt-2 max-w-[12rem] text-[.74rem] leading-5 text-ink-muted md:text-[.8rem]">{item.label}</div>
-                </div>
-              ))}
+              {stats.map((item) => {
+                const { n, suffix } = splitStat(item.value);
+                return (
+                  <div key={item.id}>
+                    <div className="font-display text-3xl font-medium tracking-[-.02em] text-accent md:text-5xl">
+                      <Counter value={n} suffix={suffix} />
+                    </div>
+                    <div className="mt-2 max-w-[12rem] text-[.74rem] leading-5 text-ink-muted md:text-[.8rem]">{item.label}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
